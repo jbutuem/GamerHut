@@ -1,0 +1,4019 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>GAMER HUT — Brandbook 2026 · Mídia Física Never Dies</title>
+<meta name="description" content="Brandbook oficial GAMER HUT. Identidade, tom de voz, paleta, tipografia, aplicações e parceiros." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,400;1,700&family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="assets/logos/badge-circle-orange.svg" />
+<style>
+/* =================== TOKENS =================== */
+:root{
+  --c-orange:        #F26641;
+  --c-orange-deep:   #D9532E;
+  --c-orange-glow:   #FF8B5C;
+  --c-mario-red:     #E1251B;
+  --c-fast-skin:     #FFC27A;
+  --c-sonic-blue:    #194F90;
+  --c-black:         #000000;
+  --c-ink:           #0A0A0A;
+  --c-jet:           #131313;
+  --c-coal:          #1A1A1A;
+  --c-mustache:      #2A2A2A;
+  --c-cool-gray:     #B1B1B1;
+  --c-mute:          #6B6B6B;
+  --c-paper:         #F4F1EC;
+  --c-cream:         #F8F4EE;
+
+  --f-display:  'Russo One', 'Bebas Neue', system-ui, sans-serif;
+  --f-body:     'Red Hat Display', system-ui, -apple-system, sans-serif;
+  --f-arcade:   'Press Start 2P', 'Russo One', monospace;
+  --f-mono:     'JetBrains Mono', 'Fira Code', monospace;
+
+  --content-max: 1280px;
+  --gutter:      clamp(20px, 4vw, 56px);
+
+  --ease-out:    cubic-bezier(.16,1,.3,1);
+  --ease-bounce: cubic-bezier(.34,1.56,.64,1);
+}
+
+/* =================== RESET =================== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--f-body);
+  background:var(--c-ink);
+  color:var(--c-cream);
+  line-height:1.55;
+  font-weight:400;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block;height:auto}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+a{color:inherit;text-decoration:none}
+
+/* =================== UTIL =================== */
+.wrap{max-width:var(--content-max);margin:0 auto;padding:0 var(--gutter);width:100%}
+.eyebrow{
+  font-family:var(--f-arcade);
+  font-size:10px;
+  letter-spacing:.18em;
+  color:var(--c-orange);
+  text-transform:uppercase;
+}
+.label-mono{
+  font-family:var(--f-mono);
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--c-cool-gray);
+}
+.h-display{
+  font-family:var(--f-display);
+  text-transform:uppercase;
+  line-height:.92;
+  letter-spacing:-.01em;
+}
+.text-orange{color:var(--c-orange)}
+.text-mute{color:var(--c-mute)}
+
+/* =================== SCANLINES (CRT) =================== */
+.scanlines::before{
+  content:"";
+  position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,
+    rgba(255,255,255,.018) 0px,
+    rgba(255,255,255,.018) 1px,
+    transparent 1px,
+    transparent 3px);
+  pointer-events:none;
+  mix-blend-mode:overlay;
+  z-index:1;
+}
+
+/* =================== HUD TOP NAV =================== */
+.hud{
+  position:fixed;top:0;left:0;right:0;
+  z-index:100;
+  padding:14px var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;
+  background:linear-gradient(180deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.78) 60%, rgba(0,0,0,0) 100%);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(242,102,65,.14);
+  transition:transform .35s var(--ease-out);
+}
+.hud.hidden{transform:translateY(-100%)}
+.hud-brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.hud-brand img{height:34px;width:auto}
+.hud-brand .meta{
+  display:flex;flex-direction:column;line-height:1.1;
+}
+.hud-brand .meta b{
+  font-family:var(--f-arcade);
+  font-size:9px;letter-spacing:.18em;color:var(--c-orange);
+}
+.hud-brand .meta span{
+  font-family:var(--f-mono);font-size:10px;color:var(--c-cool-gray);letter-spacing:.1em
+}
+.hud-nav{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.hud-nav a{
+  font-family:var(--f-mono);
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--c-cool-gray);
+  padding:8px 12px;
+  border-radius:4px;
+  position:relative;
+  transition:color .2s, background .2s;
+}
+.hud-nav a:hover{color:#fff;background:rgba(242,102,65,.08)}
+.hud-nav a.active{color:var(--c-orange)}
+.hud-nav a.active::before{
+  content:"▸ ";color:var(--c-orange);
+}
+.hud-life{
+  display:flex;align-items:center;gap:10px;flex-shrink:0;
+}
+.hud-life .lbl{
+  font-family:var(--f-arcade);
+  font-size:8px;color:var(--c-orange);letter-spacing:.2em
+}
+.lifebar{
+  width:120px;height:8px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(242,102,65,.4);
+  position:relative;overflow:hidden;
+}
+.lifebar::before{
+  content:"";position:absolute;left:0;top:0;height:100%;
+  width:var(--life,18%);
+  background:linear-gradient(90deg,#FFC27A,var(--c-orange) 60%,var(--c-orange-deep));
+  box-shadow:0 0 8px rgba(242,102,65,.6);
+  transition:width .3s var(--ease-out);
+}
+.lifebar::after{
+  content:"";position:absolute;left:0;top:0;height:100%;
+  width:var(--life,18%);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:.4;transform:translateX(-30%)}
+  50%{opacity:.9;transform:translateX(0)}
+}
+
+@media (max-width:1024px){
+  .hud-nav{display:none}
+}
+@media (max-width:640px){
+  .hud-life{display:none}
+  .hud-brand img{height:26px}
+}
+
+/* =================== HERO =================== */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(ellipse at 50% 30%, #1F1208 0%, #0A0604 55%, #000 100%);
+  overflow:hidden;
+  padding:140px var(--gutter) 80px;
+}
+.hero-bg-controller{
+  position:absolute;
+  width:130%;
+  max-width:1500px;
+  top:50%;left:50%;
+  transform:translate(-50%,-45%);
+  opacity:.05;
+  filter:drop-shadow(0 0 80px rgba(242,102,65,.2));
+  z-index:0;
+  animation:floatGhost 18s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes floatGhost{
+  0%,100%{transform:translate(-50%,-45%) scale(1)}
+  50%{transform:translate(-50%,-48%) scale(1.02)}
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(242,102,65,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242,102,65,.04) 1px, transparent 1px);
+  background-size:80px 80px;
+  mask-image:radial-gradient(ellipse at center, black 0%, transparent 70%);
+  -webkit-mask-image:radial-gradient(ellipse at center, black 0%, transparent 70%);
+  z-index:1;
+}
+.hero-inner{
+  position:relative;z-index:5;
+  text-align:center;
+  width:100%;
+  max-width:1100px;
+}
+.hero-stage-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--f-arcade);
+  font-size:10px;letter-spacing:.22em;color:var(--c-orange);
+  padding:8px 14px;
+  border:1px solid rgba(242,102,65,.4);
+  background:rgba(242,102,65,.06);
+  margin-bottom:32px;
+}
+.hero-stage-tag::before{
+  content:"";width:6px;height:6px;background:var(--c-orange);
+  box-shadow:0 0 8px var(--c-orange);
+  animation:blink 1.4s ease-in-out infinite;
+}
+@keyframes blink{
+  0%,100%{opacity:1}
+  50%{opacity:.2}
+}
+.hero h1{
+  font-family:var(--f-display);
+  font-size:clamp(44px, 11vw, 168px);
+  line-height:.85;
+  letter-spacing:-.025em;
+  color:#fff;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+.hero h1 .line{display:block}
+.hero h1 .accent{
+  color:var(--c-orange);
+  display:inline-block;
+  position:relative;
+  text-shadow:0 0 40px rgba(242,102,65,.4);
+}
+.hero h1 .accent::after{
+  content:"_";
+  color:var(--c-orange);
+  animation:caret 1s step-end infinite;
+}
+@keyframes caret{
+  50%{opacity:0}
+}
+.hero-tagline{
+  font-family:var(--f-body);
+  font-size:clamp(16px, 1.6vw, 22px);
+  font-weight:500;
+  color:var(--c-cool-gray);
+  max-width:720px;margin:0 auto 40px;
+  line-height:1.5;
+}
+.hero-cta{
+  display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
+  margin-bottom:60px;
+}
+.btn-press-start{
+  font-family:var(--f-arcade);
+  font-size:11px;letter-spacing:.2em;
+  padding:18px 32px;
+  background:var(--c-orange);color:#000;
+  border:2px solid var(--c-orange);
+  position:relative;
+  transition:all .25s var(--ease-out);
+  box-shadow:0 0 0 0 rgba(242,102,65,.6);
+}
+.btn-press-start:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 24px rgba(242,102,65,.5),0 6px 0 var(--c-orange-deep);
+}
+.btn-ghost{
+  font-family:var(--f-arcade);
+  font-size:11px;letter-spacing:.2em;
+  padding:18px 32px;
+  background:transparent;color:var(--c-cream);
+  border:2px solid rgba(255,255,255,.2);
+  transition:all .25s var(--ease-out);
+}
+.btn-ghost:hover{border-color:var(--c-orange);color:var(--c-orange)}
+
+.hero-meta{
+  display:flex;justify-content:center;gap:48px;
+  font-family:var(--f-mono);
+  font-size:11px;letter-spacing:.14em;
+  color:var(--c-mute);
+  text-transform:uppercase;
+  flex-wrap:wrap;
+}
+.hero-meta span{display:flex;align-items:center;gap:8px}
+.hero-meta span::before{
+  content:"";width:5px;height:5px;background:var(--c-orange);
+}
+
+.hero-scroll{
+  position:absolute;bottom:30px;left:50%;
+  transform:translateX(-50%);
+  z-index:5;
+  font-family:var(--f-arcade);
+  font-size:8px;letter-spacing:.3em;color:var(--c-mute);
+  text-align:center;
+  animation:scrollHint 2s ease-in-out infinite;
+}
+.hero-scroll::after{
+  content:"▼";display:block;font-size:14px;color:var(--c-orange);margin-top:6px;
+}
+@keyframes scrollHint{
+  0%,100%{transform:translate(-50%,0);opacity:.7}
+  50%{transform:translate(-50%,8px);opacity:1}
+}
+
+/* =================== SUMÁRIO =================== */
+.toc{
+  background:var(--c-jet);
+  padding:120px var(--gutter);
+  position:relative;
+  border-top:1px solid rgba(242,102,65,.1);
+}
+.toc-header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:64px;
+  flex-wrap:wrap;gap:24px;
+}
+.toc-title{
+  font-family:var(--f-display);
+  font-size:clamp(40px, 6vw, 88px);
+  color:#fff;line-height:.9;
+}
+.toc-title small{display:block;font-size:.3em;color:var(--c-orange);margin-bottom:8px;letter-spacing:.2em}
+.toc-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:1px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.06);
+}
+.toc-item{
+  background:var(--c-jet);
+  padding:24px 22px;
+  display:flex;flex-direction:column;
+  gap:8px;
+  transition:background .25s var(--ease-out), transform .25s var(--ease-out);
+  position:relative;
+  overflow:hidden;
+}
+.toc-item::before{
+  content:"";
+  position:absolute;left:0;top:0;width:3px;height:0;
+  background:var(--c-orange);
+  transition:height .3s var(--ease-out);
+}
+.toc-item:hover{
+  background:#1F1006;
+  transform:translateY(-2px);
+}
+.toc-item:hover::before{height:100%}
+.toc-num{
+  font-family:var(--f-arcade);
+  font-size:10px;color:var(--c-orange);letter-spacing:.18em;
+}
+.toc-name{
+  font-family:var(--f-display);
+  font-size:18px;color:#fff;line-height:1.1;
+  text-transform:uppercase;
+}
+.toc-desc{
+  font-family:var(--f-mono);
+  font-size:10px;color:var(--c-mute);
+  letter-spacing:.08em;text-transform:uppercase;
+}
+
+/* =================== STAGES (SECTIONS) =================== */
+section.stage{
+  position:relative;
+  padding:120px var(--gutter);
+  overflow:hidden;
+}
+section.stage.alt{background:#080808}
+section.stage.cream{background:var(--c-paper);color:var(--c-ink)}
+section.stage.cream .label-mono{color:var(--c-mute)}
+section.stage.cream .stage-eyebrow{color:var(--c-orange-deep)}
+
+.stage-head{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:40px;
+  align-items:flex-end;
+  margin-bottom:64px;
+  padding-bottom:32px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+section.stage.cream .stage-head{
+  border-color:rgba(0,0,0,.1);
+}
+.stage-num{
+  font-family:var(--f-display);
+  font-size:clamp(80px, 12vw, 180px);
+  line-height:.85;
+  color:transparent;
+  -webkit-text-stroke:1.5px var(--c-orange);
+  letter-spacing:-.03em;
+  user-select:none;
+}
+section.stage.cream .stage-num{-webkit-text-stroke-color:var(--c-orange-deep)}
+.stage-meta{flex:1;min-width:0}
+.stage-eyebrow{
+  font-family:var(--f-arcade);
+  font-size:11px;letter-spacing:.22em;color:var(--c-orange);
+  margin-bottom:14px;display:block;
+}
+.stage-title{
+  font-family:var(--f-display);
+  font-size:clamp(36px, 5.5vw, 72px);
+  line-height:.92;
+  color:#fff;text-transform:uppercase;
+  letter-spacing:-.015em;
+}
+section.stage.cream .stage-title{color:var(--c-ink)}
+.stage-sub{
+  font-size:clamp(16px,1.4vw,18px);
+  color:var(--c-cool-gray);
+  margin-top:12px;max-width:600px;
+}
+section.stage.cream .stage-sub{color:var(--c-mute)}
+
+@media (max-width:760px){
+  .stage-head{grid-template-columns:1fr;gap:16px}
+  .stage-num{font-size:72px}
+}
+
+/* =================== STAGE 01: MANIFESTO =================== */
+.manifesto{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+.manifesto-text p{
+  font-size:clamp(18px,1.8vw,24px);
+  line-height:1.5;
+  color:var(--c-cream);
+  margin-bottom:24px;
+}
+.manifesto-text p:first-of-type{
+  font-family:var(--f-display);
+  font-size:clamp(28px,3.2vw,46px);
+  line-height:1.05;
+  color:#fff;text-transform:uppercase;
+  letter-spacing:-.01em;
+  margin-bottom:32px;
+}
+.manifesto-text strong{color:var(--c-orange)}
+.manifesto-vis{
+  position:relative;
+  aspect-ratio:1/1;
+  display:flex;align-items:center;justify-content:center;
+}
+.manifesto-vis::before{
+  content:"";
+  position:absolute;inset:0;
+  background:radial-gradient(circle at center, rgba(242,102,65,.25) 0%, transparent 60%);
+  filter:blur(20px);
+}
+.manifesto-vis img{
+  position:relative;z-index:2;
+  max-width:78%;
+  filter:drop-shadow(0 0 60px rgba(242,102,65,.35));
+}
+.manifesto-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:rgba(255,255,255,.08);
+  margin-top:48px;
+  border:1px solid rgba(255,255,255,.08);
+}
+.stat{
+  background:var(--c-ink);
+  padding:24px 20px;
+}
+.stat-val{
+  font-family:var(--f-display);
+  font-size:clamp(32px,4vw,52px);
+  color:var(--c-orange);
+  line-height:1;letter-spacing:-.02em;
+}
+.stat-lbl{
+  font-family:var(--f-mono);
+  font-size:10px;letter-spacing:.14em;
+  color:var(--c-cool-gray);
+  text-transform:uppercase;
+  margin-top:6px;
+}
+@media (max-width:900px){
+  .manifesto{grid-template-columns:1fr;gap:40px}
+}
+
+/* =================== STAGE 02: ESSÊNCIA =================== */
+.essence-grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:24px;
+}
+.essence-frame{
+  grid-column:span 12;
+  padding:48px;
+  border:1.5px solid rgba(242,102,65,.4);
+  background:linear-gradient(135deg, rgba(242,102,65,.06), rgba(242,102,65,0));
+  position:relative;
+}
+.essence-frame::before,
+.essence-frame::after{
+  content:"";position:absolute;width:14px;height:14px;
+  border:2px solid var(--c-orange);
+}
+.essence-frame::before{top:-2px;left:-2px;border-right:none;border-bottom:none}
+.essence-frame::after{bottom:-2px;right:-2px;border-left:none;border-top:none}
+.essence-frame .corner{
+  position:absolute;width:14px;height:14px;
+  border:2px solid var(--c-orange);
+}
+.essence-frame .corner.tr{top:-2px;right:-2px;border-left:none;border-bottom:none}
+.essence-frame .corner.bl{bottom:-2px;left:-2px;border-right:none;border-top:none}
+
+.essence-tagline{
+  font-family:var(--f-display);
+  font-size:clamp(48px,8vw,124px);
+  line-height:.85;letter-spacing:-.025em;
+  color:#fff;text-transform:uppercase;
+  text-align:center;
+}
+.essence-tagline span{color:var(--c-orange);display:block}
+.essence-tagline small{
+  display:block;
+  font-size:.18em;letter-spacing:.3em;
+  color:var(--c-cool-gray);
+  margin-top:24px;
+  font-family:var(--f-arcade);
+}
+
+.essence-pillars{
+  grid-column:span 12;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.06);
+}
+.essence-pillar{
+  background:var(--c-ink);
+  padding:32px 28px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.essence-pillar .ico{
+  width:36px;height:36px;
+  border:1.5px solid var(--c-orange);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--f-arcade);font-size:14px;color:var(--c-orange);
+}
+.essence-pillar h4{
+  font-family:var(--f-display);
+  font-size:18px;text-transform:uppercase;
+  color:#fff;letter-spacing:.01em;
+}
+.essence-pillar p{
+  font-size:14px;color:var(--c-cool-gray);
+  line-height:1.5;
+}
+
+/* =================== STAGE 03: TOM DE VOZ =================== */
+.voice-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+}
+.voice-card{
+  background:linear-gradient(180deg, var(--c-jet) 0%, var(--c-coal) 100%);
+  border-top:3px solid var(--c-orange);
+  padding:36px 32px 32px;
+  position:relative;
+  transition:transform .3s var(--ease-out), box-shadow .3s var(--ease-out);
+}
+.voice-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 40px -10px rgba(242,102,65,.2);
+}
+.voice-card .num{
+  font-family:var(--f-arcade);
+  font-size:11px;letter-spacing:.22em;
+  color:var(--c-orange);margin-bottom:14px;
+}
+.voice-card h3{
+  font-family:var(--f-display);
+  font-size:30px;color:#fff;
+  text-transform:uppercase;
+  margin-bottom:16px;line-height:1;
+}
+.voice-card p{
+  font-size:14px;color:var(--c-cool-gray);
+  line-height:1.6;margin-bottom:16px;
+}
+.voice-card .examples{
+  border-top:1px dashed rgba(255,255,255,.12);
+  padding-top:14px;
+  font-family:var(--f-mono);
+  font-size:11px;color:var(--c-mute);letter-spacing:.06em;
+}
+.voice-card .examples b{color:var(--c-orange);display:block;margin-bottom:4px;font-family:var(--f-arcade);letter-spacing:.18em;font-size:9px}
+
+.voice-do-dont{
+  margin-top:64px;
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+}
+.voice-list{
+  padding:32px;
+  border:1px solid rgba(255,255,255,.08);
+}
+.voice-list.do{border-left:3px solid #2BC97A}
+.voice-list.dont{border-left:3px solid var(--c-mario-red)}
+.voice-list h5{
+  font-family:var(--f-arcade);
+  font-size:11px;letter-spacing:.22em;
+  margin-bottom:18px;
+}
+.voice-list.do h5{color:#2BC97A}
+.voice-list.dont h5{color:var(--c-mario-red)}
+.voice-list ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.voice-list li{
+  font-size:14px;color:var(--c-cream);
+  display:flex;gap:10px;align-items:flex-start;
+  font-weight:500;
+}
+.voice-list.do li::before{content:"✓";color:#2BC97A;font-weight:700;flex-shrink:0}
+.voice-list.dont li::before{content:"✗";color:var(--c-mario-red);font-weight:700;flex-shrink:0}
+
+@media (max-width:800px){
+  .voice-grid{grid-template-columns:1fr}
+  .voice-do-dont{grid-template-columns:1fr}
+}
+
+/* =================== STAGE 04: PILARES =================== */
+.pillars-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.06);
+}
+.pillar{
+  background:var(--c-ink);
+  padding:48px 40px;
+  position:relative;
+  min-height:280px;
+  overflow:hidden;
+}
+.pillar::before{
+  content:attr(data-bigtext);
+  position:absolute;
+  bottom:-20px;right:-20px;
+  font-family:var(--f-display);
+  font-size:200px;
+  color:rgba(242,102,65,.04);
+  pointer-events:none;
+  user-select:none;
+  line-height:.8;
+}
+.pillar .pnum{
+  font-family:var(--f-arcade);
+  font-size:11px;color:var(--c-orange);
+  letter-spacing:.22em;margin-bottom:18px;
+}
+.pillar h3{
+  font-family:var(--f-display);
+  font-size:36px;color:#fff;
+  text-transform:uppercase;
+  margin-bottom:14px;line-height:1;
+  position:relative;z-index:2;
+}
+.pillar h3 span{color:var(--c-orange)}
+.pillar p{
+  font-size:15px;color:var(--c-cool-gray);
+  line-height:1.6;
+  position:relative;z-index:2;
+  max-width:420px;
+}
+@media (max-width:760px){
+  .pillars-grid{grid-template-columns:1fr}
+}
+
+/* =================== STAGE 05: LOGOS =================== */
+.logo-system{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:24px;
+}
+.logo-card{
+  background:var(--c-jet);
+  border:1px solid rgba(255,255,255,.08);
+  padding:36px 28px 24px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  min-height:280px;
+  position:relative;
+  transition:border-color .25s, transform .25s var(--ease-out);
+}
+.logo-card:hover{
+  border-color:var(--c-orange);
+  transform:translateY(-2px);
+}
+.logo-card.bg-light{background:#fff;color:#000}
+.logo-card.bg-orange{background:var(--c-orange);color:#000}
+.logo-card .logo-img{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  width:100%;padding:12px;
+}
+.logo-card .logo-img img{
+  max-width:80%;max-height:140px;width:auto;
+}
+.logo-card .logo-img img.horizontal{max-height:120px}
+.logo-card .meta{
+  font-family:var(--f-mono);
+  font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-top:18px;
+  display:flex;flex-direction:column;gap:4px;
+  width:100%;
+}
+.logo-card .meta b{
+  font-family:var(--f-arcade);
+  font-size:10px;letter-spacing:.18em;
+  color:var(--c-orange);
+}
+.logo-card.bg-light .meta b{color:var(--c-orange-deep)}
+.logo-card.bg-orange .meta b{color:#000}
+.logo-card .meta span{color:inherit;opacity:.6}
+
+.logo-card.span-6{grid-column:span 6}
+.logo-card.span-4{grid-column:span 4}
+.logo-card.span-3{grid-column:span 3}
+
+@media (max-width:900px){
+  .logo-card.span-6,.logo-card.span-4,.logo-card.span-3{grid-column:span 6}
+}
+@media (max-width:540px){
+  .logo-card.span-6,.logo-card.span-4,.logo-card.span-3{grid-column:span 12}
+}
+
+/* =================== USOS LOGO =================== */
+.usage-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+  margin-top:48px;
+}
+.usage-card{
+  background:var(--c-jet);
+  padding:24px;
+  border:1px solid rgba(255,255,255,.08);
+  position:relative;
+  aspect-ratio:1/1;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;
+  overflow:hidden;
+}
+.usage-card.do{border-color:rgba(43,201,122,.3)}
+.usage-card.dont{border-color:rgba(225,37,27,.3)}
+.usage-card .badge{
+  position:absolute;top:10px;left:10px;
+  font-family:var(--f-arcade);
+  font-size:8px;letter-spacing:.18em;
+  padding:4px 8px;
+  z-index:2;
+}
+.usage-card.do .badge{background:#2BC97A;color:#000}
+.usage-card.dont .badge{background:var(--c-mario-red);color:#fff}
+.usage-card .demo{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.usage-card .demo img{max-width:60%;max-height:70%}
+.usage-card .demo.gradient{background:linear-gradient(45deg,#7B5AFF,#FF5A88,#FFC15A)}
+.usage-card .demo.busy{background:url('assets/games/mgs-delta-sq.jpg') center/cover}
+.usage-card .demo.warped img{transform:skewX(-15deg) scaleY(.6)}
+.usage-card .demo.recolor img{filter:hue-rotate(180deg) saturate(2)}
+.usage-card .demo.tiny img{max-width:18%}
+.usage-card .demo.cropped{overflow:hidden}
+.usage-card .demo.cropped img{max-width:120%;transform:translateX(20%)}
+
+@media (max-width:760px){
+  .usage-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* =================== STAGE 07: PALETA =================== */
+.palette-row{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr;
+  gap:1px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.06);
+  min-height:340px;
+}
+.swatch{
+  padding:24px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+.swatch.primary{background:var(--c-orange);color:#000}
+.swatch.mario{background:var(--c-mario-red);color:#fff}
+.swatch.fast{background:var(--c-fast-skin);color:#000}
+.swatch.sonic{background:var(--c-sonic-blue);color:#fff}
+.swatch.black{background:#000;color:#fff;border:1px solid rgba(255,255,255,.1)}
+.swatch.gray{background:var(--c-cool-gray);color:#000}
+.swatch-name{
+  font-family:var(--f-display);
+  font-size:clamp(18px,1.6vw,24px);
+  line-height:1;text-transform:uppercase;
+}
+.swatch-mid{
+  font-family:var(--f-mono);
+  font-size:10px;letter-spacing:.1em;
+  margin-top:8px;opacity:.85;
+}
+.swatch-codes{
+  font-family:var(--f-mono);
+  font-size:11px;letter-spacing:.04em;
+  display:flex;flex-direction:column;gap:2px;
+}
+.swatch-pct{
+  position:absolute;top:14px;right:14px;
+  font-family:var(--f-arcade);
+  font-size:9px;letter-spacing:.18em;
+  padding:4px 8px;
+  background:rgba(0,0,0,.18);
+}
+.swatch.primary .swatch-pct{background:rgba(0,0,0,.18)}
+.swatch.fast .swatch-pct{background:rgba(0,0,0,.15)}
+.swatch.gray .swatch-pct{background:rgba(0,0,0,.15)}
+
+.palette-rule{
+  margin-top:48px;
+  display:grid;
+  grid-template-columns:auto 1fr;gap:48px;
+  align-items:center;
+  padding:32px;
+  background:linear-gradient(135deg,#000,var(--c-coal));
+  border-left:3px solid var(--c-orange);
+}
+.palette-rule .formula{
+  font-family:var(--f-display);
+  font-size:clamp(40px,5vw,80px);
+  line-height:.9;color:#fff;
+}
+.palette-rule .formula span{color:var(--c-orange)}
+.palette-rule p{font-size:14px;color:var(--c-cool-gray);line-height:1.6}
+
+@media (max-width:900px){
+  .palette-row{grid-template-columns:1fr 1fr;min-height:auto}
+  .swatch{min-height:160px}
+  .palette-rule{grid-template-columns:1fr;gap:24px}
+}
+
+/* =================== STAGE 08: TIPOGRAFIA =================== */
+.type-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.06);
+}
+.type-card{
+  background:var(--c-jet);
+  padding:48px 40px;
+  display:flex;flex-direction:column;gap:20px;
+  min-height:340px;
+}
+.type-spec{
+  font-family:var(--f-mono);
+  font-size:11px;color:var(--c-mute);
+  letter-spacing:.1em;text-transform:uppercase;
+  display:flex;justify-content:space-between;
+}
+.type-spec b{color:var(--c-orange);font-family:var(--f-arcade);letter-spacing:.18em}
+.type-sample{
+  flex:1;display:flex;flex-direction:column;justify-content:center;
+}
+.type-sample .display{
+  font-family:var(--f-display);
+  font-size:clamp(48px,5vw,76px);
+  line-height:.9;color:#fff;
+  text-transform:uppercase;
+}
+.type-sample .body{
+  font-family:var(--f-body);
+  font-size:24px;line-height:1.4;color:#fff;
+}
+.type-sample .arcade{
+  font-family:var(--f-arcade);
+  font-size:18px;line-height:1.4;color:var(--c-orange);
+}
+.type-sample .mono{
+  font-family:var(--f-mono);
+  font-size:14px;color:var(--c-cool-gray);
+}
+.type-sample .small{
+  font-size:14px;color:var(--c-cool-gray);
+  margin-top:8px;
+}
+.type-glyphs{
+  font-family:var(--f-display);
+  font-size:24px;color:var(--c-mute);
+  letter-spacing:.04em;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:18px;
+  word-break:break-all;
+}
+
+.type-card .weights{
+  display:flex;flex-direction:column;gap:6px;
+  font-family:var(--f-body);
+}
+.type-card .weights span{
+  font-size:18px;color:#fff;
+}
+.type-card .weights span:nth-child(1){font-weight:300}
+.type-card .weights span:nth-child(2){font-weight:400}
+.type-card .weights span:nth-child(3){font-weight:500}
+.type-card .weights span:nth-child(4){font-weight:700}
+.type-card .weights span:nth-child(5){font-weight:800}
+.type-card .weights span:nth-child(6){font-weight:900}
+.type-card .weights span b{color:var(--c-orange);font-family:var(--f-mono);font-size:10px;margin-right:8px}
+
+@media (max-width:760px){
+  .type-grid{grid-template-columns:1fr}
+}
+
+/* =================== STAGE 09: GRAFISMOS =================== */
+.graphics-grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:18px;
+}
+.gfx{
+  background:var(--c-jet);
+  border:1px solid rgba(255,255,255,.08);
+  padding:32px;
+  display:flex;flex-direction:column;
+  gap:14px;
+  position:relative;
+  overflow:hidden;
+  min-height:240px;
+}
+.gfx-large{grid-column:span 8;min-height:340px}
+.gfx-med{grid-column:span 4}
+.gfx-small{grid-column:span 4}
+.gfx h4{
+  font-family:var(--f-display);
+  font-size:22px;color:#fff;
+  text-transform:uppercase;line-height:1;
+}
+.gfx p{font-size:13px;color:var(--c-cool-gray);line-height:1.5}
+.gfx .demo{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  position:relative;border-radius:2px;
+}
+.gfx-scanlines .demo{
+  background:linear-gradient(135deg,#FF6B3D,var(--c-orange-deep));
+  background-image:repeating-linear-gradient(0deg,
+    rgba(0,0,0,.18) 0px,rgba(0,0,0,.18) 2px,transparent 2px,transparent 4px),
+    linear-gradient(135deg,#FF6B3D,var(--c-orange-deep));
+}
+.gfx-scanlines .demo span{
+  font-family:var(--f-arcade);font-size:14px;color:#000;letter-spacing:.18em;
+}
+.gfx-pixelborder .demo{
+  background:#000;
+  border:4px solid var(--c-orange);
+  position:relative;
+}
+.gfx-pixelborder .demo::before{
+  content:"";position:absolute;inset:6px;
+  border:1px dashed rgba(242,102,65,.4);
+}
+.gfx-pixelborder .demo span{
+  font-family:var(--f-arcade);font-size:14px;color:var(--c-orange);letter-spacing:.18em;
+}
+.gfx-controller .demo img{max-width:60%;opacity:.85}
+.gfx-grid .demo{
+  background-image:
+    linear-gradient(rgba(242,102,65,.4) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(242,102,65,.4) 1px,transparent 1px);
+  background-size:24px 24px;
+  background-color:#000;
+}
+.gfx-life .demo{padding:20px 24px;background:#000;flex-direction:column;align-items:flex-start;gap:8px}
+.gfx-life .demo .lbl{font-family:var(--f-arcade);font-size:9px;color:var(--c-orange);letter-spacing:.18em}
+.gfx-life .demo .bar{
+  width:100%;height:14px;
+  background:rgba(255,255,255,.08);
+  border:1px solid var(--c-orange);
+  position:relative;overflow:hidden;
+}
+.gfx-life .demo .bar::before{
+  content:"";position:absolute;left:0;top:0;height:100%;width:72%;
+  background:linear-gradient(90deg,#FFC27A,var(--c-orange));
+}
+
+@media (max-width:900px){
+  .gfx-large,.gfx-med,.gfx-small{grid-column:span 12}
+}
+
+/* =================== STAGE 10: PARCEIROS =================== */
+.partners-strip{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:1px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.06);
+  margin-bottom:48px;
+}
+.partner{
+  background:var(--c-jet);
+  padding:36px 24px;
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;gap:8px;
+  transition:background .25s;
+}
+.partner:hover{background:#1F1006}
+.partner-mark{
+  font-family:var(--f-display);
+  font-size:24px;color:#fff;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  line-height:1;
+}
+.partner-mark.acc{color:var(--c-orange)}
+.partner-meta{
+  font-family:var(--f-mono);
+  font-size:9px;color:var(--c-mute);
+  letter-spacing:.18em;text-transform:uppercase;
+}
+.partner-tag{
+  font-family:var(--f-arcade);
+  font-size:8px;
+  padding:3px 8px;
+  background:rgba(242,102,65,.12);
+  color:var(--c-orange);
+  letter-spacing:.18em;
+  margin-top:6px;
+}
+
+.partners-disclaimer{
+  font-family:var(--f-mono);font-size:11px;color:var(--c-mute);
+  letter-spacing:.06em;
+  text-align:center;
+  padding:16px;
+  border:1px dashed rgba(255,255,255,.1);
+}
+
+/* =================== STAGE 11: BRAND VOICE EM AÇÃO =================== */
+.action-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:24px;
+}
+.action-card{
+  background:var(--c-jet);
+  border:1px solid rgba(255,255,255,.08);
+  padding:32px;
+  display:flex;flex-direction:column;gap:16px;
+}
+.action-card .ctx{
+  font-family:var(--f-arcade);
+  font-size:10px;letter-spacing:.18em;
+  color:var(--c-orange);
+}
+.action-card h4{
+  font-family:var(--f-display);
+  font-size:22px;color:#fff;
+  text-transform:uppercase;line-height:1;
+}
+.action-card .copy{
+  font-size:15px;color:#fff;
+  line-height:1.55;
+  padding:18px;
+  background:#000;
+  border-left:3px solid var(--c-orange);
+  font-weight:500;
+}
+.action-card .why{
+  font-size:13px;color:var(--c-cool-gray);
+  font-style:italic;
+}
+
+@media (max-width:800px){
+  .action-grid{grid-template-columns:1fr}
+}
+
+/* =================== STAGE 12: CONTENT PILLARS =================== */
+.content-pillars{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:1px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.06);
+}
+.cp{
+  background:var(--c-jet);
+  display:grid;
+  grid-template-columns:80px 1fr;
+  min-height:300px;
+}
+.cp:nth-child(5){
+  grid-column:span 2;
+  grid-template-columns:80px 1fr 1fr;
+}
+.cp:nth-child(5) .cp-body{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  align-items:start;
+}
+.cp:nth-child(5) .cp-body > .cp-tag,
+.cp:nth-child(5) .cp-body > h3{grid-column:span 2}
+.cp-side{
+  background:#000;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:space-between;
+  padding:24px 12px;
+  border-right:2px solid var(--c-orange);
+  position:relative;
+}
+.cp-icon{
+  font-family:var(--f-arcade);
+  font-size:28px;
+  color:var(--c-orange);
+  text-shadow:0 0 14px rgba(242,102,65,.4);
+}
+.cp-num{
+  font-family:var(--f-display);
+  font-size:36px;
+  color:transparent;
+  -webkit-text-stroke:1.5px var(--c-orange);
+  letter-spacing:-.04em;
+}
+.cp-body{padding:32px 32px 28px}
+.cp-tag{
+  font-family:var(--f-arcade);
+  font-size:9px;
+  letter-spacing:.22em;
+  color:var(--c-orange);
+  margin-bottom:14px;
+}
+.cp-body h3{
+  font-family:var(--f-display);
+  font-size:30px;
+  color:#fff;
+  text-transform:uppercase;
+  line-height:.95;
+  margin-bottom:14px;
+}
+.cp-body h3 span{color:var(--c-orange)}
+.cp-lead{
+  font-size:14px;color:var(--c-cool-gray);
+  line-height:1.55;
+  margin-bottom:18px;
+  max-width:520px;
+}
+.cp-list{
+  list-style:none;
+  display:flex;flex-direction:column;gap:6px;
+  border-top:1px dashed rgba(255,255,255,.1);
+  padding-top:14px;margin-bottom:14px;
+}
+.cp-list li{
+  font-size:13px;color:var(--c-cream);
+  line-height:1.5;
+}
+.cp-list b{
+  font-family:var(--f-arcade);
+  font-size:9px;
+  letter-spacing:.18em;
+  color:var(--c-orange);
+  margin-right:8px;
+}
+.cp-meta{
+  font-family:var(--f-mono);
+  font-size:10px;
+  color:var(--c-mute);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  border-top:1px solid rgba(255,255,255,.06);
+  padding-top:12px;
+}
+
+/* color tints per pillar — sutis */
+.cp-drop .cp-side{background:linear-gradient(180deg, #2A0F05, #000)}
+.cp-review .cp-side{background:linear-gradient(180deg, #051828, #000); border-right-color:var(--c-sonic-blue)}
+.cp-review .cp-icon{color:var(--c-sonic-blue);text-shadow:0 0 14px rgba(25,79,144,.4)}
+.cp-review .cp-num{-webkit-text-stroke-color:var(--c-sonic-blue)}
+.cp-tip .cp-side{background:linear-gradient(180deg, #2C2008, #000); border-right-color:var(--c-fast-skin)}
+.cp-tip .cp-icon{color:var(--c-fast-skin);text-shadow:0 0 14px rgba(255,194,122,.5)}
+.cp-tip .cp-num{-webkit-text-stroke-color:var(--c-fast-skin)}
+.cp-resumo .cp-side{background:linear-gradient(180deg, #1A1A1A, #000)}
+.cp-lore .cp-side{background:linear-gradient(180deg, #2A0407, #000); border-right-color:var(--c-mario-red)}
+.cp-lore .cp-icon{color:var(--c-mario-red);text-shadow:0 0 14px rgba(225,37,27,.4)}
+.cp-lore .cp-num{-webkit-text-stroke-color:var(--c-mario-red)}
+
+@media (max-width:900px){
+  .content-pillars{grid-template-columns:1fr}
+  .cp:nth-child(5){grid-column:span 1; grid-template-columns:80px 1fr}
+  .cp:nth-child(5) .cp-body{grid-template-columns:1fr; gap:0}
+  .cp:nth-child(5) .cp-body > .cp-tag,
+  .cp:nth-child(5) .cp-body > h3{grid-column:span 1}
+}
+
+.cp-summary{
+  margin-top:48px;
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:32px;
+}
+.cp-pie{
+  background:#000;
+  border:1px solid rgba(255,255,255,.08);
+  padding:32px;
+  display:flex;flex-direction:column;
+  gap:14px;
+  position:relative;
+}
+.cp-pie::before{
+  content:"DISTRIBUIÇÃO IDEAL";
+  position:absolute;top:14px;right:18px;
+  font-family:var(--f-arcade);
+  font-size:9px;letter-spacing:.18em;
+  color:var(--c-mute);
+}
+.cp-pie-row{display:flex}
+.cp-pie-bar{
+  display:flex;align-items:center;gap:14px;
+  height:36px;
+  width:var(--w);
+  padding:0 14px;
+  font-family:var(--f-mono);
+  font-size:11px;
+  letter-spacing:.08em;
+  color:#fff;
+  text-transform:uppercase;
+  position:relative;
+  min-width:200px;
+  transition:transform .3s var(--ease-out);
+}
+.cp-pie-bar:hover{transform:translateX(4px)}
+.cp-pie-bar b{
+  font-family:var(--f-display);
+  font-size:18px;color:#fff;
+  letter-spacing:0;
+  text-transform:none;
+}
+.cp-pie-bar.drop{background:linear-gradient(90deg,var(--c-orange),var(--c-orange-deep))}
+.cp-pie-bar.review{background:linear-gradient(90deg,var(--c-sonic-blue),#0E2F5A);color:#fff}
+.cp-pie-bar.tip{background:linear-gradient(90deg,var(--c-fast-skin),#D9A560);color:#000}
+.cp-pie-bar.tip b{color:#000}
+.cp-pie-bar.lore{background:linear-gradient(90deg,var(--c-mario-red),#9D1812)}
+.cp-pie-bar.resumo{background:linear-gradient(90deg,#3A3A3A,#1A1A1A);border:1px solid rgba(255,255,255,.1)}
+
+.cp-cadence{
+  background:var(--c-jet);
+  border:1px solid rgba(255,255,255,.08);
+  padding:24px;
+}
+.cp-cadence h4{
+  font-family:var(--f-arcade);
+  font-size:10px;
+  letter-spacing:.22em;
+  color:var(--c-orange);
+  margin-bottom:14px;
+}
+.cp-cadence table{
+  width:100%;
+  border-collapse:collapse;
+  font-family:var(--f-mono);
+  font-size:12px;
+}
+.cp-cadence th{
+  text-align:left;
+  font-family:var(--f-arcade);
+  font-size:9px;
+  letter-spacing:.18em;
+  color:var(--c-mute);
+  padding:6px 0;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.cp-cadence td{
+  padding:8px 0;
+  color:var(--c-cream);
+  border-bottom:1px solid rgba(255,255,255,.04);
+  letter-spacing:.04em;
+}
+.cp-cadence td:first-child{
+  color:var(--c-orange);
+  font-weight:700;
+  width:60px;
+}
+.cp-cadence td:last-child{
+  text-align:right;
+  color:var(--c-cool-gray);
+}
+
+@media (max-width:760px){
+  .cp-summary{grid-template-columns:1fr}
+  .cp{grid-template-columns:60px 1fr}
+  .cp-side{padding:18px 8px}
+  .cp-icon{font-size:22px}
+  .cp-num{font-size:28px}
+  .cp-body{padding:24px 22px 22px}
+  .cp-body h3{font-size:24px}
+}
+
+/* =================== STAGE 13: GRID MODULAR =================== */
+.grid-modular{
+  margin-bottom:64px;
+  padding:32px;
+  background:var(--c-jet);
+  border:1px solid rgba(255,255,255,.08);
+}
+.grid-modular-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:24px;
+  flex-wrap:wrap;gap:14px;
+}
+.grid-modular-head h3{
+  font-family:var(--f-display);
+  font-size:24px;
+  color:#fff;
+  text-transform:uppercase;
+}
+.grid-modular-head h3 span{color:var(--c-orange)}
+.grid-modular-head p{
+  font-size:13px;
+  color:var(--c-cool-gray);
+  max-width:480px;
+}
+.grid-modular-grid{
+  display:grid;
+  grid-template-columns:repeat(6, 1fr);
+  gap:14px;
+}
+.gm-tile{
+  aspect-ratio:1/1;
+  background:#000;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:14px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.06);
+}
+.gm-tile .gm-num{
+  position:absolute;top:8px;left:8px;
+  font-family:var(--f-arcade);
+  font-size:8px;color:var(--c-orange);
+  letter-spacing:.16em;
+  z-index:3;
+}
+.gm-tile .gm-label{
+  position:absolute;bottom:8px;left:0;right:0;
+  font-family:var(--f-mono);
+  font-size:9px;
+  color:var(--c-cool-gray);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  z-index:3;
+  background:rgba(0,0,0,.7);
+  padding:4px 6px;
+}
+.gm-tile.t-game img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:.85;
+}
+.gm-tile.t-game::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.85));
+  z-index:2;
+}
+.gm-tile.t-brand-orange{background:var(--c-orange)}
+.gm-tile.t-brand-orange .gm-num{color:#000}
+.gm-tile.t-brand-orange .gm-label{background:rgba(0,0,0,.5);color:#fff}
+.gm-tile.t-brand-orange .text{
+  font-family:var(--f-display);
+  font-size:11px;color:#000;
+  text-transform:uppercase;line-height:1;
+  z-index:2;
+}
+.gm-tile.t-dark-logo img{width:60%;height:auto;filter:drop-shadow(0 0 12px rgba(242,102,65,.4))}
+.gm-tile.t-dark-press{
+  background:#000;
+}
+.gm-tile.t-dark-press .text{
+  font-family:var(--f-arcade);
+  font-size:11px;color:var(--c-orange);
+  letter-spacing:.18em;line-height:1.4;
+}
+.gm-tile.t-quote{
+  background:linear-gradient(135deg,#0a0a0a,#1f0f06);
+}
+.gm-tile.t-quote .text{
+  font-family:var(--f-display);
+  font-size:14px;color:#fff;
+  text-transform:uppercase;line-height:1;
+}
+.gm-tile.t-quote .text span{color:var(--c-orange);display:block}
+.gm-tile.t-tip{background:linear-gradient(135deg,var(--c-fast-skin),#D9A560)}
+.gm-tile.t-tip .gm-num{color:#000}
+.gm-tile.t-tip .gm-label{background:rgba(0,0,0,.4);color:#fff}
+.gm-tile.t-tip .text{
+  font-family:var(--f-display);
+  font-size:11px;color:#000;
+  text-transform:uppercase;line-height:1;
+  z-index:2;
+}
+.gm-tile.t-tip .text span{font-family:var(--f-arcade);font-size:8px;display:block;margin-bottom:4px;letter-spacing:.18em}
+
+@media (max-width:900px){
+  .grid-modular-grid{grid-template-columns:repeat(3, 1fr);gap:10px}
+  .gm-tile .gm-num{font-size:7px}
+  .gm-tile .gm-label{font-size:8px;letter-spacing:.06em;padding:3px 4px}
+  .gm-tile.t-brand-orange .text{font-size:9px}
+  .gm-tile.t-quote .text{font-size:11px}
+  .gm-tile.t-dark-press .text{font-size:9px}
+  .gm-tile.t-tip .text{font-size:9px}
+  .gm-tile.t-tip .text span{font-size:7px}
+}
+@media (max-width:520px){
+  .grid-modular{padding:18px}
+  .grid-modular-grid{grid-template-columns:repeat(2, 1fr);gap:8px}
+  .grid-modular-head h3{font-size:18px}
+  .gm-tile{padding:8px}
+  .gm-tile .gm-num{font-size:8px;top:6px;left:6px}
+  .gm-tile .gm-label{font-size:8px;padding:3px 5px}
+  .gm-tile.t-brand-orange .text{font-size:11px}
+  .gm-tile.t-quote .text{font-size:13px}
+  .gm-tile.t-dark-press .text{font-size:11px}
+  .gm-tile.t-tip .text{font-size:11px}
+  .gm-tile.t-tip .text span{font-size:8px}
+}
+
+/* =================== STAGE 12: FEED INSTAGRAM =================== */
+.ig-frame{
+  background:#000;
+  border:1px solid rgba(255,255,255,.1);
+  padding:20px;
+  max-width:540px;
+  margin:0 auto;
+}
+.ig-header{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 4px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  margin-bottom:16px;
+}
+.ig-avatar{
+  width:54px;height:54px;
+  border-radius:50%;
+  background:var(--c-orange);
+  padding:3px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  position:relative;
+}
+.ig-avatar::before{
+  content:"";position:absolute;inset:-3px;border-radius:50%;
+  background:conic-gradient(from 0deg,#F26641,#FFC27A,#E1251B,#F26641);
+}
+.ig-avatar img{
+  width:100%;height:100%;border-radius:50%;
+  background:#000;padding:2px;position:relative;z-index:2;
+  object-fit:cover;
+}
+.ig-handle{flex:1}
+.ig-handle .name{
+  font-family:var(--f-display);font-size:16px;color:#fff;
+  letter-spacing:.02em;
+}
+.ig-handle .hand{
+  font-family:var(--f-mono);font-size:12px;color:var(--c-cool-gray);
+}
+.ig-handle .meta{
+  font-family:var(--f-mono);font-size:10px;color:var(--c-mute);
+  margin-top:2px;
+}
+.ig-handle .meta b{color:var(--c-orange)}
+.ig-follow{
+  font-family:var(--f-arcade);
+  font-size:9px;letter-spacing:.18em;
+  padding:8px 14px;
+  background:var(--c-orange);color:#000;
+}
+
+.ig-bio{
+  padding:8px 4px 18px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  margin-bottom:16px;
+}
+.ig-bio p{font-size:13px;color:#fff;line-height:1.5}
+.ig-bio p strong{color:var(--c-orange)}
+.ig-bio .links{
+  font-family:var(--f-mono);font-size:11px;color:var(--c-orange);
+  margin-top:6px;letter-spacing:.04em;
+}
+.ig-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  text-align:center;
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  margin-bottom:16px;
+}
+.ig-stats div{display:flex;flex-direction:column;gap:2px}
+.ig-stats b{
+  font-family:var(--f-display);
+  font-size:18px;color:#fff;
+}
+.ig-stats span{
+  font-family:var(--f-mono);font-size:10px;color:var(--c-cool-gray);
+  letter-spacing:.1em;text-transform:uppercase;
+}
+
+.ig-tabs{
+  display:flex;justify-content:center;gap:36px;
+  padding:10px 0;
+  border-bottom:2px solid var(--c-orange);
+  margin-bottom:6px;
+}
+.ig-tabs span{
+  font-family:var(--f-arcade);font-size:8px;
+  letter-spacing:.18em;color:var(--c-cool-gray);
+  padding:4px 0;
+}
+.ig-tabs span.active{color:var(--c-orange)}
+
+.ig-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:3px;
+  margin-top:6px;
+}
+.ig-tile{
+  aspect-ratio:1/1;
+  position:relative;
+  overflow:hidden;
+  background:#1A1A1A;
+  cursor:pointer;
+}
+.ig-tile img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .35s var(--ease-out);
+}
+.ig-tile:hover img{transform:scale(1.06)}
+.ig-tile .badge{
+  position:absolute;top:6px;right:6px;
+  font-family:var(--f-arcade);
+  font-size:7px;letter-spacing:.14em;
+  padding:3px 6px;
+  background:rgba(0,0,0,.7);
+  color:var(--c-orange);
+  z-index:2;
+}
+.ig-tile.brand{
+  background:linear-gradient(135deg,var(--c-orange),var(--c-orange-deep));
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:14px;
+}
+.ig-tile.brand .text{
+  font-family:var(--f-display);
+  font-size:14px;color:#000;line-height:1;
+  text-transform:uppercase;
+}
+.ig-tile.brand .text small{
+  font-family:var(--f-arcade);font-size:7px;
+  display:block;margin-top:6px;letter-spacing:.18em;
+}
+.ig-tile.dark{
+  background:#000;display:flex;align-items:center;justify-content:center;
+}
+.ig-tile.dark img{
+  width:60%;height:auto;opacity:.95;
+  filter:drop-shadow(0 0 12px rgba(242,102,65,.5));
+}
+.ig-tile .overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.85) 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:8px;
+  z-index:2;
+}
+.ig-tile .overlay .price{
+  font-family:var(--f-display);font-size:13px;color:#fff;line-height:1;
+}
+.ig-tile .overlay .price small{
+  font-family:var(--f-mono);font-size:9px;color:var(--c-orange);display:block;
+  letter-spacing:.1em;
+}
+
+.ig-meta{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:14px;
+  margin-top:36px;
+  padding:24px;
+  background:#000;
+  border:1px solid rgba(255,255,255,.08);
+}
+.ig-meta div{
+  font-family:var(--f-mono);
+  font-size:11px;color:var(--c-cool-gray);
+  letter-spacing:.04em;
+}
+.ig-meta b{color:var(--c-orange);font-family:var(--f-arcade);font-size:9px;letter-spacing:.18em;display:block;margin-bottom:4px}
+
+/* =================== STAGE 13: POSTS INDIVIDUAIS =================== */
+.posts-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.post-card{
+  background:#000;
+  border:1px solid rgba(255,255,255,.1);
+  overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.post-head{
+  display:flex;align-items:center;gap:10px;
+  padding:12px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.post-head .av{
+  width:32px;height:32px;border-radius:50%;
+  background:var(--c-orange);
+  padding:2px;
+  flex-shrink:0;
+}
+.post-head .av img{
+  width:100%;height:100%;border-radius:50%;
+  background:#000;object-fit:cover;
+}
+.post-head .info{flex:1;line-height:1.1}
+.post-head .info .h{font-size:12px;color:#fff;font-weight:700;font-family:var(--f-mono)}
+.post-head .info .s{font-size:10px;color:var(--c-mute);font-family:var(--f-mono)}
+.post-head .more{color:var(--c-cool-gray);font-size:14px}
+
+.post-img{
+  aspect-ratio:1/1;
+  width:100%;
+  background:#1a1a1a;
+  position:relative;
+  overflow:hidden;
+}
+.post-img > img{width:100%;height:100%;object-fit:cover}
+.post-img .post-overlay{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:18px;
+  z-index:2;
+  background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,transparent 35%,transparent 60%,rgba(0,0,0,.85) 100%);
+}
+.post-img .top-row{
+  display:flex;justify-content:space-between;align-items:flex-start;
+}
+.post-img .post-tag{
+  font-family:var(--f-arcade);
+  font-size:8px;letter-spacing:.18em;
+  padding:6px 10px;
+  background:var(--c-orange);color:#000;
+  align-self:flex-start;
+}
+.post-img .post-tag.drop{background:var(--c-mario-red);color:#fff}
+.post-img .post-tag.preorder{background:#000;color:var(--c-orange);border:1px solid var(--c-orange)}
+.post-img .gh-mini{
+  width:42px;height:42px;
+  background:#000;
+  border-radius:50%;
+  padding:8px;
+  display:flex;align-items:center;justify-content:center;
+}
+.post-img .gh-mini img{width:100%;height:100%;object-fit:contain}
+.post-img .post-title{
+  font-family:var(--f-display);
+  font-size:24px;color:#fff;
+  line-height:.95;
+  text-transform:uppercase;
+  text-shadow:0 2px 12px rgba(0,0,0,.6);
+}
+.post-img .post-title span{color:var(--c-orange)}
+.post-img .post-sub{
+  font-family:var(--f-mono);
+  font-size:10px;color:var(--c-orange);
+  letter-spacing:.14em;
+  margin-top:6px;
+}
+
+.post-actions{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 14px;border-top:1px solid rgba(255,255,255,.08);
+}
+.post-actions .icons{display:flex;gap:14px;font-size:18px;color:#fff}
+.post-actions .save{font-size:18px;color:#fff}
+
+.post-caption{
+  padding:0 14px 14px;
+  font-size:12px;color:#fff;line-height:1.4;
+}
+.post-caption b{color:#fff;margin-right:4px}
+.post-caption .h-tags{color:var(--c-orange);font-family:var(--f-mono);font-size:11px;display:block;margin-top:6px;letter-spacing:.04em}
+.post-caption .meta{
+  font-family:var(--f-mono);font-size:9px;color:var(--c-mute);
+  letter-spacing:.12em;text-transform:uppercase;
+  margin-top:8px;
+}
+
+/* Story (vertical 9:16) */
+.post-card.story .post-img{aspect-ratio:9/16}
+
+@media (max-width:900px){
+  .posts-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .posts-grid{grid-template-columns:1fr}
+}
+
+/* =================== STAGE 14: APLICAÇÕES E-COMMERCE =================== */
+.shop-mockup{
+  background:var(--c-jet);
+  border:1px solid rgba(255,255,255,.1);
+  padding:24px;
+}
+.shop-bar{
+  display:flex;align-items:center;gap:18px;
+  padding:14px 18px;
+  background:#000;
+  border-bottom:1px solid var(--c-orange);
+  margin-bottom:24px;
+}
+.shop-bar .logo{height:28px;width:auto;filter:brightness(0) invert(1)}
+.shop-bar nav{
+  display:flex;gap:22px;
+  font-family:var(--f-mono);
+  font-size:11px;color:var(--c-cool-gray);
+  letter-spacing:.12em;text-transform:uppercase;
+}
+.shop-bar nav a.act{color:var(--c-orange)}
+.shop-bar .right{
+  margin-left:auto;
+  display:flex;gap:14px;align-items:center;
+  font-family:var(--f-mono);
+  font-size:11px;color:var(--c-cool-gray);
+}
+.shop-bar .cart{
+  font-family:var(--f-arcade);font-size:9px;
+  padding:6px 10px;background:var(--c-orange);color:#000;letter-spacing:.18em;
+}
+.shop-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+.shop-card{
+  background:#000;
+  border:1px solid rgba(255,255,255,.08);
+  display:flex;flex-direction:column;
+  transition:border-color .2s, transform .25s var(--ease-out);
+}
+.shop-card:hover{
+  border-color:var(--c-orange);
+  transform:translateY(-3px);
+}
+.shop-img{
+  aspect-ratio:4/5;
+  width:100%;
+  background:#222;
+  position:relative;
+  overflow:hidden;
+}
+.shop-img img{width:100%;height:100%;object-fit:cover}
+.shop-img .ribbon{
+  position:absolute;top:8px;left:8px;
+  font-family:var(--f-arcade);
+  font-size:8px;letter-spacing:.16em;
+  padding:4px 8px;
+  background:var(--c-orange);color:#000;
+}
+.shop-img .ribbon.preorder{background:var(--c-mario-red);color:#fff}
+.shop-img .ribbon.lacrado{background:#000;color:var(--c-orange);border:1px solid var(--c-orange)}
+.shop-info{padding:12px}
+.shop-info .platform{
+  font-family:var(--f-arcade);font-size:8px;
+  letter-spacing:.18em;color:var(--c-orange);margin-bottom:4px;
+}
+.shop-info .title{
+  font-family:var(--f-display);font-size:13px;color:#fff;
+  line-height:1.05;text-transform:uppercase;margin-bottom:8px;
+  min-height:28px;
+}
+.shop-info .price-row{
+  display:flex;align-items:baseline;gap:6px;
+}
+.shop-info .price{
+  font-family:var(--f-display);font-size:18px;color:var(--c-orange);
+}
+.shop-info .install{
+  font-family:var(--f-mono);font-size:9px;color:var(--c-cool-gray);
+}
+.shop-info .nf{
+  margin-top:6px;
+  font-family:var(--f-mono);font-size:9px;color:var(--c-cool-gray);
+  letter-spacing:.06em;
+}
+.shop-info .nf b{color:#2BC97A}
+
+@media (max-width:900px){
+  .shop-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* =================== STAGE 15: TIPS DE COPY =================== */
+.copy-tips{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.06);
+}
+.tip{
+  background:var(--c-jet);
+  padding:32px 28px;
+}
+.tip .ctx{font-family:var(--f-arcade);font-size:9px;color:var(--c-orange);letter-spacing:.18em;margin-bottom:14px}
+.tip .yes,.tip .no{
+  font-size:14px;line-height:1.5;
+  padding:12px 14px;
+  border-left:3px solid;
+  margin-bottom:8px;
+}
+.tip .yes{border-color:#2BC97A;background:rgba(43,201,122,.04);color:#fff}
+.tip .yes::before{content:"✓ ";color:#2BC97A;font-weight:700}
+.tip .no{border-color:var(--c-mario-red);background:rgba(225,37,27,.04);color:var(--c-cool-gray);text-decoration:line-through;text-decoration-color:rgba(225,37,27,.4)}
+.tip .no::before{content:"✗ ";color:var(--c-mario-red);font-weight:700;text-decoration:none}
+
+@media (max-width:800px){.copy-tips{grid-template-columns:1fr}}
+
+/* =================== FOOTER =================== */
+.foot{
+  background:#000;
+  padding:80px var(--gutter) 40px;
+  border-top:1px solid rgba(242,102,65,.2);
+  position:relative;
+}
+.foot-konami{
+  font-family:var(--f-arcade);
+  font-size:10px;color:var(--c-mute);
+  letter-spacing:.22em;text-align:center;
+  margin-bottom:48px;
+  display:flex;justify-content:center;align-items:center;gap:6px;
+  flex-wrap:wrap;
+}
+.foot-konami kbd{
+  font-family:var(--f-arcade);font-size:11px;
+  padding:6px 10px;
+  background:var(--c-jet);
+  border:1px solid rgba(255,255,255,.1);
+  border-bottom-width:3px;
+  color:var(--c-orange);
+}
+.foot-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:48px;
+  margin-bottom:48px;
+}
+.foot-brand img{height:60px;width:auto;margin-bottom:18px}
+.foot-brand p{
+  font-size:13px;color:var(--c-cool-gray);line-height:1.6;
+  max-width:340px;
+}
+.foot-col h6{
+  font-family:var(--f-arcade);
+  font-size:9px;color:var(--c-orange);letter-spacing:.22em;
+  margin-bottom:18px;
+}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.foot-col li{
+  font-family:var(--f-mono);
+  font-size:12px;color:var(--c-cool-gray);
+  letter-spacing:.04em;
+}
+.foot-col li a:hover{color:var(--c-orange)}
+.foot-bottom{
+  padding-top:32px;
+  border-top:1px solid rgba(255,255,255,.06);
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--f-mono);
+  font-size:10px;color:var(--c-mute);
+  letter-spacing:.1em;text-transform:uppercase;
+  flex-wrap:wrap;gap:16px;
+}
+.foot-bottom .ver{color:var(--c-orange)}
+
+@media (max-width:800px){
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media (max-width:500px){
+  .foot-grid{grid-template-columns:1fr}
+}
+
+/* =================== ANIMAÇÕES SCROLL =================== */
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .6s var(--ease-out), transform .6s var(--ease-out);
+}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* Konami flash */
+.konami-flash{
+  position:fixed;inset:0;z-index:1000;
+  background:var(--c-orange);
+  pointer-events:none;
+  opacity:0;
+  display:flex;align-items:center;justify-content:center;
+}
+.konami-flash.on{
+  animation:konamiOn 1.6s var(--ease-out) forwards;
+}
+.konami-flash .msg{
+  font-family:var(--f-arcade);
+  font-size:clamp(20px,4vw,42px);
+  color:#000;
+  letter-spacing:.18em;text-align:center;
+  text-shadow:4px 4px 0 #000;
+}
+@keyframes konamiOn{
+  0%{opacity:0}
+  20%{opacity:.95}
+  80%{opacity:.95}
+  100%{opacity:0}
+}
+
+/* =================== EASTER EGG: STAFF ROLL (TGT) =================== */
+/* Tela cheia estilo créditos finais de jogo arcade, com scanlines e o logo TGT
+   subindo de baixo pra cima. Acionável por: 
+   1) digitar "tgt" no teclado, 
+   2) clicar 3× no "ESTE BRANDBOOK É VIVO" do footer, 
+   3) easter-egg button escondido na 17/17 do footer */
+
+.staff-roll{
+  position:fixed;inset:0;z-index:2000;
+  background:#000;
+  display:none;
+  overflow:hidden;
+  font-family:var(--f-mono);
+}
+.staff-roll.on{
+  display:block;
+  animation:srFadeIn .6s var(--ease-out) forwards;
+}
+.staff-roll::before{
+  content:"";
+  position:absolute;inset:0;
+  background-image:repeating-linear-gradient(0deg,
+    rgba(255,255,255,.04) 0px,
+    rgba(255,255,255,.04) 1px,
+    transparent 1px,
+    transparent 3px);
+  pointer-events:none;
+  z-index:5;
+}
+.staff-roll::after{
+  content:"";
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,.85) 100%);
+  pointer-events:none;
+  z-index:6;
+}
+
+.sr-close{
+  position:absolute;top:24px;right:24px;
+  z-index:20;
+  font-family:var(--f-arcade);
+  font-size:11px;letter-spacing:.18em;
+  padding:10px 14px;
+  background:rgba(0,0,0,.6);
+  color:var(--c-cool-gray);
+  border:1px solid rgba(255,255,255,.15);
+  cursor:pointer;
+  transition:all .2s;
+}
+.sr-close:hover{
+  color:#fff;border-color:#fff;
+}
+
+.sr-glitch-tag{
+  position:absolute;top:24px;left:24px;
+  z-index:20;
+  font-family:var(--f-arcade);
+  font-size:9px;letter-spacing:.22em;
+  color:var(--c-orange);
+  display:flex;align-items:center;gap:6px;
+}
+.sr-glitch-tag::before{
+  content:"";
+  width:6px;height:6px;background:var(--c-orange);
+  box-shadow:0 0 8px var(--c-orange);
+  animation:blink 1s step-end infinite;
+}
+
+.sr-track{
+  position:absolute;
+  left:50%;top:80vh;
+  transform:translateX(-50%);
+  width:100%;
+  max-width:720px;
+  padding:0 32px;
+  z-index:10;
+  text-align:center;
+  /* animação começa quando .on é adicionado via JS */
+}
+.staff-roll.on .sr-track{
+  animation:srScroll 42s linear forwards;
+}
+
+.sr-section{
+  margin-bottom:80px;
+  opacity:.95;
+}
+.sr-section .role{
+  font-family:var(--f-arcade);
+  font-size:11px;letter-spacing:.22em;
+  color:var(--c-orange);
+  margin-bottom:14px;
+}
+.sr-section .name{
+  font-family:var(--f-display);
+  font-size:36px;
+  color:#fff;
+  text-transform:uppercase;
+  line-height:.95;
+  letter-spacing:-.01em;
+}
+.sr-section .sub{
+  font-family:var(--f-mono);
+  font-size:13px;
+  color:var(--c-cool-gray);
+  margin-top:8px;
+  letter-spacing:.06em;
+}
+
+.sr-tgt{
+  margin:120px auto 80px;
+  padding:40px;
+  border:2px solid var(--c-mario-red);
+  background:linear-gradient(135deg, #0a0000, #1a0408);
+  position:relative;
+  max-width:560px;
+}
+.sr-tgt::before,.sr-tgt::after{
+  content:"";position:absolute;
+  width:18px;height:18px;
+  border:2px solid var(--c-mario-red);
+}
+.sr-tgt::before{top:-4px;left:-4px;border-right:none;border-bottom:none}
+.sr-tgt::after{bottom:-4px;right:-4px;border-left:none;border-top:none}
+.sr-tgt-tag{
+  font-family:var(--f-arcade);
+  font-size:9px;letter-spacing:.22em;
+  color:var(--c-mario-red);
+  margin-bottom:24px;
+}
+.sr-tgt img{
+  max-width:90%;
+  margin:0 auto;
+  filter:drop-shadow(0 0 24px rgba(225,37,27,.4));
+}
+.sr-tgt-meta{
+  margin-top:24px;
+  font-family:var(--f-mono);
+  font-size:11px;
+  color:var(--c-cool-gray);
+  letter-spacing:.08em;
+  line-height:1.7;
+}
+.sr-tgt-meta b{color:var(--c-mario-red);font-family:var(--f-arcade);font-size:9px;letter-spacing:.22em;display:block;margin-bottom:6px}
+.sr-tgt-link{
+  display:inline-block;
+  margin-top:18px;
+  font-family:var(--f-arcade);
+  font-size:9px;letter-spacing:.18em;
+  padding:10px 16px;
+  background:var(--c-mario-red);
+  color:#fff;
+  text-decoration:none;
+  transition:all .25s var(--ease-out);
+}
+.sr-tgt-link:hover{
+  background:#fff;color:var(--c-mario-red);
+  transform:translateY(-2px);
+}
+
+.sr-end{
+  font-family:var(--f-arcade);
+  font-size:14px;letter-spacing:.22em;
+  color:var(--c-orange);
+  text-align:center;
+  margin:80px 0 240px;
+  text-shadow:0 0 20px rgba(242,102,65,.5);
+}
+.sr-end small{
+  display:block;
+  font-size:9px;
+  color:var(--c-mute);
+  margin-top:14px;
+  letter-spacing:.18em;
+}
+
+@keyframes srFadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+@keyframes srScroll{
+  0%   { top: 80vh; }
+  85%  { top: -160vh; }
+  100% { top: -200vh; }
+}
+
+@media (max-width:760px){
+  .sr-glitch-tag{
+    font-size:8px;
+    letter-spacing:.16em;
+    top:18px;left:14px;
+  }
+  .sr-glitch-tag::before{display:none}
+  .sr-close{
+    top:14px;right:14px;
+    font-size:9px;
+    padding:8px 10px;
+    letter-spacing:.14em;
+  }
+  .sr-track{
+    padding:0 18px;
+  }
+  .sr-section .name{
+    font-size:26px !important;
+  }
+  .sr-section .role{font-size:9px}
+  .sr-section .sub{font-size:11px}
+  /* PARTNERS · SQUAD: lista grande em mobile */
+  .sr-section .name[style*="font-size:18px"]{
+    font-size:13px !important;
+    line-height:1.6 !important;
+  }
+  /* TGT box */
+  .sr-tgt{
+    padding:24px 18px;
+    margin:80px auto 60px;
+  }
+  .sr-tgt img{max-width:80%}
+  .sr-tgt-meta{font-size:10px;line-height:1.6}
+  .sr-end{font-size:11px;letter-spacing:.18em;margin:60px 0 180px}
+  /* Reduzir scroll range pra caber mais */
+  @keyframes srScroll{
+    0%   { top: 75vh; }
+    85%  { top: -240vh; }
+    100% { top: -280vh; }
+  }
+}
+
+.staff-roll.on .sr-track{
+  /* animation já no .sr-track via .staff-roll.on .sr-track acima */
+}
+
+/* Botão escondido no footer pra ativar */
+.sr-trigger{
+  cursor:pointer;
+  user-select:none;
+  transition:color .2s;
+}
+.sr-trigger:hover{color:var(--c-mario-red) !important}
+.sr-trigger::after{
+  content:" ◢";
+  opacity:0;
+  transition:opacity .2s;
+}
+.sr-trigger:hover::after{opacity:1}
+
+/* Indicador discreto de easter egg */
+.sr-hint{
+  font-family:var(--f-arcade);
+  font-size:8px;
+  letter-spacing:.22em;
+  color:var(--c-mute);
+  opacity:.4;
+  margin-top:8px;
+  text-align:center;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===================== HUD NAV ===================== -->
+<header class="hud" id="hud">
+  <div class="hud-brand">
+    <img src="assets/logos/logo-horizontal-white.png" alt="Gamer Hut" />
+    <div class="meta">
+      <b>BRANDBOOK</b>
+      <span>v.2026.02</span>
+    </div>
+  </div>
+  <nav class="hud-nav" id="hudnav">
+    <a href="#manifesto">01 · Manifesto</a>
+    <a href="#essencia">02 · Essência</a>
+    <a href="#voz">03 · Voz</a>
+    <a href="#pilares">04 · Pilares</a>
+    <a href="#logo">05 · Logo</a>
+    <a href="#paleta">07 · Cores</a>
+    <a href="#tipo">08 · Tipo</a>
+    <a href="#parceiros">10 · Squad</a>
+    <a href="#feed">12 · Feed</a>
+    <a href="#shop">14 · Loja</a>
+  </nav>
+  <div class="hud-life">
+    <span class="lbl">SCROLL</span>
+    <div class="lifebar" id="lifebar" style="--life:0%"></div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero scanlines" id="hero">
+  <img class="hero-bg-controller" src="assets/logos/logo-vertical-outline-orange.svg" alt="" aria-hidden="true" />
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-stage-tag">PLAYER 1 · READY</div>
+    <h1>
+      <span class="line">MÍDIA FÍSICA</span>
+      <span class="line"><span class="accent">NEVER DIES</span></span>
+    </h1>
+    <p class="hero-tagline">
+      Brandbook oficial GAMER HUT — a hut da galera que entende de games. Original, lacrado, com NF.
+      Nada de console, nada de pirata, nada de mané. Só o que importa: o jogo na sua mão.
+    </p>
+    <div class="hero-cta">
+      <a class="btn-press-start" href="#manifesto">▶ PRESS START</a>
+      <a class="btn-ghost" href="#feed">VER FEED</a>
+    </div>
+    <div class="hero-meta">
+      <span>17 STAGES</span>
+      <span>9 PUBLISHERS</span>
+      <span>1 ESSÊNCIA</span>
+      <span>0 PIRATA</span>
+    </div>
+  </div>
+  <div class="hero-scroll">SCROLL TO CONTINUE</div>
+</section>
+
+<!-- ===================== SUMÁRIO ===================== -->
+<section class="toc" id="toc">
+  <div class="wrap">
+    <div class="toc-header reveal">
+      <h2 class="toc-title">
+        <small>SELECT STAGE</small>
+        17 CAPÍTULOS<br/><span class="text-orange">/ 1 BRAND</span>
+      </h2>
+      <p class="text-mute" style="max-width:380px;font-size:14px">
+        Esse brandbook é dividido em 17 stages. Sem chefão final, sem hard mode. Só a verdade da marca, do começo ao fim.
+      </p>
+    </div>
+    <div class="toc-grid reveal">
+      <a href="#manifesto" class="toc-item"><span class="toc-num">STAGE 01</span><span class="toc-name">Manifesto</span><span class="toc-desc">Quem somos · Por quê</span></a>
+      <a href="#essencia"  class="toc-item"><span class="toc-num">STAGE 02</span><span class="toc-name">Essência</span><span class="toc-desc">Mídia Física Never Dies</span></a>
+      <a href="#voz"       class="toc-item"><span class="toc-num">STAGE 03</span><span class="toc-name">Tom de Voz</span><span class="toc-desc">Como a gente fala</span></a>
+      <a href="#pilares"   class="toc-item"><span class="toc-num">STAGE 04</span><span class="toc-name">Pilares</span><span class="toc-desc">4 frentes da marca</span></a>
+      <a href="#logo"      class="toc-item"><span class="toc-num">STAGE 05</span><span class="toc-name">Logo System</span><span class="toc-desc">6 variações oficiais</span></a>
+      <a href="#usos"      class="toc-item"><span class="toc-num">STAGE 06</span><span class="toc-name">Usos do Logo</span><span class="toc-desc">Faça · Não faça</span></a>
+      <a href="#paleta"    class="toc-item"><span class="toc-num">STAGE 07</span><span class="toc-name">Paleta</span><span class="toc-desc">6 cores · Regra 60-30-10</span></a>
+      <a href="#tipo"      class="toc-item"><span class="toc-num">STAGE 08</span><span class="toc-name">Tipografia</span><span class="toc-desc">4 famílias · Hierarquia</span></a>
+      <a href="#grafismos" class="toc-item"><span class="toc-num">STAGE 09</span><span class="toc-name">Grafismos</span><span class="toc-desc">HUD · Scanlines · Pixels</span></a>
+      <a href="#parceiros" class="toc-item"><span class="toc-num">STAGE 10</span><span class="toc-name">Squad</span><span class="toc-desc">Publishers parceiras</span></a>
+      <a href="#voz-acao"  class="toc-item"><span class="toc-num">STAGE 11</span><span class="toc-name">Voz em Ação</span><span class="toc-desc">Casos de uso</span></a>
+      <a href="#conteudo"  class="toc-item"><span class="toc-num">STAGE 12</span><span class="toc-name">Pilares de Conteúdo</span><span class="toc-desc">Drop · Review · Tip · Lore</span></a>
+      <a href="#feed"      class="toc-item"><span class="toc-num">STAGE 13</span><span class="toc-name">Feed Instagram</span><span class="toc-desc">Grid 3×3 · Sistema modular</span></a>
+      <a href="#posts"     class="toc-item"><span class="toc-num">STAGE 14</span><span class="toc-name">Posts</span><span class="toc-desc">Drop · Pré-venda · Story</span></a>
+      <a href="#shop"      class="toc-item"><span class="toc-num">STAGE 15</span><span class="toc-name">E-commerce</span><span class="toc-desc">Mock loja online</span></a>
+      <a href="#tips"      class="toc-item"><span class="toc-num">STAGE 16</span><span class="toc-name">Tips de Copy</span><span class="toc-desc">Pronto pra usar</span></a>
+      <a href="#fim"       class="toc-item"><span class="toc-num">STAGE 17</span><span class="toc-name">Game Over</span><span class="toc-desc">Créditos · Versão</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 01 — MANIFESTO ===================== -->
+<section class="stage" id="manifesto">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <div class="stage-num">01</div>
+      <div class="stage-meta">
+        <span class="stage-eyebrow">STAGE 01 · MANIFESTO</span>
+        <h2 class="stage-title">SOMOS<br/>OS <span class="text-orange">EXPERTS</span></h2>
+        <p class="stage-sub">A casa de quem joga, coleciona e respeita o jogo. A casa de quem ainda olha pra capa e sente alguma coisa.</p>
+      </div>
+    </div>
+    <div class="manifesto reveal">
+      <div class="manifesto-text">
+        <p>A GAMER HUT existe pra um motivo só: <strong>colocar o jogo certo na mão certa</strong>.</p>
+        <p>Cada caixa que sai daqui é original, lacrada, com NF e a paixão de quem entende. A gente não vende console, não vende pirata, não vende seminovo — vende experiência, comunidade e o cheirinho de plástico novo de uma mídia recém-aberta.</p>
+        <p>Aqui o player é tratado como squad. O drop é evento. O lançamento é ritual. E a coleção é coisa séria.</p>
+      </div>
+      <div class="manifesto-vis">
+        <img src="assets/logos/logo-vertical-orange.png" alt="GH controller logo" />
+      </div>
+    </div>
+    <div class="manifesto-stats reveal">
+      <div class="stat"><div class="stat-val">100%</div><div class="stat-lbl">Original · Lacrado · NF</div></div>
+      <div class="stat"><div class="stat-val">9</div><div class="stat-lbl">Publishers oficiais</div></div>
+      <div class="stat"><div class="stat-val">0</div><div class="stat-lbl">Pirata · Console · Seminovo</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 02 — ESSÊNCIA ===================== -->
+<section class="stage alt" id="essencia">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <div class="stage-num">02</div>
+      <div class="stage-meta">
+        <span class="stage-eyebrow">STAGE 02 · ESSÊNCIA</span>
+        <h2 class="stage-title">DNA DA HUT</h2>
+        <p class="stage-sub">A frase que carrega tudo. O grito de guerra que define a marca, o feed e o tom de cada drop.</p>
+      </div>
+    </div>
+    <div class="essence-grid">
+      <div class="essence-frame reveal">
+        <span class="corner tr"></span>
+        <span class="corner bl"></span>
+        <h3 class="essence-tagline">
+          MÍDIA FÍSICA <span>NEVER DIES</span>
+          <small>· Let the games begin ·</small>
+        </h3>
+      </div>
+      <div class="essence-pillars reveal">
+        <div class="essence-pillar">
+          <div class="ico">A</div>
+          <h4>Acessível</h4>
+          <p>Linguagem direta, gamer, sem corporativês. Fala que nem player com player.</p>
+        </div>
+        <div class="essence-pillar">
+          <div class="ico">B</div>
+          <h4>Transparente</h4>
+          <p>Nada por baixo do pano. Sempre original, sempre lacrado, sempre com NF na caixa.</p>
+        </div>
+        <div class="essence-pillar">
+          <div class="ico">C</div>
+          <h4>Instigante</h4>
+          <p>Drops que fazem o player querer ser o primeiro. Senso de evento, sem urgência fake.</p>
+        </div>
+        <div class="essence-pillar">
+          <div class="ico">D</div>
+          <h4>Confiável</h4>
+          <p>Parceria oficial com 9 publishers. Cada lançamento chega como deveria chegar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 03 — TOM DE VOZ ===================== -->
+<section class="stage" id="voz">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <div class="stage-num">03</div>
+      <div class="stage-meta">
+        <span class="stage-eyebrow">STAGE 03 · TOM DE VOZ</span>
+        <h2 class="stage-title">COMO A<br/>HUT <span class="text-orange">FALA</span></h2>
+        <p class="stage-sub">Três pilares que regem cada caption, cada legenda, cada e-mail. Profissional sem perder a personalidade gamer.</p>
+      </div>
+    </div>
+
+    <div class="voice-grid reveal">
+      <div class="voice-card">
+        <div class="num">01</div>
+        <h3>Acessível</h3>
+        <p>Linguagem clara, moderna, descomplicada. A gente não precisa provar que entende — a gente prova com o que entrega.</p>
+        <div class="examples">
+          <b>USE</b>"Bora pré-vender Mario Kart? Lacrado e com NF, do jeito que a gente faz."
+        </div>
+      </div>
+      <div class="voice-card">
+        <div class="num">02</div>
+        <h3>Transparente</h3>
+        <p>Tudo às claras. Procedência, prazo, condição de pagamento, política de troca. Confiança não se promete — se mostra.</p>
+        <div class="examples">
+          <b>USE</b>"Original, lacrado, com nota fiscal na caixa. É o que a gente faz."
+        </div>
+      </div>
+      <div class="voice-card">
+        <div class="num">03</div>
+        <h3>Instigante</h3>
+        <p>Energia de drop. Tom de evento. Empolgação real, sem "imperdível!!!" forçado. O que vende é o jogo certo, não o ponto de exclamação.</p>
+        <div class="examples">
+          <b>USE</b>"GTA VI. Você sabe o que vem aí. Pré-venda aberta na Hut."
+        </div>
+      </div>
+    </div>
+
+    <div class="voice-do-dont reveal">
+      <div class="voice-list do">
+        <h5>★ USE</h5>
+        <ul>
+          <li>Original / lacrado / com NF</li>
+          <li>Mídia física, capa, encarte</li>
+          <li>Drop · lançamento · pré-venda</li>
+          <li>Bora · vem · press start · gg</li>
+          <li>Comunidade · player · squad · hut</li>
+          <li>Exclusivo · raro · edição limitada</li>
+        </ul>
+      </div>
+      <div class="voice-list dont">
+        <h5>✗ NUNCA USE</h5>
+        <ul>
+          <li>Pirata · réplica · cópia · genérico</li>
+          <li>Console novo · vendemos console</li>
+          <li>Usado · seminovo · troca de jogo</li>
+          <li>"IMPERDÍVEL!!!" · urgência fake</li>
+          <li>Linguagem corporativa fria</li>
+          <li>Promessa que a gente não cumpre</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 04 — PILARES ===================== -->
+<section class="stage alt" id="pilares">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <div class="stage-num">04</div>
+      <div class="stage-meta">
+        <span class="stage-eyebrow">STAGE 04 · PILARES</span>
+        <h2 class="stage-title">QUATRO<br/>FRENTES</h2>
+        <p class="stage-sub">Cada pilar é um modo de jogar. Negócio, oferta, time e sociedade — onde a Hut investe energia, dinheiro e atenção.</p>
+      </div>
+    </div>
+    <div class="pillars-grid reveal">
+      <div class="pillar" data-bigtext="01">
+        <div class="pnum">PILAR 01 · NEGÓCIO</div>
+        <h3>Transparência <span>com</span> ousadia</h3>
+        <p>Operação séria, comunicação solta. A gente é claro nos números e ousado na execução. Sem firula, sem promessa rasa.</p>
+      </div>
+      <div class="pillar" data-bigtext="02">
+        <div class="pnum">PILAR 02 · OFERTA</div>
+        <h3>Segurança <span>e</span> tranquilidade</h3>
+        <p>Cada caixa que sai daqui é original, lacrada e com NF. Pré-venda monitorada. Pós-venda presente. Sem surpresa ruim.</p>
+      </div>
+      <div class="pillar" data-bigtext="03">
+        <div class="pnum">PILAR 03 · TIME</div>
+        <h3>Empolgação <span>genuína</span></h3>
+        <p>O time joga, fala de jogo, vive o jogo. Não é roteiro de social media — é gente que liga o console depois do expediente.</p>
+      </div>
+      <div class="pillar" data-bigtext="04">
+        <div class="pnum">PILAR 04 · SOCIEDADE</div>
+        <h3>Criando <span>oportunidades</span></h3>
+        <p>Acesso à mídia física para quem coleciona, presenteia, joga. Espaço pra criadores, pra eventos, pra comunidade real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 05 — LOGO SYSTEM ===================== -->
+<section class="stage" id="logo">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <div class="stage-num">05</div>
+      <div class="stage-meta">
+        <span class="stage-eyebrow">STAGE 05 · LOGO SYSTEM</span>
+        <h2 class="stage-title">SEIS <span class="text-orange">VARIAÇÕES</span><br/>OFICIAIS</h2>
+        <p class="stage-sub">O símbolo é um controle estilizado com as letras G+H. Vem em forma vertical, horizontal e em selo circular — preto, laranja e outline.</p>
+      </div>
+    </div>
+
+    <div class="logo-system reveal">
+      <!-- Hero principal: vertical preto sobre fundo branco -->
+      <div class="logo-card span-6 bg-light">
+        <div class="logo-img"><img src="assets/logos/logo-vertical-black.png" alt="Logo vertical preto"/></div>
+        <div class="meta">
+          <b>01 · LOGO PRIMÁRIO</b>
+          <span>Vertical · Black on Light</span>
+          <span style="opacity:.4">USO PADRÃO · MÁXIMA LEGIBILIDADE</span>
+        </div>
+      </div>
+
+      <!-- Vertical laranja sobre preto -->
+      <div class="logo-card span-6">
+        <div class="logo-img"><img src="assets/logos/logo-vertical-orange.png" alt="Logo vertical laranja"/></div>
+        <div class="meta">
+          <b>02 · LOGO ASSINATURA</b>
+          <span>Vertical · Orange on Dark</span>
+          <span style="opacity:.4">DARK MODE · DROPS · HEROS</span>
+        </div>
+      </div>
+
+      <!-- Horizontal preto -->
+      <div class="logo-card span-6 bg-light">
+        <div class="logo-img"><img src="assets/logos/logo-horizontal-black.png" alt="Logo horizontal preto" class="horizontal" style="max-width:90%"/></div>
+        <div class="meta">
+          <b>03 · LOGO HORIZONTAL</b>
+          <span>Lockup wide · Black</span>
+          <span style="opacity:.4">HEADERS · ASSINATURA EM E-MAIL</span>
+        </div>
+      </div>
+
+      <!-- Horizontal branco em fundo escuro -->
+      <div class="logo-card span-6">
+        <div class="logo-img"><img src="assets/logos/logo-horizontal-white.png" alt="Logo horizontal branco" class="horizontal" style="max-width:90%"/></div>
+        <div class="meta">
+          <b>04 · LOGO HORIZONTAL DARK</b>
+          <span>Lockup wide · White on Dark</span>
+          <span style="opacity:.4">FUNDO ESCURO · NAV · FOOTERS</span>
+        </div>
+      </div>
+
+      <!-- Selo circular preto -->
+      <div class="logo-card span-4">
+        <div class="logo-img"><img src="assets/logos/badge-circle-black.png" alt="Selo circular preto" style="max-width:65%"/></div>
+        <div class="meta">
+          <b>05 · BADGE BLACK</b>
+          <span>Selo circular · Black</span>
+          <span style="opacity:.4">AVATAR · STAMPS · FAVICON</span>
+        </div>
+      </div>
+
+      <!-- Selo circular laranja -->
+      <div class="logo-card span-4">
+        <div class="logo-img"><img src="assets/logos/badge-circle-orange.png" alt="Selo circular laranja" style="max-width:65%"/></div>
+        <div class="meta">
+          <b>06 · BADGE ORANGE</b>
+          <span>Selo circular · Orange</span>
+          <span style="opacity:.4">AVATAR INSTAGRAM · PINS</span>
+        </div>
+      </div>
+
+      <!-- Outline laranja -->
+      <div class="logo-card span-4">
+        <div class="logo-img"><img src="assets/logos/logo-vertical-outline-orange.png" alt="Logo outline laranja" style="max-width:80%"/></div>
+        <div class="meta">
+          <b>07 · OUTLINE</b>
+          <span>Vertical · Stroke Orange</span>
+          <span style="opacity:.4">WATERMARK · PATTERNS · BG</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 06 — USOS DO LOGO ===================== -->
+<section class="stage alt" id="usos">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <div class="stage-num">06</div>
+      <div class="stage-meta">
+        <span class="stage-eyebrow">STAGE 06 · USOS</span>
+        <h2 class="stage-title">FAÇA · <span class="text-orange">NÃO FAÇA</span></h2>
+        <p class="stage-sub">A integridade do símbolo é inegociável. Ele é a primeira impressão da marca e a última linha de defesa contra o "parecido".</p>
+      </div>
+    </div>
+    <div class="usage-grid reveal">
+      <div class="usage-card do">
+        <span class="badge">FAÇA</span>
+        <div class="demo" style="background:#000"><img src="assets/logos/logo-vertical-orange.png" alt=""/></div>
+      </div>
+      <div class="usage-card do">
+        <span class="badge">FAÇA</span>
+        <div class="demo" style="background:#fff"><img src="assets/logos/logo-vertical-black.png" alt=""/></div>
+      </div>
+      <div class="usage-card do">
+        <span class="badge">FAÇA</span>
+        <div class="demo" style="background:var(--c-orange)"><img src="assets/logos/badge-circle-black.png" alt="" style="max-width:55%"/></div>
+      </div>
+      <div class="usage-card do">
+        <span class="badge">FAÇA</span>
+        <div class="demo" style="background:#0A0A0A"><img src="assets/logos/logo-vertical-white.png" alt=""/></div>
+      </div>
+
+      <div class="usage-card dont">
+        <span class="badge">NÃO FAÇA</span>
+        <div class="demo gradient warped"><img src="assets/logos/logo-vertical-black.png" alt=""/></div>
+      </div>
+      <div class="usage-card dont">
+        <span class="badge">NÃO FAÇA</span>
+        <div class="demo busy"><img src="assets/logos/logo-vertical-black.png" alt=""/></div>
+      </div>
+      <div class="usage-card dont">
+        <span class="badge">NÃO FAÇA</span>
+        <div class="demo recolor" style="background:#fff"><img src="assets/logos/logo-vertical-orange.png" alt=""/></div>
+      </div>
+      <div class="usage-card dont">
+        <span class="badge">NÃO FAÇA</span>
+        <div class="demo cropped" style="background:#000"><img src="assets/logos/logo-vertical-orange.png" alt=""/></div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <div class="voice-list do" style="border-left-color:#2BC97A">
+        <h5 style="color:#2BC97A">FAÇA</h5>
+        <ul>
+          <li>Use sobre fundo limpo, com contraste suficiente</li>
+          <li>Mantenha a margem de respiro (mín. = 1× altura do "G")</li>
+          <li>Use o branco invertido em qualquer fundo escuro</li>
+          <li>Use o badge em avatares circulares (Instagram, app)</li>
+        </ul>
+      </div>
+      <div class="voice-list dont" style="border-left-color:var(--c-mario-red)">
+        <h5 style="color:var(--c-mario-red)">NÃO FAÇA</h5>
+        <ul>
+          <li>Distorcer, rotacionar, esticar ou cortar o logo</li>
+          <li>Trocar a cor por outras fora da paleta oficial</li>
+          <li>Aplicar sobre imagem busy sem fundo de proteção</li>
+          <li>Usar versão sem texto sozinha (sempre acompanhada)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 07 — PALETA ===================== -->
+<section class="stage" id="paleta">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <div class="stage-num">07</div>
+      <div class="stage-meta">
+        <span class="stage-eyebrow">STAGE 07 · PALETA</span>
+        <h2 class="stage-title">SEIS <span class="text-orange">CORES</span><br/>UMA SÓ HUT</h2>
+        <p class="stage-sub">Laranja como assinatura, preto como base, e quatro cores de apoio que homenageiam ícones do universo gamer. Regra 60-30-10.</p>
+      </div>
+    </div>
+
+    <div class="palette-row reveal">
+      <div class="swatch primary">
+        <span class="swatch-pct">60% PRIMARY</span>
+        <div>
+          <div class="swatch-name">Orange Sunset</div>
+          <div class="swatch-mid">A cor da Hut. Drops, CTAs, destaques.</div>
+        </div>
+        <div class="swatch-codes">
+          <span>HEX  #F26641</span>
+          <span>RGB  242·102·65</span>
+          <span>CMYK 0·71·81·0</span>
+          <span>PMS  7416 C</span>
+        </div>
+      </div>
+      <div class="swatch black">
+        <span class="swatch-pct">30%</span>
+        <div>
+          <div class="swatch-name">Black Mustache</div>
+        </div>
+        <div class="swatch-codes">
+          <span>HEX #000000</span>
+          <span>Base · BG</span>
+        </div>
+      </div>
+      <div class="swatch mario">
+        <span class="swatch-pct">10%</span>
+        <div>
+          <div class="swatch-name">Mario Red</div>
+        </div>
+        <div class="swatch-codes">
+          <span>HEX #E1251B</span>
+          <span>PMS 485 C</span>
+        </div>
+      </div>
+      <div class="swatch fast">
+        <span class="swatch-pct">10%</span>
+        <div>
+          <div class="swatch-name">Fast Skin</div>
+        </div>
+        <div class="swatch-codes">
+          <span>HEX #FFC27A</span>
+          <span>PMS 149 C</span>
+        </div>
+      </div>
+      <div class="swatch sonic">
+        <span class="swatch-pct">10%</span>
+        <div>
+          <div class="swatch-name">Sonic Blue</div>
+        </div>
+        <div class="swatch-codes">
+          <span>HEX #194F90</span>
+          <span>PMS 7686 C</span>
+        </div>
+      </div>
+      <div class="swatch gray">
+        <span class="swatch-pct">UI</span>
+        <div>
+          <div class="swatch-name">Cool Gray</div>
+        </div>
+        <div class="swatch-codes">
+          <span>HEX #B1B1B1</span>
+          <span>Texto · UI</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-rule reveal">
+      <div class="formula">60 <span>·</span> 30 <span>·</span> 10</div>
+      <p>
+        <b style="color:var(--c-orange);font-family:var(--f-arcade);font-size:10px;letter-spacing:.18em">REGRA DE OURO</b><br/><br/>
+        <b>60% Black Mustache</b> — domina o feed e o site, dá o palco pro produto.<br/>
+        <b>30% Orange Sunset</b> — é a marca falando: CTA, drops, destaques.<br/>
+        <b>10% Apoio</b> — Mario Red, Fast Skin, Sonic Blue entram com parcimônia, em contextos específicos (campanhas temáticas, parcerias, eventos).
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 08 — TIPOGRAFIA ===================== -->
+<section class="stage alt" id="tipo">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <div class="stage-num">08</div>
+      <div class="stage-meta">
+        <span class="stage-eyebrow">STAGE 08 · TIPOGRAFIA</span>
+        <h2 class="stage-title">QUATRO<br/>FAMÍLIAS</h2>
+        <p class="stage-sub">Russo One pra impacto, Red Hat Display pro corpo, Press Start 2P pro retrô e JetBrains Mono pros dados. Hierarquia clara, leitura instantânea.</p>
+      </div>
+    </div>
+
+    <div class="type-grid reveal">
+      <div class="type-card">
+        <div class="type-spec"><b>DISPLAY</b><span>Russo One · Regular</span></div>
+        <div class="type-sample">
+          <div class="display">PRESS<br/>START</div>
+          <div class="small">Headlines, capas, manchetes, drops. Sempre em CAIXA ALTA. Não usar em corpo de texto.</div>
+        </div>
+        <div class="type-glyphs">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</div>
+      </div>
+
+      <div class="type-card">
+        <div class="type-spec"><b>BODY</b><span>Red Hat Display · 6 pesos</span></div>
+        <div class="type-sample">
+          <div class="weights">
+            <span><b>300</b>Light · texto auxiliar e legendas</span>
+            <span><b>400</b>Regular · corpo padrão</span>
+            <span><b>500</b>Medium · destaques no texto</span>
+            <span><b>700</b>Bold · ênfases e subtítulos</span>
+            <span><b>800</b>Extra Bold · CTAs e botões</span>
+            <span><b>900</b>Black · headers grandes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="type-card">
+        <div class="type-spec"><b>ARCADE</b><span>Press Start 2P · Acento retrô</span></div>
+        <div class="type-sample">
+          <div class="arcade">PLAYER 1<br/>SELECT STAGE</div>
+          <div class="small">Acentos retrô 8-bit: tags, eyebrows, badges, navegação. <b style="color:var(--c-mario-red)">Nunca em corpo de texto.</b> Usar com moderação — é tempero, não prato principal.</div>
+        </div>
+      </div>
+
+      <div class="type-card">
+        <div class="type-spec"><b>MONO</b><span>JetBrains Mono · Specs</span></div>
+        <div class="type-sample">
+          <div class="mono">
+            HEX #F26641<br/>
+            EAN 7898937321024<br/>
+            STAGE 08 · TIPOGRAFIA<br/>
+            UPDATED 2026.01.06
+          </div>
+          <div class="small">Para metadados, códigos, EANs, especificações técnicas, números de versão. Dá ar de terminal e backstage de produto.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 09 — GRAFISMOS ===================== -->
+<section class="stage" id="grafismos">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <div class="stage-num">09</div>
+      <div class="stage-meta">
+        <span class="stage-eyebrow">STAGE 09 · GRAFISMOS</span>
+        <h2 class="stage-title">HUD <span class="text-orange">·</span> SCAN <span class="text-orange">·</span> PIXEL</h2>
+        <p class="stage-sub">Os elementos visuais que dão personalidade à marca: HUD de jogo, scanlines de CRT, lifebars e pixel borders.</p>
+      </div>
+    </div>
+
+    <div class="graphics-grid reveal">
+      <div class="gfx gfx-large gfx-scanlines">
+        <h4>Scanlines</h4>
+        <p>Linhas horizontais sutis em sobreposição. Reforçam a memória visual do CRT antigo. Aplicar com opacidade entre 1.5%–4% — sutil, nunca chamativo.</p>
+        <div class="demo"><span>CRT MODE · ON</span></div>
+      </div>
+
+      <div class="gfx gfx-med gfx-pixelborder">
+        <h4>Pixel Border</h4>
+        <p>Cantos com marca de canto. Lembra HUD de menu de jogo.</p>
+        <div class="demo"><span>·SELECT·</span></div>
+      </div>
+
+      <div class="gfx gfx-med gfx-life">
+        <h4>Lifebar</h4>
+        <p>Barra de vida pulsante. Usada em loaders, progress, cabeçalhos.</p>
+        <div class="demo">
+          <div class="lbl">HP · 72/100</div>
+          <div class="bar"></div>
+        </div>
+      </div>
+
+      <div class="gfx gfx-small gfx-controller">
+        <h4>Controle Silhueta</h4>
+        <p>O símbolo do logo isolado. Pattern, watermark, motivo gráfico.</p>
+        <div class="demo"><img src="assets/logos/logo-vertical-outline-orange.png" alt=""/></div>
+      </div>
+
+      <div class="gfx gfx-small gfx-grid">
+        <h4>Grid Neon</h4>
+        <p>Grid vetorial. Sensação de mundo digital, retrô-futurista.</p>
+        <div class="demo"></div>
+      </div>
+
+      <div class="gfx gfx-med">
+        <h4>Press Start Tag</h4>
+        <p>Lozango piscando. Indica ação, link, próximo step.</p>
+        <div class="demo" style="background:#000;flex-direction:column;gap:14px">
+          <div class="hero-stage-tag" style="margin:0">PLAYER 1 · READY</div>
+          <div class="hero-stage-tag" style="margin:0;border-color:rgba(225,37,27,.4);color:var(--c-mario-red)">DROP · LIVE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 10 — PARCEIROS / SQUAD ===================== -->
+<section class="stage alt" id="parceiros">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <div class="stage-num">10</div>
+      <div class="stage-meta">
+        <span class="stage-eyebrow">STAGE 10 · SQUAD</span>
+        <h2 class="stage-title">NOSSO <span class="text-orange">SQUAD</span><br/>OFICIAL</h2>
+        <p class="stage-sub">Trabalhamos com 9 publishers oficiais. Cada parceria garante título original, lacrado, com NF — sem zona cinzenta.</p>
+      </div>
+    </div>
+
+    <div class="partners-strip reveal">
+      <div class="partner">
+        <div class="partner-mark">NINTENDO</div>
+        <div class="partner-meta">DESDE 1889</div>
+        <div class="partner-tag">SQUAD</div>
+      </div>
+      <div class="partner">
+        <div class="partner-mark">SONY <span class="text-orange">PS</span></div>
+        <div class="partner-meta">PLAYSTATION</div>
+        <div class="partner-tag">SQUAD</div>
+      </div>
+      <div class="partner">
+        <div class="partner-mark">MICROSOFT</div>
+        <div class="partner-meta">XBOX STUDIOS</div>
+        <div class="partner-tag">SQUAD</div>
+      </div>
+      <div class="partner">
+        <div class="partner-mark">CAPCOM</div>
+        <div class="partner-meta">RESIDENT · STREET</div>
+        <div class="partner-tag">SQUAD</div>
+      </div>
+      <div class="partner">
+        <div class="partner-mark">ROCKSTAR</div>
+        <div class="partner-meta">GTA · RDR</div>
+        <div class="partner-tag">SQUAD</div>
+      </div>
+      <div class="partner">
+        <div class="partner-mark">KONAMI</div>
+        <div class="partner-meta">METAL GEAR · PES</div>
+        <div class="partner-tag">SQUAD</div>
+      </div>
+      <div class="partner">
+        <div class="partner-mark">SEGA</div>
+        <div class="partner-meta">SONIC · YAKUZA</div>
+        <div class="partner-tag">SQUAD</div>
+      </div>
+      <div class="partner">
+        <div class="partner-mark">BANDAI <span class="text-orange">N.</span></div>
+        <div class="partner-meta">TEKKEN · DARK SOULS</div>
+        <div class="partner-tag">SQUAD</div>
+      </div>
+      <div class="partner">
+        <div class="partner-mark">UBISOFT</div>
+        <div class="partner-meta">ASSASSIN'S CREED</div>
+        <div class="partner-tag">SQUAD</div>
+      </div>
+    </div>
+
+    <p class="partners-disclaimer reveal">
+      // Todas as marcas, jogos e personagens citados são propriedade de seus respectivos publishers.<br/>
+      A Gamer Hut é uma rede oficial autorizada e atua exclusivamente com mídia física original, lacrada e com nota fiscal.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== STAGE 11 — VOZ EM AÇÃO ===================== -->
+<section class="stage" id="voz-acao">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <div class="stage-num">11</div>
+      <div class="stage-meta">
+        <span class="stage-eyebrow">STAGE 11 · BRAND VOICE NA RUA</span>
+        <h2 class="stage-title">A VOZ <span class="text-orange">EM AÇÃO</span></h2>
+        <p class="stage-sub">Casos reais de aplicação do tom em diferentes contextos: lançamento, pré-venda, atendimento, parceria.</p>
+      </div>
+    </div>
+
+    <div class="action-grid reveal">
+      <div class="action-card">
+        <div class="ctx">CONTEXTO · LANÇAMENTO BIG NAME</div>
+        <h4>Drop semanal</h4>
+        <div class="copy">
+          GTA VI chegou na Hut. <strong>Original, lacrado, com NF</strong> — do jeito que tinha que ser. Pré-venda aberta, estoque limitado, e a gente avisa quando o teu pedido sair pra entrega. Bora?
+        </div>
+        <p class="why">Tom: empolgação real, sem ponto de exclamação. Reforço de procedência sem soar defensivo. CTA direto ("Bora?") cria intimidade.</p>
+      </div>
+
+      <div class="action-card">
+        <div class="ctx">CONTEXTO · PRÉ-VENDA</div>
+        <h4>Edição limitada</h4>
+        <div class="copy">
+          Metal Gear Solid Δ — Snake Eater Deluxe. <strong>50 unidades</strong>. Capa exclusiva, steelbook, e aquela pose do Snake que você sabe. Pré-venda fecha quando bater o limite. Sem urgência fake — quando acabar, acabou.
+        </div>
+        <p class="why">Tom: transparência sobre limite. "Sem urgência fake" desarma o player de e-commerce e cria confiança.</p>
+      </div>
+
+      <div class="action-card">
+        <div class="ctx">CONTEXTO · ATENDIMENTO / DM</div>
+        <h4>Dúvida do player</h4>
+        <div class="copy">
+          Salve! O <strong>Pokémon Z-A</strong> ainda tá em pré-venda — chega em casa no dia do lançamento, lacrado e com NF. Se quiser, te chamo no WhatsApp pra fechar e enviar o código de rastreio direto pra você. 👋
+        </div>
+        <p class="why">Tom: acessível ("Salve!"), específico (cita o produto), proativo (oferece próximo passo). Emoji é ok em DM, com moderação.</p>
+      </div>
+
+      <div class="action-card">
+        <div class="ctx">CONTEXTO · POST DE COMUNIDADE</div>
+        <h4>Sem promo, com valor</h4>
+        <div class="copy">
+          Aviso pra galera que coleciona: a primeira tiragem do <strong>Black Flag Resynced</strong> vem com uma capa reversível diferente da segunda tiragem. Quem comprar na primeira semana garante a edição com a arte original. Spoiler: eu já reservei a minha.
+        </div>
+        <p class="why">Tom: especialista falando com especialista. "Eu já reservei a minha" coloca o time como parte da comunidade — não como vendedor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 12 — PILARES DE CONTEÚDO ===================== -->
+<section class="stage" id="conteudo">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <div class="stage-num">12</div>
+      <div class="stage-meta">
+        <span class="stage-eyebrow">STAGE 12 · CONTENT PILLARS</span>
+        <h2 class="stage-title">CINCO <span class="text-orange">PILARES</span><br/>DE CONTEÚDO</h2>
+        <p class="stage-sub">A Hut não vive só de drop. Cada post tem propósito — vender, contar, ensinar, provocar ou conectar. Os 5 pilares definem o que entra no feed e como entra.</p>
+      </div>
+    </div>
+
+    <div class="content-pillars reveal">
+      <article class="cp cp-drop">
+        <div class="cp-side">
+          <div class="cp-icon">▶</div>
+          <div class="cp-num">P1</div>
+        </div>
+        <div class="cp-body">
+          <div class="cp-tag">DROP · PRÉ-VENDA</div>
+          <h3>Drop &amp; <span>Lançamento</span></h3>
+          <p class="cp-lead">O músculo comercial do feed. Avisar que chegou, que abriu pré-venda, que tá pra acabar. Aqui mora o CTA direto.</p>
+          <ul class="cp-list">
+            <li><b>FORMATO:</b> key art do jogo + tag DROP/PRÉ-VENDA + preço + selo lacrado</li>
+            <li><b>RITMO:</b> 3–4× por semana, mais forte às quintas e sextas</li>
+            <li><b>CTA:</b> "Bora?" / "Reserva tua." / "Press start na bio."</li>
+          </ul>
+          <div class="cp-meta">≈ 35% do feed · Cores: Orange Sunset + Black</div>
+        </div>
+      </article>
+
+      <article class="cp cp-review">
+        <div class="cp-side">
+          <div class="cp-icon">★</div>
+          <div class="cp-num">P2</div>
+        </div>
+        <div class="cp-body">
+          <div class="cp-tag">REVIEW · ANÁLISE</div>
+          <h3>Review <span>do Squad</span></h3>
+          <p class="cp-lead">A opinião honesta de quem joga. Nota, prós e contras, pra quem é, pra quem não é. Se um jogo é meia-boca, a gente diz — credibilidade vem antes de comissão.</p>
+          <ul class="cp-list">
+            <li><b>FORMATO:</b> carrossel 5–7 slides com nota /10, prós/contras, veredito</li>
+            <li><b>RITMO:</b> 1× por semana, sempre na terça (review tuesday)</li>
+            <li><b>CTA:</b> "Concorda? Discorda? Fala aí nos comentários."</li>
+          </ul>
+          <div class="cp-meta">≈ 20% do feed · Cores: Sonic Blue + Black + Orange acento</div>
+        </div>
+      </article>
+
+      <article class="cp cp-tip">
+        <div class="cp-side">
+          <div class="cp-icon">⚡</div>
+          <div class="cp-num">P3</div>
+        </div>
+        <div class="cp-body">
+          <div class="cp-tag">TIP · DICA RÁPIDA</div>
+          <h3>Tip <span>da Hut</span></h3>
+          <p class="cp-lead">Conhecimento aplicado: como conservar mídia física, diferença entre regiões, como identificar uma reedição, dicas de colecionador. Conteúdo que vira referência.</p>
+          <ul class="cp-list">
+            <li><b>FORMATO:</b> tile visual com título grande + 1 frase / mini-vídeo de 15s</li>
+            <li><b>RITMO:</b> 2× por semana — segunda e quarta (#TipDaHut)</li>
+            <li><b>CTA:</b> "Salva pra não esquecer." / "Manda pra galera."</li>
+          </ul>
+          <div class="cp-meta">≈ 20% do feed · Cores: Fast Skin + Black + acento Orange</div>
+        </div>
+      </article>
+
+      <article class="cp cp-resumo">
+        <div class="cp-side">
+          <div class="cp-icon">≡</div>
+          <div class="cp-num">P4</div>
+        </div>
+        <div class="cp-body">
+          <div class="cp-tag">RESUMO · NEWS</div>
+          <h3>Resumo <span>da semana</span></h3>
+          <p class="cp-lead">Curadoria do que rolou no mundo dos games em 7 dias. Anúncios, delays, lançamentos, drama — sem repetir aquilo que já tá em todo lugar. Editado, não copiado.</p>
+          <ul class="cp-list">
+            <li><b>FORMATO:</b> carrossel "WEEK RECAP · 5 NOTÍCIAS" + selo da semana</li>
+            <li><b>RITMO:</b> 1× por semana — sábado de manhã</li>
+            <li><b>CTA:</b> "O que você achou da semana? Manda no DM."</li>
+          </ul>
+          <div class="cp-meta">≈ 10% do feed · Cores: Black + Orange + Cool Gray</div>
+        </div>
+      </article>
+
+      <article class="cp cp-lore">
+        <div class="cp-side">
+          <div class="cp-icon">◉</div>
+          <div class="cp-num">P5</div>
+        </div>
+        <div class="cp-body">
+          <div class="cp-tag">LORE · CURIOSIDADE</div>
+          <h3>Lore <span>&amp; Curiosidade</span></h3>
+          <p class="cp-lead">A parte que faz o player parar de scrollar. História de bastidor, easter egg, recorde, fato esquecido. Conteúdo que gera "não sabia, vou compartilhar".</p>
+          <ul class="cp-list">
+            <li><b>FORMATO:</b> tile dark com fato + ilustração ou cena do jogo</li>
+            <li><b>RITMO:</b> 1× por semana — domingo (#GamerLore)</li>
+            <li><b>CTA:</b> "Sabia disso? Marca um amigo nerd."</li>
+          </ul>
+          <div class="cp-meta">≈ 15% do feed · Cores: Black + Mario Red + Orange acento</div>
+        </div>
+      </article>
+    </div>
+
+    <div class="cp-summary reveal">
+      <div class="cp-pie">
+        <div class="cp-pie-row">
+          <span class="cp-pie-bar drop"  style="--w:35%"><b>35%</b> DROP &amp; LANÇAMENTO</span>
+        </div>
+        <div class="cp-pie-row">
+          <span class="cp-pie-bar review" style="--w:20%"><b>20%</b> REVIEW</span>
+        </div>
+        <div class="cp-pie-row">
+          <span class="cp-pie-bar tip"   style="--w:20%"><b>20%</b> TIP DA HUT</span>
+        </div>
+        <div class="cp-pie-row">
+          <span class="cp-pie-bar lore"  style="--w:15%"><b>15%</b> LORE</span>
+        </div>
+        <div class="cp-pie-row">
+          <span class="cp-pie-bar resumo" style="--w:10%"><b>10%</b> RESUMO SEMANAL</span>
+        </div>
+      </div>
+      <div class="cp-cadence">
+        <h4>CADÊNCIA SEMANAL TIPO</h4>
+        <table>
+          <thead><tr><th>DIA</th><th>PILAR</th><th>HORA</th></tr></thead>
+          <tbody>
+            <tr><td>SEG</td><td>Tip da Hut</td><td>10h</td></tr>
+            <tr><td>TER</td><td>Review do Squad</td><td>19h</td></tr>
+            <tr><td>QUA</td><td>Tip da Hut</td><td>10h</td></tr>
+            <tr><td>QUI</td><td>Drop / Pré-venda</td><td>12h</td></tr>
+            <tr><td>SEX</td><td>Drop principal</td><td>17h</td></tr>
+            <tr><td>SAB</td><td>Resumo da semana</td><td>09h</td></tr>
+            <tr><td>DOM</td><td>Lore &amp; Curiosidade</td><td>20h</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 13 — FEED INSTAGRAM ===================== -->
+<section class="stage alt" id="feed">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <div class="stage-num">13</div>
+      <div class="stage-meta">
+        <span class="stage-eyebrow">STAGE 13 · FEED INSTAGRAM</span>
+        <h2 class="stage-title">@<span class="text-orange">GAMERHUT</span>.STORE</h2>
+        <p class="stage-sub">Mockup do perfil oficial. Grid 3×3 alternando key art de jogos, posts de marca em laranja sólido, e tiles dark com logo. O ritmo visual cria identidade na primeira olhada.</p>
+      </div>
+    </div>
+
+    <div class="grid-modular reveal">
+      <div class="grid-modular-head">
+        <h3>SISTEMA <span>MODULAR</span> · 6 PEÇAS</h3>
+        <p>Tudo que entra no feed é uma combinação dessas 6 peças. Embaralhe na ordem certa, e o ritmo visual se mantém — sem precisar reinventar o template a cada post.</p>
+      </div>
+      <div class="grid-modular-grid">
+
+        <div class="gm-tile t-game">
+          <span class="gm-num">01</span>
+          <img src="assets/games/mgs-delta-sq.jpg" alt=""/>
+          <span class="gm-label">KEY ART · DROP</span>
+        </div>
+
+        <div class="gm-tile t-brand-orange">
+          <span class="gm-num">02</span>
+          <span class="text">MÍDIA<br/>FÍSICA<br/>NEVER<br/>DIES</span>
+          <span class="gm-label">BRAND · ORANGE</span>
+        </div>
+
+        <div class="gm-tile t-dark-logo">
+          <span class="gm-num">03</span>
+          <img src="assets/logos/logo-vertical-orange.png" alt=""/>
+          <span class="gm-label">LOGO · DARK</span>
+        </div>
+
+        <div class="gm-tile t-dark-press">
+          <span class="gm-num">04</span>
+          <span class="text">PRESS<br/>START<br/>· SEXTA ·</span>
+          <span class="gm-label">PRESS · ARCADE</span>
+        </div>
+
+        <div class="gm-tile t-quote">
+          <span class="gm-num">05</span>
+          <span class="text">SEM<br/><span>PIRATA</span><br/>JAMAIS</span>
+          <span class="gm-label">QUOTE · MANIFESTO</span>
+        </div>
+
+        <div class="gm-tile t-tip">
+          <span class="gm-num">06</span>
+          <span class="text"><span>#TIPDAHUT</span>NUNCA<br/>DEIXE A<br/>CAPA<br/>NO SOL</span>
+          <span class="gm-label">TIP · CONTENT</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ig-frame reveal">
+      <div class="ig-header">
+        <div class="ig-avatar"><img src="assets/logos/badge-circle-orange.png" alt=""/></div>
+        <div class="ig-handle">
+          <div class="name">GAMER HUT</div>
+          <div class="hand">@gamerhut.store</div>
+          <div class="meta"><b>OFICIAL</b> · A hut que entende</div>
+        </div>
+        <button class="ig-follow">SEGUIR</button>
+      </div>
+
+      <div class="ig-bio">
+        <p>
+          <strong>🎮 Mídia Física Never Dies</strong><br/>
+          Original · Lacrado · Com NF. Squad oficial Nintendo · PlayStation · Xbox · Capcom · Rockstar · Konami · Sega · Bandai Namco · Ubisoft.
+        </p>
+        <div class="links">▸ gamerhut.com.br</div>
+      </div>
+
+      <div class="ig-stats">
+        <div><b>847</b><span>Posts</span></div>
+        <div><b>52,4K</b><span>Seguidores</span></div>
+        <div><b>9</b><span>Squad</span></div>
+      </div>
+
+      <div class="ig-tabs">
+        <span class="active">▦ POSTS</span>
+        <span>◉ REELS</span>
+        <span>◐ MARCADAS</span>
+      </div>
+
+      <div class="ig-grid">
+        <!-- Linha 1: drop forte + brand + game -->
+        <div class="ig-tile">
+          <span class="badge">DROP</span>
+          <img src="assets/games/gta5-sq.jpg" alt="GTA V"/>
+          <div class="overlay">
+            <div class="price">R$ 199<small>PRÉ-VENDA · GTA VI</small></div>
+          </div>
+        </div>
+        <div class="ig-tile brand">
+          <div class="text">MÍDIA<br/>FÍSICA<br/><span style="color:#000">NEVER<br/>DIES</span><small>· let the games begin ·</small></div>
+        </div>
+        <div class="ig-tile">
+          <span class="badge">DROP</span>
+          <img src="assets/games/mgs-delta-sq.jpg" alt="MGS Delta"/>
+          <div class="overlay">
+            <div class="price">R$ 349<small>METAL GEAR Δ · LACRADO</small></div>
+          </div>
+        </div>
+
+        <!-- Linha 2: lançamentos + dark + game -->
+        <div class="ig-tile">
+          <span class="badge">DROP</span>
+          <img src="assets/games/rdr2-sq.jpg" alt="RDR2"/>
+          <div class="overlay">
+            <div class="price">R$ 179<small>RED DEAD II · COM NF</small></div>
+          </div>
+        </div>
+        <div class="ig-tile dark">
+          <img src="assets/logos/logo-vertical-orange.png" alt=""/>
+        </div>
+        <div class="ig-tile">
+          <span class="badge">DROP</span>
+          <img src="assets/games/sonic-cw-sq.jpg" alt="Sonic"/>
+          <div class="overlay">
+            <div class="price">R$ 249<small>SONIC CROSSWORLDS</small></div>
+          </div>
+        </div>
+
+        <!-- Linha 3: kids + brand + retro -->
+        <div class="ig-tile">
+          <span class="badge">PRÉ</span>
+          <img src="assets/games/pokemon-za-sq.jpg" alt="Pokémon Z-A"/>
+          <div class="overlay">
+            <div class="price">R$ 329<small>POKÉMON LEGENDS Z-A</small></div>
+          </div>
+        </div>
+        <div class="ig-tile brand" style="background:linear-gradient(135deg,#000,#1a0a04)">
+          <div class="text" style="color:var(--c-orange)">PRESS<br/>START<br/><span style="color:#fff">·LACRADO·</span><small style="color:var(--c-orange)">DROP TODA SEXTA</small></div>
+        </div>
+        <div class="ig-tile">
+          <span class="badge">DROP</span>
+          <img src="assets/games/zelda-totk-sq.jpg" alt="Zelda"/>
+          <div class="overlay">
+            <div class="price">R$ 299<small>ZELDA TOTK · ORIGINAL</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ig-meta">
+        <div><b>RITMO</b>3 game art · 3 brand · 3 dark/manifesto<br/>na malha 3×3</div>
+        <div><b>FOTO PERFIL</b>Badge circular laranja<br/>(badge-circle-orange.svg)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 14 — POSTS INDIVIDUAIS ===================== -->
+<section class="stage" id="posts">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <div class="stage-num">14</div>
+      <div class="stage-meta">
+        <span class="stage-eyebrow">STAGE 14 · POSTS</span>
+        <h2 class="stage-title">DROP <span class="text-orange">·</span> PRÉ-VENDA <span class="text-orange">·</span> STORY</h2>
+        <p class="stage-sub">Modelos de posts replicáveis. Cada formato tem seu papel: drop é manchete, pré-venda é convite, story é conversa.</p>
+      </div>
+    </div>
+
+    <div class="posts-grid reveal">
+      <!-- POST 1: DROP - lançamento principal -->
+      <div class="post-card">
+        <div class="post-head">
+          <div class="av"><img src="assets/logos/badge-circle-orange.png" alt=""/></div>
+          <div class="info">
+            <div class="h">gamerhut.store</div>
+            <div class="s">Patrocinado · Drop</div>
+          </div>
+          <div class="more">···</div>
+        </div>
+        <div class="post-img">
+          <img src="assets/games/mgs-delta-sq.jpg" alt="MGS Delta"/>
+          <div class="post-overlay">
+            <div class="top-row">
+              <span class="post-tag drop">▶ DROP NOW</span>
+              <div class="gh-mini"><img src="assets/logos/logo-vertical-orange.png" alt=""/></div>
+            </div>
+            <div>
+              <div class="post-title">METAL GEAR<br/>SOLID <span>Δ</span></div>
+              <div class="post-sub">SNAKE EATER · KONAMI · LACRADO</div>
+            </div>
+          </div>
+        </div>
+        <div class="post-actions">
+          <div class="icons">♥ 💬 ↗</div>
+          <div class="save">⌘</div>
+        </div>
+        <div class="post-caption">
+          <b>gamerhut.store</b> Snake voltou pra missão e chegou na Hut. Original, lacrado, com NF. Tactical Espionage Action do jeito certo.
+          <span class="h-tags">#metalgearsolid #snakeeater #konami #midiafísica #gamerhut</span>
+          <span class="meta">há 2 horas · 1.247 curtidas</span>
+        </div>
+      </div>
+
+      <!-- POST 2: PRÉ-VENDA -->
+      <div class="post-card">
+        <div class="post-head">
+          <div class="av"><img src="assets/logos/badge-circle-orange.png" alt=""/></div>
+          <div class="info">
+            <div class="h">gamerhut.store</div>
+            <div class="s">Pré-venda · Limitada</div>
+          </div>
+          <div class="more">···</div>
+        </div>
+        <div class="post-img">
+          <img src="assets/games/pokemon-za-sq.jpg" alt="Pokémon Z-A"/>
+          <div class="post-overlay">
+            <div class="top-row">
+              <span class="post-tag preorder">◉ PRÉ-VENDA</span>
+              <div class="gh-mini"><img src="assets/logos/logo-vertical-orange.png" alt=""/></div>
+            </div>
+            <div>
+              <div class="post-title">POKÉMON<br/>LEGENDS <span>Z-A</span></div>
+              <div class="post-sub">NINTENDO · ENVIO NO LANÇAMENTO</div>
+            </div>
+          </div>
+        </div>
+        <div class="post-actions">
+          <div class="icons">♥ 💬 ↗</div>
+          <div class="save">⌘</div>
+        </div>
+        <div class="post-caption">
+          <b>gamerhut.store</b> Lumiose City tá te esperando. Reserva agora e a gente garante que a tua cópia chega <b>no dia do lançamento</b>, original e lacrada.
+          <span class="h-tags">#pokemonlegends #zaregion #nintendo #squad #gamerhut</span>
+          <span class="meta">há 5 horas · 893 curtidas</span>
+        </div>
+      </div>
+
+      <!-- POST 3: STORY (vertical) -->
+      <div class="post-card story">
+        <div class="post-head">
+          <div class="av"><img src="assets/logos/badge-circle-orange.png" alt=""/></div>
+          <div class="info">
+            <div class="h">gamerhut.store</div>
+            <div class="s">Story · há 4h</div>
+          </div>
+          <div class="more">···</div>
+        </div>
+        <div class="post-img">
+          <img src="assets/games/rdr2-sq.jpg" alt="RDR2"/>
+          <div class="post-overlay" style="padding:24px">
+            <div class="top-row">
+              <span class="post-tag" style="background:var(--c-orange-deep);color:#fff">▼ ARRASTA PRA CIMA</span>
+              <div class="gh-mini"><img src="assets/logos/logo-vertical-orange.png" alt=""/></div>
+            </div>
+            <div>
+              <div class="post-title" style="font-size:32px">RED DEAD<br/><span>REDEMPTION II</span></div>
+              <div class="post-sub" style="margin-top:10px">"YOU'RE A GOOD MAN, ARTHUR."</div>
+              <div class="post-sub" style="color:#fff;margin-top:6px">→ R$ 179 · LACRADO</div>
+            </div>
+          </div>
+        </div>
+        <div class="post-actions">
+          <div class="icons">↗</div>
+          <div class="save" style="font-family:var(--f-mono);font-size:11px;color:var(--c-cool-gray)">VISUALIZAÇÕES · 4.2K</div>
+        </div>
+        <div class="post-caption">
+          <b style="color:var(--c-orange);font-family:var(--f-arcade);font-size:9px;letter-spacing:.18em">STORY · 9:16</b>
+          <p style="margin-top:6px">Use as Stories pra reforçar drops em andamento, mostrar bastidor de checagem de procedência, ou destacar uma promo relâmpago. Sempre com sticker da loja.</p>
+        </div>
+      </div>
+
+      <!-- POST 4: SONIC -->
+      <div class="post-card">
+        <div class="post-head">
+          <div class="av"><img src="assets/logos/badge-circle-orange.png" alt=""/></div>
+          <div class="info">
+            <div class="h">gamerhut.store</div>
+            <div class="s">Drop · Multi-plataforma</div>
+          </div>
+          <div class="more">···</div>
+        </div>
+        <div class="post-img">
+          <img src="assets/games/sonic-cw-sq.jpg" alt="Sonic Crossworlds"/>
+          <div class="post-overlay">
+            <div class="top-row">
+              <span class="post-tag drop">▶ DROP NOW</span>
+              <div class="gh-mini"><img src="assets/logos/logo-vertical-orange.png" alt=""/></div>
+            </div>
+            <div>
+              <div class="post-title">SONIC RACING<br/><span>CROSSWORLDS</span></div>
+              <div class="post-sub">SEGA · SWITCH · PS5 · XBOX</div>
+            </div>
+          </div>
+        </div>
+        <div class="post-actions">
+          <div class="icons">♥ 💬 ↗</div>
+          <div class="save">⌘</div>
+        </div>
+        <div class="post-caption">
+          <b>gamerhut.store</b> Velocidade da luz, multiverso da pista. Sonic, Tails, Knuckles e o squad inteiro nos kart. Disponível pras três grandes — escolhe a tua.
+          <span class="h-tags">#sonic #sega #racing #midiafísica #gamerhut</span>
+          <span class="meta">há 1 dia · 2.184 curtidas</span>
+        </div>
+      </div>
+
+      <!-- POST 5: GTA V -->
+      <div class="post-card">
+        <div class="post-head">
+          <div class="av"><img src="assets/logos/badge-circle-orange.png" alt=""/></div>
+          <div class="info">
+            <div class="h">gamerhut.store</div>
+            <div class="s">Clássico em estoque</div>
+          </div>
+          <div class="more">···</div>
+        </div>
+        <div class="post-img">
+          <img src="assets/games/gta5-sq.jpg" alt="GTA V"/>
+          <div class="post-overlay">
+            <div class="top-row">
+              <span class="post-tag" style="background:var(--c-fast-skin);color:#000">★ CLÁSSICO</span>
+              <div class="gh-mini"><img src="assets/logos/logo-vertical-orange.png" alt=""/></div>
+            </div>
+            <div>
+              <div class="post-title">GTA <span>V</span></div>
+              <div class="post-sub">ROCKSTAR · LOS SANTOS NEVER DIES</div>
+            </div>
+          </div>
+        </div>
+        <div class="post-actions">
+          <div class="icons">♥ 💬 ↗</div>
+          <div class="save">⌘</div>
+        </div>
+        <div class="post-caption">
+          <b>gamerhut.store</b> Trevor, Franklin e Michael ainda mandam. Edição física, lacrada, na sua estante. Enquanto o VI não chega, o V continua.
+          <span class="h-tags">#gtav #rockstar #classic #colecionador #gamerhut</span>
+          <span class="meta">há 3 dias · 1.612 curtidas</span>
+        </div>
+      </div>
+
+      <!-- POST 6: GoW Ragnarok -->
+      <div class="post-card">
+        <div class="post-head">
+          <div class="av"><img src="assets/logos/badge-circle-orange.png" alt=""/></div>
+          <div class="info">
+            <div class="h">gamerhut.store</div>
+            <div class="s">Drop · PS5 Exclusive</div>
+          </div>
+          <div class="more">···</div>
+        </div>
+        <div class="post-img">
+          <img src="assets/games/gow-ragnarok-sq.jpg" alt="GoW Ragnarok"/>
+          <div class="post-overlay">
+            <div class="top-row">
+              <span class="post-tag drop">▶ DROP NOW</span>
+              <div class="gh-mini"><img src="assets/logos/logo-vertical-orange.png" alt=""/></div>
+            </div>
+            <div>
+              <div class="post-title">GOD OF WAR<br/><span>RAGNARÖK</span></div>
+              <div class="post-sub">SONY · PS5 · KRATOS &amp; ATREUS</div>
+            </div>
+          </div>
+        </div>
+        <div class="post-actions">
+          <div class="icons">♥ 💬 ↗</div>
+          <div class="save">⌘</div>
+        </div>
+        <div class="post-caption">
+          <b>gamerhut.store</b> O fim dos nove reinos numa caixa só. Original, lacrada, com NF. Pra quem joga e pra quem coleciona.
+          <span class="h-tags">#godofwar #ragnarok #ps5 #sony #gamerhut</span>
+          <span class="meta">há 5 dias · 3.421 curtidas</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 15 — E-COMMERCE MOCKUP ===================== -->
+<section class="stage alt" id="shop">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <div class="stage-num">15</div>
+      <div class="stage-meta">
+        <span class="stage-eyebrow">STAGE 15 · E-COMMERCE</span>
+        <h2 class="stage-title">LOJA <span class="text-orange">ONLINE</span></h2>
+        <p class="stage-sub">Aplicação dos princípios da marca em gamerhut.com.br: cards de produto, ribbons, hierarquia de preço e selo de procedência sempre visível.</p>
+      </div>
+    </div>
+
+    <div class="shop-mockup reveal">
+      <div class="shop-bar">
+        <img src="assets/logos/logo-horizontal-black.png" class="logo" alt=""/>
+        <nav>
+          <a class="act">▸ NOVIDADES</a>
+          <a>NINTENDO</a>
+          <a>PLAYSTATION</a>
+          <a>XBOX</a>
+          <a>EDIÇÕES LIMITADAS</a>
+        </nav>
+        <div class="right">
+          <span>BUSCAR</span>
+          <span>CONTA</span>
+          <span class="cart">▸ CARRINHO · 2</span>
+        </div>
+      </div>
+
+      <div class="shop-grid">
+        <div class="shop-card">
+          <div class="shop-img">
+            <img src="assets/games/mgs-delta-sq.jpg" alt="MGS Delta"/>
+            <span class="ribbon">DROP</span>
+          </div>
+          <div class="shop-info">
+            <div class="platform">PS5 · XBOX · PC</div>
+            <div class="title">METAL GEAR SOLID Δ</div>
+            <div class="price-row">
+              <span class="price">R$ 349</span>
+              <span class="install">10× R$ 34,90</span>
+            </div>
+            <div class="nf"><b>✓</b> Original · Lacrado · Com NF</div>
+          </div>
+        </div>
+
+        <div class="shop-card">
+          <div class="shop-img">
+            <img src="assets/games/pokemon-za-sq.jpg" alt="Pokémon Z-A"/>
+            <span class="ribbon preorder">PRÉ-VENDA</span>
+          </div>
+          <div class="shop-info">
+            <div class="platform">SWITCH 1 · 2</div>
+            <div class="title">POKÉMON LEGENDS Z-A</div>
+            <div class="price-row">
+              <span class="price">R$ 329</span>
+              <span class="install">10× R$ 32,90</span>
+            </div>
+            <div class="nf"><b>✓</b> Envio no lançamento</div>
+          </div>
+        </div>
+
+        <div class="shop-card">
+          <div class="shop-img">
+            <img src="assets/games/zelda-totk-sq.jpg" alt="Zelda TotK"/>
+            <span class="ribbon lacrado">LACRADO</span>
+          </div>
+          <div class="shop-info">
+            <div class="platform">SWITCH</div>
+            <div class="title">TEARS OF THE KINGDOM</div>
+            <div class="price-row">
+              <span class="price">R$ 299</span>
+              <span class="install">10× R$ 29,90</span>
+            </div>
+            <div class="nf"><b>✓</b> Original · Lacrado · Com NF</div>
+          </div>
+        </div>
+
+        <div class="shop-card">
+          <div class="shop-img">
+            <img src="assets/games/rdr2-sq.jpg" alt="RDR2"/>
+            <span class="ribbon">DROP</span>
+          </div>
+          <div class="shop-info">
+            <div class="platform">PS4 · XBOX ONE · PC</div>
+            <div class="title">RED DEAD REDEMPTION II</div>
+            <div class="price-row">
+              <span class="price">R$ 179</span>
+              <span class="install">6× R$ 29,83</span>
+            </div>
+            <div class="nf"><b>✓</b> Original · Lacrado · Com NF</div>
+          </div>
+        </div>
+
+        <div class="shop-card">
+          <div class="shop-img">
+            <img src="assets/games/sonic-cw-sq.jpg" alt="Sonic"/>
+            <span class="ribbon">DROP</span>
+          </div>
+          <div class="shop-info">
+            <div class="platform">SWITCH · PS5 · XBOX</div>
+            <div class="title">SONIC CROSSWORLDS</div>
+            <div class="price-row">
+              <span class="price">R$ 249</span>
+              <span class="install">8× R$ 31,12</span>
+            </div>
+            <div class="nf"><b>✓</b> Original · Lacrado · Com NF</div>
+          </div>
+        </div>
+
+        <div class="shop-card">
+          <div class="shop-img">
+            <img src="assets/games/ac-blackflag-sq.jpg" alt="Black Flag"/>
+            <span class="ribbon preorder">PRÉ-VENDA</span>
+          </div>
+          <div class="shop-info">
+            <div class="platform">PS5 · XBOX · PC</div>
+            <div class="title">AC: BLACK FLAG RESYNCED</div>
+            <div class="price-row">
+              <span class="price">R$ 279</span>
+              <span class="install">10× R$ 27,90</span>
+            </div>
+            <div class="nf"><b>✓</b> Envio no lançamento</div>
+          </div>
+        </div>
+
+        <div class="shop-card">
+          <div class="shop-img">
+            <img src="assets/games/007-sq.jpg" alt="007"/>
+            <span class="ribbon preorder">PRÉ-VENDA</span>
+          </div>
+          <div class="shop-info">
+            <div class="platform">PS5 · XBOX · PC</div>
+            <div class="title">007 FIRST LIGHT</div>
+            <div class="price-row">
+              <span class="price">R$ 299</span>
+              <span class="install">10× R$ 29,90</span>
+            </div>
+            <div class="nf"><b>✓</b> Envio no lançamento</div>
+          </div>
+        </div>
+
+        <div class="shop-card">
+          <div class="shop-img">
+            <img src="assets/games/invincible-vs-sq.jpg" alt="Invincible VS"/>
+            <span class="ribbon">DROP</span>
+          </div>
+          <div class="shop-info">
+            <div class="platform">PS5 · XBOX · PC · SWITCH</div>
+            <div class="title">INVINCIBLE VS</div>
+            <div class="price-row">
+              <span class="price">R$ 269</span>
+              <span class="install">9× R$ 29,89</span>
+            </div>
+            <div class="nf"><b>✓</b> Original · Lacrado · Com NF</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 16 — TIPS DE COPY ===================== -->
+<section class="stage" id="tips">
+  <div class="wrap">
+    <div class="stage-head reveal">
+      <div class="stage-num">16</div>
+      <div class="stage-meta">
+        <span class="stage-eyebrow">STAGE 16 · COPY READY-TO-USE</span>
+        <h2 class="stage-title">CHEAT <span class="text-orange">SHEET</span></h2>
+        <p class="stage-sub">Frases prontas pra puxar quando bater o branco. Copy aprovado, dentro do tom.</p>
+      </div>
+    </div>
+
+    <div class="copy-tips reveal">
+      <div class="tip">
+        <div class="ctx">▸ ABERTURA DE POST</div>
+        <p class="yes">"Salve, Hut! Bora falar de [JOGO]."</p>
+        <p class="yes">"Drop da semana chegou — e veio pesado."</p>
+        <p class="yes">"Tô aqui pra te avisar:"</p>
+        <p class="no">"Olá, queridos clientes! Temos uma novidade incrível!!!"</p>
+      </div>
+      <div class="tip">
+        <div class="ctx">▸ REFORÇO DE PROCEDÊNCIA</div>
+        <p class="yes">"Original, lacrado, com NF. Como sempre."</p>
+        <p class="yes">"Direto do publisher pra tua estante."</p>
+        <p class="yes">"Sai daqui do jeito que tinha que sair."</p>
+        <p class="no">"100% confiável e seguro!"</p>
+      </div>
+      <div class="tip">
+        <div class="ctx">▸ CTA DE PRÉ-VENDA</div>
+        <p class="yes">"Reserva tua e a gente garante o envio no dia."</p>
+        <p class="yes">"Pré-venda aberta. Quando bater o limite, fecha."</p>
+        <p class="yes">"Press start na bio."</p>
+        <p class="no">"COMPRE JÁ! ÚLTIMAS UNIDADES! IMPERDÍVEL!!!"</p>
+      </div>
+      <div class="tip">
+        <div class="ctx">▸ COMUNIDADE / RELACIONAMENTO</div>
+        <p class="yes">"Comenta aí qual foi o último jogo que te marcou."</p>
+        <p class="yes">"Vocês escolhem o próximo drop. Manda no DM."</p>
+        <p class="yes">"Player do mês: @[user]. Pega tua featured."</p>
+        <p class="no">"Curta, comente e compartilhe para participar!"</p>
+      </div>
+      <div class="tip">
+        <div class="ctx">▸ PÓS-VENDA</div>
+        <p class="yes">"Pedido a caminho. Código de rastreio no DM."</p>
+        <p class="yes">"Chegou? Manda foto, a gente compartilha."</p>
+        <p class="yes">"Qualquer coisa, tô aqui."</p>
+        <p class="no">"Agradecemos sua preferência. Conte conosco!"</p>
+      </div>
+      <div class="tip">
+        <div class="ctx">▸ LIMITES DA MARCA</div>
+        <p class="yes">"A gente não trabalha com console — só com mídia."</p>
+        <p class="yes">"Aqui é só lacrado. Seminovo procura outro lugar."</p>
+        <p class="yes">"Pirata? Aqui na Hut, jamais."</p>
+        <p class="no">[evitar entrar no mérito de marketplaces que vendem essas categorias]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAGE 17 — GAME OVER / FOOTER ===================== -->
+<footer class="foot" id="fim">
+  <div class="wrap">
+    <div class="foot-konami">
+      <span style="margin-right:8px">EASTER EGG · TENTA O CÓDIGO</span>
+      <kbd>↑</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd><kbd>←</kbd><kbd>→</kbd><kbd>B</kbd><kbd>A</kbd>
+    </div>
+    <p class="sr-hint">// OU TENTA DIGITAR T·G·T NO TECLADO. OU CLICA TRÊS VEZES NO BADGE LARANJA AQUI EMBAIXO.</p>
+
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/logos/logo-horizontal-white.png" alt="Gamer Hut"/>
+        <p>
+          A hut que entende de games. Mídia física original, lacrada, com NF.<br/>
+          Squad oficial das nove maiores publishers do mundo.
+        </p>
+        <p style="margin-top:14px;font-family:var(--f-arcade);font-size:9px;letter-spacing:.18em;color:var(--c-orange)">
+          MÍDIA FÍSICA NEVER DIES ◢
+        </p>
+      </div>
+      <div class="foot-col">
+        <h6>NAVEGAÇÃO</h6>
+        <ul>
+          <li><a href="#manifesto">01 · Manifesto</a></li>
+          <li><a href="#essencia">02 · Essência</a></li>
+          <li><a href="#voz">03 · Tom de voz</a></li>
+          <li><a href="#logo">05 · Logo system</a></li>
+          <li><a href="#paleta">07 · Paleta</a></li>
+          <li><a href="#tipo">08 · Tipografia</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>APLICAÇÕES</h6>
+        <ul>
+          <li><a href="#feed">12 · Feed Instagram</a></li>
+          <li><a href="#posts">13 · Posts</a></li>
+          <li><a href="#shop">14 · E-commerce</a></li>
+          <li><a href="#tips">15 · Cheat sheet</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>CANAIS</h6>
+        <ul>
+          <li>gamerhut.com.br</li>
+          <li>@gamerhut.store</li>
+          <li>contato@gamerhut.com.br</li>
+          <li><br/></li>
+          <li style="color:var(--c-orange)" class="sr-trigger" id="srTrigger" title="???">▸ ESTE BRANDBOOK É VIVO</li>
+          <li>// updated 2026.05.06</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 GAMER HUT · TODOS OS DIREITOS RESERVADOS</span>
+      <span class="ver">▸ BRANDBOOK V.2026.02 · STAGE 17/17 · GAME OVER</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Konami flash overlay -->
+<div class="konami-flash" id="konamiFlash">
+  <div class="msg">★ MÍDIA FÍSICA<br/>NEVER DIES ★<br/><small style="font-size:.4em;letter-spacing:.3em">+30 LIVES</small></div>
+</div>
+
+<!-- ===================== EASTER EGG · STAFF ROLL (TGT) ===================== -->
+<div class="staff-roll" id="staffRoll" role="dialog" aria-label="Créditos do brandbook">
+  <span class="sr-glitch-tag">SECRET STAGE · STAFF ROLL</span>
+  <button class="sr-close" id="srClose" aria-label="Fechar">▶ CONTINUE [ESC]</button>
+  <div class="sr-track">
+    <div class="sr-section">
+      <div class="role">★ THE END ★</div>
+      <div class="name">CONGRATULATIONS,<br/>PLAYER 1</div>
+      <div class="sub">Você descobriu uma sala secreta. Aqui ficam os créditos.</div>
+    </div>
+
+    <div class="sr-section">
+      <div class="role">CLIENT</div>
+      <div class="name">GAMER HUT</div>
+      <div class="sub">A hut da galera que entende. Mídia física, original, com NF.</div>
+    </div>
+
+    <div class="sr-section">
+      <div class="role">BRAND ESSENCE</div>
+      <div class="name">MÍDIA FÍSICA<br/>NEVER DIES</div>
+      <div class="sub">Let the games begin · 2026</div>
+    </div>
+
+    <div class="sr-section">
+      <div class="role">PARTNERS · SQUAD</div>
+      <div class="name" style="font-size:18px;letter-spacing:.04em;line-height:1.4">
+        NINTENDO · SONY PLAYSTATION<br/>
+        MICROSOFT · CAPCOM · ROCKSTAR<br/>
+        KONAMI · SEGA · BANDAI NAMCO<br/>
+        UBISOFT
+      </div>
+    </div>
+
+    <div class="sr-section">
+      <div class="role">DESIGN · STRATEGY · CODE</div>
+      <div class="name">↓</div>
+    </div>
+
+    <div class="sr-tgt">
+      <div class="sr-tgt-tag">▶ POWERED BY</div>
+      <img src="assets/tgt/tgt-dark.png" alt="TGT — A Agência Além do Marketing" />
+      <div class="sr-tgt-meta">
+        <b>BRANDBOOK · DESIGN · ESTRATÉGIA</b>
+        Concebido, criado e codado por TGT.<br/>
+        Marketing que vai além do marketing.<br/>
+        Pra marca que vai além do varejo.
+      </div>
+      <a class="sr-tgt-link" href="#" onclick="return false">▸ TGT.AG / SAY HI</a>
+    </div>
+
+    <div class="sr-section">
+      <div class="role">SPECIAL THANKS</div>
+      <div class="name" style="font-size:20px;line-height:1.5">
+        Aos colecionadores que ainda<br/>
+        respeitam o cheiro do plástico novo.<br/>
+        Aos publishers que ainda lacram caixas.<br/>
+        Aos players que ainda apertam ▶ START.
+      </div>
+    </div>
+
+    <div class="sr-end">
+      ★ GAME OVER ★<br/>
+      <small>v.2026.02 · BRANDBOOK GAMER HUT</small>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  // ============== SCROLL SPY + LIFEBAR ==============
+  const hud = document.getElementById('hud');
+  const lifebar = document.getElementById('lifebar');
+  const navLinks = document.querySelectorAll('#hudnav a');
+  const sections = Array.from(document.querySelectorAll('section.stage, #hero, #toc, .foot'));
+  let lastScroll = 0;
+
+  function updateScroll(){
+    const sy = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? Math.min(100, Math.max(0, (sy / max) * 100)) : 0;
+
+    // Lifebar
+    if (lifebar) lifebar.style.setProperty('--life', pct.toFixed(1) + '%');
+
+    // Hide HUD on scroll down (after threshold), show on scroll up
+    if (sy > 200 && sy > lastScroll){
+      hud.classList.add('hidden');
+    } else {
+      hud.classList.remove('hidden');
+    }
+    lastScroll = sy;
+
+    // Spy: figure out which section is most visible
+    let activeId = null;
+    const winMid = sy + window.innerHeight * 0.4;
+    for (const sec of sections){
+      const top = sec.offsetTop;
+      const bot = top + sec.offsetHeight;
+      if (winMid >= top && winMid < bot){
+        activeId = sec.id;
+        break;
+      }
+    }
+    navLinks.forEach(a => {
+      const href = a.getAttribute('href').replace('#','');
+      if (href === activeId) a.classList.add('active');
+      else a.classList.remove('active');
+    });
+  }
+  window.addEventListener('scroll', updateScroll, {passive:true});
+  window.addEventListener('resize', updateScroll, {passive:true});
+  updateScroll();
+
+  // ============== REVEAL ON SCROLL ==============
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries){
+        if (e.isIntersecting){
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      }
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.01});
+    reveals.forEach(el => io.observe(el));
+    // Failsafe: força tudo visível após 3.5s, evitando "telas pretas" caso o IO não dispare
+    setTimeout(() => {
+      reveals.forEach(el => el.classList.add('in'));
+    }, 3500);
+    // Também: se elemento já está visível no carregamento, força in imediatamente
+    requestAnimationFrame(() => {
+      reveals.forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0){
+          el.classList.add('in');
+        }
+      });
+    });
+  } else {
+    reveals.forEach(el => el.classList.add('in'));
+  }
+
+  // ============== KONAMI CODE ==============
+  const seq = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  let pos = 0;
+  const flash = document.getElementById('konamiFlash');
+  document.addEventListener('keydown', (e) => {
+    const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+    const expected = seq[pos];
+    if (k === expected){
+      pos++;
+      if (pos === seq.length){
+        flash.classList.add('on');
+        setTimeout(() => flash.classList.remove('on'), 1700);
+        // Bonus: depois do konami, abrir staff roll após o flash
+        setTimeout(() => openStaffRoll(), 1500);
+        pos = 0;
+      }
+    } else {
+      pos = (k === seq[0]) ? 1 : 0;
+    }
+  });
+
+  // ============== STAFF ROLL EASTER EGG (TGT) ==============
+  const staffRoll = document.getElementById('staffRoll');
+  const srClose = document.getElementById('srClose');
+  const srTrigger = document.getElementById('srTrigger');
+  let srTriggerClicks = 0;
+  let srTriggerTimer = null;
+
+  function openStaffRoll(){
+    if (!staffRoll) return;
+    // Reset animação para sempre começar do zero
+    const track = staffRoll.querySelector('.sr-track');
+    if (track){
+      track.style.animation = 'none';
+      track.offsetHeight; // reflow
+      track.style.animation = '';
+    }
+    staffRoll.classList.add('on');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeStaffRoll(){
+    if (!staffRoll) return;
+    staffRoll.classList.remove('on');
+    document.body.style.overflow = '';
+  }
+
+  if (srClose) srClose.addEventListener('click', closeStaffRoll);
+  
+  // Trigger 1: clicar 3x no link "ESTE BRANDBOOK É VIVO"
+  if (srTrigger){
+    srTrigger.addEventListener('click', () => {
+      srTriggerClicks++;
+      clearTimeout(srTriggerTimer);
+      srTriggerTimer = setTimeout(() => { srTriggerClicks = 0; }, 1500);
+      if (srTriggerClicks >= 3){
+        srTriggerClicks = 0;
+        openStaffRoll();
+      }
+    });
+  }
+
+  // Trigger 2: digitar "tgt" no teclado
+  let tgtBuffer = '';
+  document.addEventListener('keydown', (e) => {
+    if (e.key.length !== 1) return;
+    tgtBuffer = (tgtBuffer + e.key.toLowerCase()).slice(-3);
+    if (tgtBuffer === 'tgt') {
+      tgtBuffer = '';
+      openStaffRoll();
+    }
+  });
+
+  // Trigger 3: ESC fecha
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && staffRoll && staffRoll.classList.contains('on')){
+      closeStaffRoll();
+    }
+  });
+
+  // ============== SMOOTH SCROLL OFFSET ==============
+  // Quando clica em link âncora, compensa o HUD fixo
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      const offset = 70; // altura aproximada do HUD
+      const y = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({top:y, behavior:'smooth'});
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
