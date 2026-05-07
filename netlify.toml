@@ -1,0 +1,32 @@
+# Configuração do Netlify
+# Se você optar por usar Netlify em vez de GitHub Pages,
+# basta conectar o repo lá e este arquivo já cuida de tudo.
+
+[build]
+  publish = "."
+  command = ""
+
+# Cache mais longo para assets imutáveis
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML sempre fresco
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Headers de segurança básicos
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Preview de PRs habilitado por padrão.
+# Cada PR ganha uma URL tipo:
+#   https://deploy-preview-123--gamerhut-brandbook.netlify.app
