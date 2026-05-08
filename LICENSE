@@ -1,0 +1,91 @@
+# LICENSE · GAMER HUT Brandbook
+
+Copyright © 2026 GAMER HUT.
+
+## Mixed License Structure
+
+This repository contains different types of assets, each governed by different terms.
+
+---
+
+### ✅ FREE TO USE — by Gamer Hut team and contractors
+
+The following are licensed under **MIT License** (see below):
+
+- All `*.md` documentation files
+- Design tokens in `tokens/`
+- Color palette specifications (hex values, Pantone references)
+- Layout grid specifications
+- Component HTML/CSS code in `components/`
+- All custom-written copy templates and voice guidelines
+
+### ✅ OPEN SOURCE FONTS
+
+The following fonts are licensed under SIL Open Font License 1.1 and may be freely
+used and redistributed:
+
+- Russo One (Google Fonts)
+- Red Hat Display (Google Fonts)
+- Press Start 2P (Google Fonts)
+- JetBrains Mono (Google Fonts)
+
+---
+
+### ⚠️ RESTRICTED USE — Gamer Hut trademarks and brand assets
+
+The following are **proprietary to GAMER HUT** and may NOT be used without written
+permission:
+
+- All Gamer Hut logos (in `assets/logos/`)
+- "GAMER HUT" name and visual identity
+- Tagline: "Mídia física never dies"
+- Tagline: "Let the games begin"
+- Custom illustrations and brand artwork
+
+### ⚠️ THIRD-PARTY ASSETS — used with implicit/explicit license
+
+The following are property of their respective owners and used in this brandbook
+ONLY as illustrative reference for co-branding and editorial examples. They are
+NOT licensed for redistribution:
+
+- Game cover art in `assets/games/` (property of respective publishers:
+  Nintendo, Sony, Konami, Rockstar, Capcom, SEGA, Bandai Namco, Ubisoft, etc.)
+- Publisher logos (when used in co-branding mockups)
+- TGT Strategy MKT logo (in `assets/tgt/`)
+
+---
+
+## MIT License (for the open portions above)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Contact
+
+For licensing questions, partnership inquiries, or to request use of restricted
+assets:
+
+📧 contato@gamerhut.com.br
+🌐 gamerhut.com.br
+📱 @gamerhut.store
+
+---
+
+🟧 *Brandbook desenvolvido pela TGT Strategy MKT — A Agência Além do Marketing.*

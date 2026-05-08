@@ -1,0 +1,820 @@
+{
+  "name": "gamerhut-design-system-pack",
+  "version": "1.0.0",
+  "description": "Pack 100% otimizado para Claude Design (claude.ai/design) — extrai design system completo da GAMER HUT",
+  "brand": "GAMER HUT",
+  "tagline": "MÍDIA FÍSICA NEVER DIES",
+  "brandbook_version": "v.2026.05",
+  "generated_at": "2026-05-07",
+  "claude_design_compatible": true,
+  "upload_order": [
+    "DESIGN.md",
+    "brandbook/brandbook.pdf",
+    "examples/landing-page.html",
+    "tokens/",
+    "colors/",
+    "logos/",
+    "icons/",
+    "patterns/",
+    "typography/",
+    "voice-content/",
+    "reference-screenshots/"
+  ],
+  "what_claude_design_extracts": {
+    "color_palette": {
+      "primary": "#F26641",
+      "secondary": "#000000",
+      "accent": [
+        "#E1251B",
+        "#FFC27A",
+        "#194F90"
+      ],
+      "neutrals": [
+        "#0a0a0a",
+        "#1a1a1a",
+        "#F5F0E8",
+        "#B1B1B1",
+        "#666666"
+      ],
+      "rule": "60-30-10 (60% black, 30% orange, 10% accent)"
+    },
+    "typography": {
+      "display": "Russo One (Google Fonts)",
+      "body": "Red Hat Display (Google Fonts)",
+      "arcade": "Press Start 2P (Google Fonts)",
+      "mono": "JetBrains Mono (Google Fonts)"
+    },
+    "components": [
+      "buttons (3 variants × 3 sizes)",
+      "cards (drop, review, tip)",
+      "tags & badges (5 colors)",
+      "inputs (default + arcade)",
+      "HUD top bar with lifebar",
+      "eyebrows & labels"
+    ],
+    "layout_patterns": {
+      "grid": "12 desktop / 6 tablet / 4 mobile",
+      "spacing_scale": "múltiplos de 4 (4,8,12,16,24,32,48,64,96,128)",
+      "baseline": "8px",
+      "container_max": "1280px"
+    }
+  },
+  "files": {
+    "root": [
+      {
+        "path": "DESIGN.md",
+        "size_bytes": 12929,
+        "size_human": "12KB"
+      },
+      {
+        "path": "README.md",
+        "size_bytes": 11830,
+        "size_human": "11KB"
+      }
+    ],
+    "brandbook": [
+      {
+        "path": "brandbook/assets/games/007-large.jpg",
+        "size_bytes": 115079,
+        "size_human": "112KB"
+      },
+      {
+        "path": "brandbook/assets/games/007-sq.jpg",
+        "size_bytes": 112314,
+        "size_human": "109KB"
+      },
+      {
+        "path": "brandbook/assets/games/007-thumb.jpg",
+        "size_bytes": 35239,
+        "size_human": "34KB"
+      },
+      {
+        "path": "brandbook/assets/games/ac-blackflag-large.jpg",
+        "size_bytes": 260507,
+        "size_human": "254KB"
+      },
+      {
+        "path": "brandbook/assets/games/ac-blackflag-sq.jpg",
+        "size_bytes": 242183,
+        "size_human": "236KB"
+      },
+      {
+        "path": "brandbook/assets/games/ac-blackflag-thumb.jpg",
+        "size_bytes": 85032,
+        "size_human": "83KB"
+      },
+      {
+        "path": "brandbook/assets/games/gow-large.jpg",
+        "size_bytes": 273142,
+        "size_human": "266KB"
+      },
+      {
+        "path": "brandbook/assets/games/gow-ragnarok-large.jpg",
+        "size_bytes": 65416,
+        "size_human": "63KB"
+      },
+      {
+        "path": "brandbook/assets/games/gow-ragnarok-sq.jpg",
+        "size_bytes": 168823,
+        "size_human": "164KB"
+      },
+      {
+        "path": "brandbook/assets/games/gow-ragnarok-thumb.jpg",
+        "size_bytes": 73267,
+        "size_human": "71KB"
+      },
+      {
+        "path": "brandbook/assets/games/gow-sq.jpg",
+        "size_bytes": 189501,
+        "size_human": "185KB"
+      },
+      {
+        "path": "brandbook/assets/games/gow-thumb.jpg",
+        "size_bytes": 68257,
+        "size_human": "66KB"
+      },
+      {
+        "path": "brandbook/assets/games/gta5-large.jpg",
+        "size_bytes": 275932,
+        "size_human": "269KB"
+      },
+      {
+        "path": "brandbook/assets/games/gta5-sq.jpg",
+        "size_bytes": 181855,
+        "size_human": "177KB"
+      },
+      {
+        "path": "brandbook/assets/games/gta5-thumb.jpg",
+        "size_bytes": 71015,
+        "size_human": "69KB"
+      },
+      {
+        "path": "brandbook/assets/games/invincible-vs-large.jpg",
+        "size_bytes": 237490,
+        "size_human": "231KB"
+      },
+      {
+        "path": "brandbook/assets/games/invincible-vs-sq.jpg",
+        "size_bytes": 194843,
+        "size_human": "190KB"
+      },
+      {
+        "path": "brandbook/assets/games/invincible-vs-thumb.jpg",
+        "size_bytes": 73879,
+        "size_human": "72KB"
+      },
+      {
+        "path": "brandbook/assets/games/mario-movie-large.jpg",
+        "size_bytes": 61466,
+        "size_human": "60KB"
+      },
+      {
+        "path": "brandbook/assets/games/mario-movie-sq.jpg",
+        "size_bytes": 158667,
+        "size_human": "154KB"
+      },
+      {
+        "path": "brandbook/assets/games/mario-movie-thumb.jpg",
+        "size_bytes": 68744,
+        "size_human": "67KB"
+      },
+      {
+        "path": "brandbook/assets/games/mgs-delta-large.jpg",
+        "size_bytes": 286596,
+        "size_human": "279KB"
+      },
+      {
+        "path": "brandbook/assets/games/mgs-delta-sq.jpg",
+        "size_bytes": 261996,
+        "size_human": "255KB"
+      },
+      {
+        "path": "brandbook/assets/games/mgs-delta-thumb.jpg",
+        "size_bytes": 75171,
+        "size_human": "73KB"
+      },
+      {
+        "path": "brandbook/assets/games/pokemon-za-large.jpg",
+        "size_bytes": 268922,
+        "size_human": "262KB"
+      },
+      {
+        "path": "brandbook/assets/games/pokemon-za-sq.jpg",
+        "size_bytes": 190280,
+        "size_human": "185KB"
+      },
+      {
+        "path": "brandbook/assets/games/pokemon-za-thumb.jpg",
+        "size_bytes": 72078,
+        "size_human": "70KB"
+      },
+      {
+        "path": "brandbook/assets/games/rdr2-large.jpg",
+        "size_bytes": 231627,
+        "size_human": "226KB"
+      },
+      {
+        "path": "brandbook/assets/games/rdr2-sq.jpg",
+        "size_bytes": 256418,
+        "size_human": "250KB"
+      },
+      {
+        "path": "brandbook/assets/games/rdr2-thumb.jpg",
+        "size_bytes": 89142,
+        "size_human": "87KB"
+      },
+      {
+        "path": "brandbook/assets/games/sonic-cw-large.jpg",
+        "size_bytes": 300465,
+        "size_human": "293KB"
+      },
+      {
+        "path": "brandbook/assets/games/sonic-cw-sq.jpg",
+        "size_bytes": 230927,
+        "size_human": "225KB"
+      },
+      {
+        "path": "brandbook/assets/games/sonic-cw-thumb.jpg",
+        "size_bytes": 81409,
+        "size_human": "79KB"
+      },
+      {
+        "path": "brandbook/assets/games/zelda-totk-large.jpg",
+        "size_bytes": 277303,
+        "size_human": "270KB"
+      },
+      {
+        "path": "brandbook/assets/games/zelda-totk-sq.jpg",
+        "size_bytes": 191913,
+        "size_human": "187KB"
+      },
+      {
+        "path": "brandbook/assets/games/zelda-totk-thumb.jpg",
+        "size_bytes": 58594,
+        "size_human": "57KB"
+      },
+      {
+        "path": "brandbook/assets/logos/badge-circle-black.png",
+        "size_bytes": 105894,
+        "size_human": "103KB"
+      },
+      {
+        "path": "brandbook/assets/logos/badge-circle-black.svg",
+        "size_bytes": 25471,
+        "size_human": "24KB"
+      },
+      {
+        "path": "brandbook/assets/logos/badge-circle-orange.png",
+        "size_bytes": 104078,
+        "size_human": "101KB"
+      },
+      {
+        "path": "brandbook/assets/logos/badge-circle-orange.svg",
+        "size_bytes": 26155,
+        "size_human": "25KB"
+      },
+      {
+        "path": "brandbook/assets/logos/logo-horizontal-black.png",
+        "size_bytes": 49128,
+        "size_human": "47KB"
+      },
+      {
+        "path": "brandbook/assets/logos/logo-horizontal-black.svg",
+        "size_bytes": 32401,
+        "size_human": "31KB"
+      },
+      {
+        "path": "brandbook/assets/logos/logo-horizontal-white.png",
+        "size_bytes": 37383,
+        "size_human": "36KB"
+      },
+      {
+        "path": "brandbook/assets/logos/logo-vertical-black.png",
+        "size_bytes": 117077,
+        "size_human": "114KB"
+      },
+      {
+        "path": "brandbook/assets/logos/logo-vertical-black.svg",
+        "size_bytes": 18138,
+        "size_human": "17KB"
+      },
+      {
+        "path": "brandbook/assets/logos/logo-vertical-orange.png",
+        "size_bytes": 102790,
+        "size_human": "100KB"
+      },
+      {
+        "path": "brandbook/assets/logos/logo-vertical-orange.svg",
+        "size_bytes": 19142,
+        "size_human": "18KB"
+      },
+      {
+        "path": "brandbook/assets/logos/logo-vertical-outline-orange.png",
+        "size_bytes": 142738,
+        "size_human": "139KB"
+      },
+      {
+        "path": "brandbook/assets/logos/logo-vertical-outline-orange.svg",
+        "size_bytes": 29185,
+        "size_human": "28KB"
+      },
+      {
+        "path": "brandbook/assets/logos/logo-vertical-white.png",
+        "size_bytes": 82132,
+        "size_human": "80KB"
+      },
+      {
+        "path": "brandbook/assets/tgt/tgt-dark.png",
+        "size_bytes": 84710,
+        "size_human": "82KB"
+      },
+      {
+        "path": "brandbook/assets/tgt/tgt-light.png",
+        "size_bytes": 69827,
+        "size_human": "68KB"
+      },
+      {
+        "path": "brandbook/assets/tgt/tgt-symbol.png",
+        "size_bytes": 42946,
+        "size_human": "41KB"
+      },
+      {
+        "path": "brandbook/assets/tgt/tgt.svg",
+        "size_bytes": 2509,
+        "size_human": "2KB"
+      },
+      {
+        "path": "brandbook/brandbook.pdf",
+        "size_bytes": 8640666,
+        "size_human": "8MB"
+      },
+      {
+        "path": "brandbook/index.html",
+        "size_bytes": 311763,
+        "size_human": "304KB"
+      }
+    ],
+    "colors": [
+      {
+        "path": "colors/palette-60-30-10.png",
+        "size_bytes": 30947,
+        "size_human": "30KB"
+      },
+      {
+        "path": "colors/palette.png",
+        "size_bytes": 49225,
+        "size_human": "48KB"
+      },
+      {
+        "path": "colors/swatches/black-mustache.png",
+        "size_bytes": 6027,
+        "size_human": "5KB"
+      },
+      {
+        "path": "colors/swatches/cool-gray.png",
+        "size_bytes": 6128,
+        "size_human": "5KB"
+      },
+      {
+        "path": "colors/swatches/fast-skin.png",
+        "size_bytes": 7558,
+        "size_human": "7KB"
+      },
+      {
+        "path": "colors/swatches/mario-red.png",
+        "size_bytes": 7582,
+        "size_human": "7KB"
+      },
+      {
+        "path": "colors/swatches/orange-sunset.png",
+        "size_bytes": 8651,
+        "size_human": "8KB"
+      },
+      {
+        "path": "colors/swatches/sonic-blue.png",
+        "size_bytes": 8326,
+        "size_human": "8KB"
+      }
+    ],
+    "components": [
+      {
+        "path": "components/components-preview.png",
+        "size_bytes": 326985,
+        "size_human": "319KB"
+      },
+      {
+        "path": "components/components.html",
+        "size_bytes": 13475,
+        "size_human": "13KB"
+      }
+    ],
+    "examples": [
+      {
+        "path": "examples/landing-page.html",
+        "size_bytes": 12208,
+        "size_human": "11KB"
+      },
+      {
+        "path": "examples/screenshots/landing-page.png",
+        "size_bytes": 244397,
+        "size_human": "238KB"
+      }
+    ],
+    "icons": [
+      {
+        "path": "icons/add.svg",
+        "size_bytes": 265,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/caixa.svg",
+        "size_bytes": 282,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/cart.svg",
+        "size_bytes": 306,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/cartucho.svg",
+        "size_bytes": 296,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/close.svg",
+        "size_bytes": 242,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/controle.svg",
+        "size_bytes": 340,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/delivery.svg",
+        "size_bytes": 330,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/disc.svg",
+        "size_bytes": 324,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/drop.svg",
+        "size_bytes": 263,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/favorito.svg",
+        "size_bytes": 288,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/icons-preview.png",
+        "size_bytes": 32682,
+        "size_human": "31KB"
+      },
+      {
+        "path": "icons/icons-spec.md",
+        "size_bytes": 3219,
+        "size_human": "3KB"
+      },
+      {
+        "path": "icons/icons-sprite.svg",
+        "size_bytes": 2413,
+        "size_human": "2KB"
+      },
+      {
+        "path": "icons/lacrado.svg",
+        "size_bytes": 268,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/lancamento.svg",
+        "size_bytes": 295,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/nf.svg",
+        "size_bytes": 304,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/player.svg",
+        "size_bytes": 278,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/press.svg",
+        "size_bytes": 248,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/sacola.svg",
+        "size_bytes": 275,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/squad.svg",
+        "size_bytes": 300,
+        "size_human": "0KB"
+      },
+      {
+        "path": "icons/start.svg",
+        "size_bytes": 249,
+        "size_human": "0KB"
+      }
+    ],
+    "layouts": [
+      {
+        "path": "layouts/breakpoints.md",
+        "size_bytes": 3092,
+        "size_human": "3KB"
+      },
+      {
+        "path": "layouts/grid-system.png",
+        "size_bytes": 84605,
+        "size_human": "82KB"
+      }
+    ],
+    "logos": [
+      {
+        "path": "logos/logo-usage.md",
+        "size_bytes": 3448,
+        "size_human": "3KB"
+      },
+      {
+        "path": "logos/png/badge-circle-black.png",
+        "size_bytes": 105894,
+        "size_human": "103KB"
+      },
+      {
+        "path": "logos/png/badge-circle-orange.png",
+        "size_bytes": 104078,
+        "size_human": "101KB"
+      },
+      {
+        "path": "logos/png/logo-horizontal-black.png",
+        "size_bytes": 49128,
+        "size_human": "47KB"
+      },
+      {
+        "path": "logos/png/logo-horizontal-white.png",
+        "size_bytes": 37383,
+        "size_human": "36KB"
+      },
+      {
+        "path": "logos/png/logo-vertical-black.png",
+        "size_bytes": 117077,
+        "size_human": "114KB"
+      },
+      {
+        "path": "logos/png/logo-vertical-orange.png",
+        "size_bytes": 102790,
+        "size_human": "100KB"
+      },
+      {
+        "path": "logos/png/logo-vertical-outline-orange.png",
+        "size_bytes": 142738,
+        "size_human": "139KB"
+      },
+      {
+        "path": "logos/png/logo-vertical-white.png",
+        "size_bytes": 82132,
+        "size_human": "80KB"
+      },
+      {
+        "path": "logos/svg/badge-circle-black.svg",
+        "size_bytes": 25471,
+        "size_human": "24KB"
+      },
+      {
+        "path": "logos/svg/badge-circle-orange.svg",
+        "size_bytes": 26155,
+        "size_human": "25KB"
+      },
+      {
+        "path": "logos/svg/logo-horizontal-black.svg",
+        "size_bytes": 32401,
+        "size_human": "31KB"
+      },
+      {
+        "path": "logos/svg/logo-vertical-black.svg",
+        "size_bytes": 18138,
+        "size_human": "17KB"
+      },
+      {
+        "path": "logos/svg/logo-vertical-orange.svg",
+        "size_bytes": 19142,
+        "size_human": "18KB"
+      },
+      {
+        "path": "logos/svg/logo-vertical-outline-orange.svg",
+        "size_bytes": 29185,
+        "size_human": "28KB"
+      }
+    ],
+    "patterns": [
+      {
+        "path": "patterns/controllers-mosaic.svg",
+        "size_bytes": 544,
+        "size_human": "0KB"
+      },
+      {
+        "path": "patterns/diagonal-stripes.svg",
+        "size_bytes": 423,
+        "size_human": "0KB"
+      },
+      {
+        "path": "patterns/konami-dots.svg",
+        "size_bytes": 337,
+        "size_human": "0KB"
+      },
+      {
+        "path": "patterns/lifebar-repeat.svg",
+        "size_bytes": 415,
+        "size_human": "0KB"
+      },
+      {
+        "path": "patterns/patterns-preview.png",
+        "size_bytes": 88342,
+        "size_human": "86KB"
+      },
+      {
+        "path": "patterns/patterns-spec.md",
+        "size_bytes": 3092,
+        "size_human": "3KB"
+      },
+      {
+        "path": "patterns/pixel-grid.svg",
+        "size_bytes": 359,
+        "size_human": "0KB"
+      },
+      {
+        "path": "patterns/scanlines.svg",
+        "size_bytes": 349,
+        "size_human": "0KB"
+      }
+    ],
+    "reference-screenshots": [
+      {
+        "path": "reference-screenshots/easter-egg-tgt.jpg",
+        "size_bytes": 70654,
+        "size_human": "68KB"
+      },
+      {
+        "path": "reference-screenshots/hero.jpg",
+        "size_bytes": 71480,
+        "size_human": "69KB"
+      },
+      {
+        "path": "reference-screenshots/lock-screen.jpg",
+        "size_bytes": 65061,
+        "size_human": "63KB"
+      },
+      {
+        "path": "reference-screenshots/stage01-manifesto.jpg",
+        "size_bytes": 119118,
+        "size_human": "116KB"
+      },
+      {
+        "path": "reference-screenshots/stage02-essencia.jpg",
+        "size_bytes": 80167,
+        "size_human": "78KB"
+      },
+      {
+        "path": "reference-screenshots/stage05-logos.jpg",
+        "size_bytes": 107115,
+        "size_human": "104KB"
+      },
+      {
+        "path": "reference-screenshots/stage07-grid.jpg",
+        "size_bytes": 166812,
+        "size_human": "162KB"
+      },
+      {
+        "path": "reference-screenshots/stage08-paleta.jpg",
+        "size_bytes": 82228,
+        "size_human": "80KB"
+      },
+      {
+        "path": "reference-screenshots/stage09-tipo.jpg",
+        "size_bytes": 91895,
+        "size_human": "89KB"
+      },
+      {
+        "path": "reference-screenshots/stage10-iconografia.jpg",
+        "size_bytes": 100012,
+        "size_human": "97KB"
+      },
+      {
+        "path": "reference-screenshots/stage12-patterns.jpg",
+        "size_bytes": 220701,
+        "size_human": "215KB"
+      },
+      {
+        "path": "reference-screenshots/stage13-squad.jpg",
+        "size_bytes": 60916,
+        "size_human": "59KB"
+      },
+      {
+        "path": "reference-screenshots/stage14-cobranding.jpg",
+        "size_bytes": 111390,
+        "size_human": "108KB"
+      },
+      {
+        "path": "reference-screenshots/stage16-conteudo.jpg",
+        "size_bytes": 181897,
+        "size_human": "177KB"
+      },
+      {
+        "path": "reference-screenshots/stage17-feed.jpg",
+        "size_bytes": 147928,
+        "size_human": "144KB"
+      },
+      {
+        "path": "reference-screenshots/stage18-posts.jpg",
+        "size_bytes": 285826,
+        "size_human": "279KB"
+      },
+      {
+        "path": "reference-screenshots/stage19-fisicas.jpg",
+        "size_bytes": 134543,
+        "size_human": "131KB"
+      },
+      {
+        "path": "reference-screenshots/stage20-shop.jpg",
+        "size_bytes": 213996,
+        "size_human": "208KB"
+      }
+    ],
+    "tokens": [
+      {
+        "path": "tokens/colors.css",
+        "size_bytes": 5312,
+        "size_human": "5KB"
+      },
+      {
+        "path": "tokens/design-tokens.json",
+        "size_bytes": 8379,
+        "size_human": "8KB"
+      },
+      {
+        "path": "tokens/tailwind.config.js",
+        "size_bytes": 3744,
+        "size_human": "3KB"
+      }
+    ],
+    "typography": [
+      {
+        "path": "typography/fonts.md",
+        "size_bytes": 3317,
+        "size_human": "3KB"
+      },
+      {
+        "path": "typography/type-scale.png",
+        "size_bytes": 107611,
+        "size_human": "105KB"
+      },
+      {
+        "path": "typography/typography-spec.md",
+        "size_bytes": 3718,
+        "size_human": "3KB"
+      }
+    ],
+    "voice-content": [
+      {
+        "path": "voice-content/content-pillars.md",
+        "size_bytes": 4819,
+        "size_human": "4KB"
+      },
+      {
+        "path": "voice-content/copy-templates.md",
+        "size_bytes": 5772,
+        "size_human": "5KB"
+      },
+      {
+        "path": "voice-content/do-and-dont.md",
+        "size_bytes": 7211,
+        "size_human": "7KB"
+      },
+      {
+        "path": "voice-content/glossary.md",
+        "size_bytes": 5950,
+        "size_human": "5KB"
+      },
+      {
+        "path": "voice-content/tom-de-voz.md",
+        "size_bytes": 5317,
+        "size_human": "5KB"
+      }
+    ]
+  },
+  "stats": {
+    "total_files": 145,
+    "total_size_bytes": 20268967,
+    "total_size_human": "19MB (19793KB)"
+  }
+}

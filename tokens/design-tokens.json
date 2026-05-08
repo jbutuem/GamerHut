@@ -1,0 +1,210 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "GAMER HUT Design Tokens · v1.0 · 2026-05-07",
+  "color": {
+    "brand": {
+      "orange-sunset": {
+        "$value": "#F26641",
+        "$type": "color",
+        "$description": "Cor primária da marca · Pantone 7416 C · 30% da composição"
+      },
+      "mario-red": {
+        "$value": "#E1251B",
+        "$type": "color",
+        "$description": "Apoio · Pantone 485 C · alertas, drops urgentes"
+      },
+      "fast-skin": {
+        "$value": "#FFC27A",
+        "$type": "color",
+        "$description": "Apoio · Pantone 149 C · sucesso, premium, calor"
+      },
+      "sonic-blue": {
+        "$value": "#194F90",
+        "$type": "color",
+        "$description": "Apoio · Pantone 7686 C · trust, info, BGM toggle"
+      },
+      "black-mustache": {
+        "$value": "#000000",
+        "$type": "color",
+        "$description": "Base preta · 60% da composição"
+      },
+      "cool-gray": {
+        "$value": "#B1B1B1",
+        "$type": "color",
+        "$description": "Texto auxiliar, captions, disabled states"
+      }
+    },
+    "neutrals": {
+      "jet": {
+        "$value": "#0a0a0a",
+        "$type": "color",
+        "$description": "Card backgrounds em fundo preto"
+      },
+      "charcoal": {
+        "$value": "#1a1a1a",
+        "$type": "color",
+        "$description": "Hover states em cards"
+      },
+      "cream": {
+        "$value": "#F5F0E8",
+        "$type": "color",
+        "$description": "Texto sobre fundo escuro (alternativa ao branco)"
+      },
+      "mute": {
+        "$value": "#666666",
+        "$type": "color",
+        "$description": "Texto bem secundário"
+      }
+    },
+    "extensions": {
+      "orange-deep": { "$value": "#C94F2F", "$type": "color" },
+      "orange-light": { "$value": "#FF8866", "$type": "color" }
+    },
+    "semantic": {
+      "primary": { "$value": "{color.brand.orange-sunset}", "$type": "color" },
+      "background": { "$value": "{color.brand.black-mustache}", "$type": "color" },
+      "surface": { "$value": "{color.neutrals.jet}", "$type": "color" },
+      "text-primary": { "$value": "#FFFFFF", "$type": "color" },
+      "text-secondary": { "$value": "{color.brand.cool-gray}", "$type": "color" },
+      "text-muted": { "$value": "{color.neutrals.mute}", "$type": "color" },
+      "border": { "$value": "rgba(255,255,255,.08)", "$type": "color" },
+      "danger": { "$value": "{color.brand.mario-red}", "$type": "color" },
+      "success": { "$value": "{color.brand.fast-skin}", "$type": "color" },
+      "info": { "$value": "{color.brand.sonic-blue}", "$type": "color" }
+    },
+    "pantones": {
+      "$description": "Equivalentes Pantone para impressão",
+      "orange-sunset": "7416 C",
+      "mario-red": "485 C",
+      "fast-skin": "149 C",
+      "sonic-blue": "7686 C"
+    }
+  },
+  "color-distribution": {
+    "$description": "Regra 60-30-10 para composições visuais",
+    "primary": { "value": "60%", "color": "{color.brand.black-mustache}" },
+    "secondary": { "value": "30%", "color": "{color.brand.orange-sunset}" },
+    "accent": { "value": "10%", "color": "{color.brand.mario-red} | {color.brand.fast-skin} | {color.brand.sonic-blue}" }
+  },
+  "typography": {
+    "fontFamily": {
+      "display": {
+        "$value": "Russo One, Impact, sans-serif",
+        "$type": "fontFamily",
+        "$description": "Display · headlines, capas · sempre CAIXA ALTA"
+      },
+      "body": {
+        "$value": "Red Hat Display, system-ui, sans-serif",
+        "$type": "fontFamily",
+        "$description": "Body · texto corrido, descrições"
+      },
+      "arcade": {
+        "$value": "Press Start 2P, monospace",
+        "$type": "fontFamily",
+        "$description": "Arcade · tags, eyebrows, badges · NUNCA em corpo"
+      },
+      "mono": {
+        "$value": "JetBrains Mono, monospace",
+        "$type": "fontFamily",
+        "$description": "Monoespaçada · specs, EANs, códigos"
+      }
+    },
+    "fontWeight": {
+      "light":     { "$value": 300, "$type": "fontWeight" },
+      "regular":   { "$value": 400, "$type": "fontWeight" },
+      "medium":    { "$value": 500, "$type": "fontWeight" },
+      "bold":      { "$value": 700, "$type": "fontWeight" },
+      "extrabold": { "$value": 800, "$type": "fontWeight" },
+      "black":     { "$value": 900, "$type": "fontWeight" }
+    },
+    "fontSize": {
+      "display":  { "$value": "96px", "$type": "dimension" },
+      "h1":       { "$value": "72px", "$type": "dimension" },
+      "h2":       { "$value": "56px", "$type": "dimension" },
+      "h3":       { "$value": "40px", "$type": "dimension" },
+      "h4":       { "$value": "32px", "$type": "dimension" },
+      "h5":       { "$value": "24px", "$type": "dimension" },
+      "body-lg":  { "$value": "18px", "$type": "dimension" },
+      "body":     { "$value": "16px", "$type": "dimension" },
+      "body-sm":  { "$value": "14px", "$type": "dimension" },
+      "caption":  { "$value": "12px", "$type": "dimension" },
+      "arcade":   { "$value": "10px", "$type": "dimension" },
+      "arcade-sm":{ "$value": "9px",  "$type": "dimension" },
+      "mono":     { "$value": "12px", "$type": "dimension" }
+    },
+    "lineHeight": {
+      "display":  { "$value": "96px" },
+      "h1":       { "$value": "80px" },
+      "h2":       { "$value": "64px" },
+      "h3":       { "$value": "48px" },
+      "h4":       { "$value": "40px" },
+      "h5":       { "$value": "32px" },
+      "body-lg":  { "$value": "28px" },
+      "body":     { "$value": "24px" },
+      "body-sm":  { "$value": "20px" },
+      "caption":  { "$value": "16px" },
+      "arcade":   { "$value": "16px" }
+    },
+    "letterSpacing": {
+      "tight":  { "$value": "-0.02em" },
+      "headline": { "$value": "-0.01em" },
+      "normal": { "$value": "0" },
+      "mono":   { "$value": "0.04em" },
+      "wide":   { "$value": "0.06em" },
+      "arcade": { "$value": "0.18em" },
+      "arcade-loose": { "$value": "0.22em" }
+    }
+  },
+  "spacing": {
+    "$description": "Múltiplos de 4 · sempre",
+    "0":   { "$value": "0px",   "$type": "dimension" },
+    "1":   { "$value": "4px",   "$type": "dimension" },
+    "2":   { "$value": "8px",   "$type": "dimension" },
+    "3":   { "$value": "12px",  "$type": "dimension" },
+    "4":   { "$value": "16px",  "$type": "dimension" },
+    "6":   { "$value": "24px",  "$type": "dimension" },
+    "8":   { "$value": "32px",  "$type": "dimension" },
+    "12":  { "$value": "48px",  "$type": "dimension" },
+    "16":  { "$value": "64px",  "$type": "dimension" },
+    "24":  { "$value": "96px",  "$type": "dimension" },
+    "32":  { "$value": "128px", "$type": "dimension" }
+  },
+  "borderRadius": {
+    "$description": "A marca não usa rounded corners. Tudo retangular.",
+    "none":   { "$value": "0",    "$type": "dimension" },
+    "sharp":  { "$value": "0",    "$type": "dimension" },
+    "circle": { "$value": "50%",  "$type": "dimension", "$description": "Apenas para badges circulares" }
+  },
+  "borderWidth": {
+    "thin":   { "$value": "1px", "$type": "dimension" },
+    "medium": { "$value": "2px", "$type": "dimension" },
+    "thick":  { "$value": "3px", "$type": "dimension" }
+  },
+  "shadow": {
+    "card":  { "$value": "0 12px 32px rgba(0,0,0,.5)", "$type": "shadow" },
+    "glow":  { "$value": "0 0 24px rgba(242,102,65,.4)", "$type": "shadow" },
+    "neon":  { "$value": "0 0 32px rgba(242,102,65,.55), 0 0 64px rgba(242,102,65,.25)", "$type": "shadow" },
+    "danger-glow": { "$value": "0 0 24px rgba(225,37,27,.4)", "$type": "shadow" }
+  },
+  "breakpoint": {
+    "mobile":  { "$value": "520px",  "$type": "dimension" },
+    "tablet":  { "$value": "1024px", "$type": "dimension" },
+    "desktop": { "$value": "1280px", "$type": "dimension", "$description": "Container max-width" }
+  },
+  "grid": {
+    "mobile":  { "columns": 4,  "margin": "16px", "gutter": "12px" },
+    "tablet":  { "columns": 6,  "margin": "32px", "gutter": "18px" },
+    "desktop": { "columns": 12, "margin": "80px", "gutter": "24px" }
+  },
+  "easing": {
+    "out":   { "$value": "cubic-bezier(.16, 1, .3, 1)" },
+    "inOut": { "$value": "cubic-bezier(.45, .05, .25, 1)" },
+    "linear":{ "$value": "linear" }
+  },
+  "duration": {
+    "fast":   { "$value": "200ms" },
+    "normal": { "$value": "400ms" },
+    "slow":   { "$value": "600ms" },
+    "epic":   { "$value": "1200ms" }
+  }
+}

@@ -1,0 +1,2063 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GAMER HUT Brandbook v.2026.09 — Mídia Física Never Dies">
+<title>GAMER HUT · Brandbook v.2026.09</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,400;1,700&family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c-orange: #F26641;
+  --c-orange-deep: #c5421e;
+  --c-mario: #E1251B;
+  --c-skin: #FFC27A;
+  --c-sonic: #194F90;
+  --c-black: #000000;
+  --c-bg: #0a0a0a;
+  --c-surface: #131313;
+  --c-surface-2: #1a1a1a;
+  --c-light: #FFFFFF;
+  --c-cream: #F5F0E8;
+  --c-gray: #B1B1B1;
+  --c-gray-d: #666666;
+  --c-success: #4ade80;
+  --c-danger: #ef4444;
+  --f-display: 'Russo One', system-ui, sans-serif;
+  --f-body: 'Red Hat Display', system-ui, sans-serif;
+  --f-arcade: 'Press Start 2P', monospace;
+  --f-mono: 'JetBrains Mono', monospace;
+  --container: 1280px;
+  --pad-x: 80px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { background: var(--c-bg); color: var(--c-cream); font-family: var(--f-body); font-size: 16px; line-height: 1.7; overflow-x: hidden; position: relative; }
+body::before { content: ''; position: fixed; inset: 0; background: repeating-linear-gradient(0deg, transparent 0, transparent 2px, rgba(255,255,255,0.015) 2px, rgba(255,255,255,0.015) 3px); pointer-events: none; z-index: 1; }
+.container { max-width: var(--container); margin: 0 auto; padding: 0 var(--pad-x); }
+@media (max-width: 1024px) { :root { --pad-x: 32px; } }
+@media (max-width: 520px) { :root { --pad-x: 16px; } }
+
+.eyebrow { font-family: var(--f-arcade); font-size: 10px; letter-spacing: 0.22em; color: var(--c-orange); text-transform: uppercase; display: inline-block; margin-bottom: 16px; }
+h1, h2, h3, h4 { font-family: var(--f-display); text-transform: uppercase; letter-spacing: -0.01em; line-height: 1.05; }
+h1 { font-size: clamp(56px, 9vw, 96px); }
+h2 { font-size: clamp(40px, 6vw, 64px); margin-bottom: 24px; }
+h3 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 16px; }
+h4 { font-size: 24px; margin-bottom: 12px; }
+p { font-size: 16px; max-width: 65ch; margin-bottom: 16px; color: var(--c-gray); }
+p strong, p b { color: var(--c-cream); font-weight: 700; }
+.lead { font-size: 18px; line-height: 1.6; color: var(--c-cream); max-width: 65ch; }
+.mono { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.04em; color: var(--c-gray); }
+.hl-orange { color: var(--c-orange); }
+
+/* LOGO LABEL HIERARCHY (matching print) */
+.logo-label { text-align: center; padding: 20px 16px 24px; }
+.logo-label .l-title { font-family: var(--f-arcade); font-size: 11px; color: var(--c-orange); letter-spacing: 0.22em; display: block; margin-bottom: 10px; }
+.logo-label .l-sub { font-family: var(--f-mono); font-size: 10px; color: var(--c-cream); letter-spacing: 0.18em; text-transform: uppercase; display: block; margin-bottom: 6px; font-weight: 500; }
+.logo-label .l-meta { font-family: var(--f-mono); font-size: 9px; color: var(--c-gray-d); letter-spacing: 0.15em; text-transform: uppercase; display: block; }
+
+/* LOGO STAGE BLOCKS — print-style (alternating light/dark) */
+.logo-frame { display: flex; flex-direction: column; }
+/* Publisher cards (Stage 15) */
+.publisher-card { background: var(--c-surface); border: 1px solid #1a1a1a; padding: 32px 20px; text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden; }
+.publisher-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 0; background: var(--c-orange); transition: height 0.3s ease; }
+.publisher-card:hover { border-color: var(--c-orange); transform: translateY(-2px); }
+.publisher-card:hover::before { height: 100%; }
+.publisher-card .pub-logo { font-family: var(--f-display); font-size: 28px; color: var(--c-cream); letter-spacing: 0.04em; margin-bottom: 6px; line-height: 1; }
+.publisher-card .pub-meta { font-family: var(--f-arcade); font-size: 9px; color: var(--c-orange); letter-spacing: 0.22em; margin-bottom: 16px; }
+.publisher-card .pub-titles { font-family: var(--f-mono); font-size: 10px; color: var(--c-gray-d); letter-spacing: 0.1em; line-height: 1.6; }
+
+/* === PATTERN TILES (Stage 14) === */
+.pattern-tile { position: relative; aspect-ratio: 1; background: #000; border: 1px solid #1a1a1a; overflow: hidden; }
+.pattern-fill { position: absolute; inset: 0; }
+.pattern-label { position: absolute; top: 12px; left: 12px; font-family: 'Press Start 2P', monospace; font-size: 9px; color: var(--c-orange); letter-spacing: 0.18em; background: rgba(0,0,0,0.85); padding: 6px 10px; border: 1px solid rgba(242,102,65,0.3); z-index: 2; }
+
+/* 01 SIGNATURE — logos repetidos */
+.pattern-signature { background-image: url('assets/logos/logoverticaloutlineorange.png'); background-size: 64px 64px; background-repeat: repeat; opacity: 0.55; }
+
+/* 02 CRT — scanlines horizontais densas */
+.pattern-crt { background-image: repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(242,102,65,0.18) 3px, rgba(242,102,65,0.18) 4px); }
+
+/* 03 8-BIT — grid pixel */
+.pattern-8bit { background-image: linear-gradient(rgba(242,102,65,0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(242,102,65,0.22) 1px, transparent 1px); background-size: 24px 24px; }
+
+/* 04 HUD — cantos L-shape repetidos */
+.pattern-hud { background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80' fill='none'%3E%3Cpath d='M 12 12 L 12 22 M 12 12 L 22 12 M 68 12 L 58 12 M 68 12 L 68 22 M 12 68 L 12 58 M 12 68 L 22 68 M 68 68 L 58 68 M 68 68 L 68 58' stroke='%23F26641' stroke-width='1.5' stroke-linecap='square'/%3E%3Ccircle cx='40' cy='40' r='1.5' fill='%23F26641'/%3E%3C/svg%3E"); background-size: 80px 80px; background-repeat: repeat; opacity: 0.7; }
+
+/* 05 CAUTION — listras diagonais laranja/preto */
+.pattern-caution { background-image: repeating-linear-gradient(45deg, #F26641 0, #F26641 18px, #000 18px, #000 36px); opacity: 0.85; }
+
+/* 06 RETRO — dots alternados em escala pixel */
+.pattern-retro { background-image: radial-gradient(circle, #F26641 1.5px, transparent 1.7px), radial-gradient(circle, rgba(242,102,65,0.4) 1px, transparent 1.2px); background-size: 16px 16px, 16px 16px; background-position: 0 0, 8px 8px; }
+
+/* HAIL TO THE PLAN bonus stage */
+.hail-stage { background: linear-gradient(135deg, #0a0a0a 0%, #1a0a05 100%); border: 2px solid var(--c-orange); padding: 80px 48px; margin: 96px 0; text-align: center; position: relative; overflow: hidden; }
+.hail-stage::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0, transparent 40px, rgba(242,102,65,0.03) 40px, rgba(242,102,65,0.03) 41px); pointer-events: none; }
+.hail-stage .hail-warning { font-family: var(--f-arcade); font-size: 11px; color: var(--c-orange); letter-spacing: 0.22em; margin-bottom: 24px; opacity: 0.9; animation: hail-pulse 2s ease-in-out infinite; }
+@keyframes hail-pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+.hail-stage h2 { font-size: clamp(48px, 7vw, 96px); margin: 16px 0 32px; line-height: 1; }
+.hail-stage .hail-cta { display: inline-flex; flex-direction: column; align-items: center; gap: 8px; margin: 32px auto; padding: 24px 48px; background: var(--c-orange); color: #000; text-decoration: none; border: 2px solid var(--c-orange); transition: all 0.2s ease; position: relative; }
+.hail-stage .hail-cta:hover { background: transparent; color: var(--c-orange); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(242,102,65,0.4); }
+.hail-stage .hail-cta .cta-press { font-family: var(--f-arcade); font-size: 14px; letter-spacing: 0.18em; }
+.hail-stage .cta-meta { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.18em; opacity: 0.8; }
+.hail-stage .easter-hint { margin-top: 48px; font-family: var(--f-mono); font-size: 11px; color: var(--c-gray-d); letter-spacing: 0.1em; line-height: 1.8; }
+.hail-stage .key-combo { display: inline-block; padding: 4px 8px; background: rgba(242,102,65,0.15); border: 1px solid rgba(242,102,65,0.4); margin: 0 2px; font-size: 12px; color: var(--c-orange); }
+.logo-block { display: flex; align-items: center; justify-content: center; min-height: 280px; padding: 40px; }
+.logo-block.bg-light { background: var(--c-light); }
+.logo-block.bg-dark { background: var(--c-bg); }
+.logo-block.bg-cream { background: var(--c-cream); }
+.logo-block img { max-width: 65%; max-height: 70%; object-fit: contain; display: block; }
+.logo-block-sm { display: flex; align-items: center; justify-content: center; min-height: 200px; padding: 32px; }
+.logo-block-sm.bg-dark { background: var(--c-bg); }
+.logo-block-sm.bg-light { background: var(--c-light); }
+.logo-block-sm img { max-width: 55%; max-height: 70%; object-fit: contain; display: block; }
+
+/* LOCK SCREEN */
+#lock-screen { position: fixed; inset: 0; background: var(--c-bg); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 24px; }
+#lock-screen .lock-card { max-width: 480px; width: 100%; padding: 48px 40px; background: var(--c-surface); border: 1px solid #222; position: relative; }
+#lock-screen .lock-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--c-orange); }
+#lock-screen .ghut-mark { width: 88px; height: 88px; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; }
+#lock-screen .ghut-mark img { width: 100%; height: 100%; object-fit: contain; }
+#lock-screen h1 { font-size: 28px; text-align: center; margin-bottom: 8px; }
+#lock-screen .lock-tag { display: block; text-align: center; font-family: var(--f-arcade); font-size: 9px; color: var(--c-orange); letter-spacing: 0.2em; margin-bottom: 32px; }
+#lock-screen p { text-align: center; font-size: 14px; margin-bottom: 24px; }
+#lock-screen input { width: 100%; padding: 14px 16px; background: var(--c-bg); border: 1px solid #333; color: var(--c-cream); font-family: var(--f-mono); font-size: 14px; letter-spacing: 0.05em; outline: none; }
+#lock-screen input:focus { border-color: var(--c-orange); }
+#lock-screen button { width: 100%; margin-top: 12px; padding: 14px; background: var(--c-orange); color: #000; border: none; font-family: var(--f-arcade); font-size: 11px; letter-spacing: 0.18em; cursor: pointer; transition: background 0.2s; }
+#lock-screen button:hover { background: var(--c-orange-deep); color: #fff; }
+#lock-screen .lock-error { color: var(--c-danger); font-size: 12px; margin-top: 12px; text-align: center; min-height: 16px; }
+#lock-screen .lock-foot { margin-top: 32px; text-align: center; font-family: var(--f-arcade); font-size: 8px; color: #555; letter-spacing: 0.18em; }
+
+/* HUD top bar */
+.hud { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 12px var(--pad-x); display: grid; grid-template-columns: auto 1fr auto auto; gap: 32px; align-items: center; transition: opacity 0.3s; opacity: 0; }
+.hud.visible { opacity: 1; }
+.hud-logo { display: flex; align-items: center; gap: 12px; }
+.hud-logo .hud-mark { height: 32px; }
+.hud-logo .hud-mark img { height: 100%; width: auto; object-fit: contain; }
+.hud-logo .hud-meta { display: flex; flex-direction: column; line-height: 1.2; }
+.hud-logo .hud-meta .h-brand { font-family: var(--f-arcade); font-size: 10px; color: var(--c-orange); letter-spacing: 0.18em; }
+.hud-logo .hud-meta .h-ver { font-family: var(--f-arcade); font-size: 8px; color: var(--c-gray-d); letter-spacing: 0.18em; margin-top: 4px; }
+.hud-nav { display: flex; gap: 18px; flex-wrap: nowrap; overflow: hidden; justify-content: center; }
+.hud-nav a { font-family: var(--f-arcade); font-size: 8px; letter-spacing: 0.18em; color: var(--c-gray); text-decoration: none; transition: color 0.2s; text-transform: uppercase; white-space: nowrap; }
+.hud-nav a:hover, .hud-nav a.active { color: var(--c-orange); }
+.hud-scroll { display: flex; align-items: center; gap: 10px; }
+.hud-scroll-label { font-family: var(--f-arcade); font-size: 8px; color: var(--c-orange); letter-spacing: 0.2em; }
+.hud-scroll-track { width: 100px; height: 4px; background: rgba(255,255,255,0.1); position: relative; }
+.hud-scroll-fill { position: absolute; inset: 0 auto 0 0; background: var(--c-orange); width: 0%; transition: width 0.1s; }
+.hud-tools { display: flex; gap: 12px; align-items: center; }
+.hud-toggle { background: transparent; border: 1px solid var(--c-orange); color: var(--c-orange); padding: 6px 12px; font-family: var(--f-arcade); font-size: 8px; letter-spacing: 0.18em; cursor: pointer; transition: all 0.2s; }
+.hud-toggle:hover { background: var(--c-orange); color: #000; }
+@media (max-width: 1024px) { .hud-nav, .hud-scroll { display: none; } }
+
+/* HERO */
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 120px var(--pad-x) 80px; position: relative; overflow: hidden; }
+.hero-content { position: relative; z-index: 2; max-width: var(--container); margin: 0 auto; width: 100%; }
+.hero-controller { position: absolute; right: -100px; top: 50%; transform: translateY(-50%); width: 600px; height: 600px; opacity: 0.06; z-index: 1; pointer-events: none; }
+.hero-controller svg { width: 100%; height: 100%; }
+.hero h1 { font-size: clamp(60px, 14vw, 180px); line-height: 0.92; margin-bottom: 24px; }
+.hero h1 .never { color: var(--c-orange); }
+.hero p.lead { font-size: 18px; max-width: 600px; color: var(--c-gray); margin-bottom: 40px; }
+.hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 48px 0; max-width: 700px; }
+.hero-stat .num { font-family: var(--f-display); font-size: 36px; color: var(--c-orange); display: block; line-height: 1; }
+.hero-stat .lbl { font-family: var(--f-arcade); font-size: 8px; letter-spacing: 0.2em; color: var(--c-gray-d); margin-top: 8px; display: block; }
+.hero-cta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.btn-primary { background: var(--c-orange); color: #000; padding: 16px 28px; font-family: var(--f-arcade); font-size: 11px; letter-spacing: 0.2em; border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s; }
+.btn-primary:hover { background: var(--c-orange-deep); color: #fff; }
+.btn-ghost { background: transparent; color: var(--c-cream); padding: 16px 28px; border: 1px solid rgba(255,255,255,0.2); font-family: var(--f-arcade); font-size: 11px; letter-spacing: 0.2em; cursor: pointer; text-decoration: none; transition: all 0.2s; }
+.btn-ghost:hover { border-color: var(--c-orange); color: var(--c-orange); }
+.scroll-down { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); font-family: var(--f-arcade); font-size: 8px; letter-spacing: 0.25em; color: var(--c-gray-d); animation: bounce 2s infinite; }
+@keyframes bounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
+
+/* SECTIONS */
+.section { padding: 120px var(--pad-x); position: relative; max-width: var(--container); margin: 0 auto; }
+.stage { padding: 96px var(--pad-x) 64px; max-width: var(--container); margin: 0 auto; }
+.stage-head { display: grid; grid-template-columns: 200px 1fr; gap: 48px; margin-bottom: 64px; align-items: start; }
+@media (max-width: 1024px) { .stage-head { grid-template-columns: 1fr; gap: 24px; } }
+.stage-numwrap { font-family: var(--f-display); font-size: 140px; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--c-orange); }
+.stage-numwrap.solid { color: var(--c-orange); -webkit-text-stroke: 0; }
+.stage-headcol h2 { margin-bottom: 16px; }
+.stage-headcol p { font-size: 18px; line-height: 1.6; max-width: 640px; }
+.divider { height: 1px; background: linear-gradient(to right, rgba(255,255,255,0.1), transparent); margin: 32px 0; }
+
+.stage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 64px; }
+@media (max-width: 1024px) { .stage-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .stage-grid { grid-template-columns: 1fr; } }
+.stage-card { padding: 24px; background: var(--c-surface); border: 1px solid #1f1f1f; transition: all 0.2s; text-decoration: none; color: inherit; display: block; position: relative; overflow: hidden; }
+.stage-card:hover { border-color: var(--c-orange); transform: translateY(-2px); }
+.stage-card::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 2px; background: var(--c-orange); transition: width 0.3s; }
+.stage-card:hover::before { width: 100%; }
+.stage-card .num { font-family: var(--f-arcade); font-size: 9px; color: var(--c-orange); letter-spacing: 0.2em; }
+.stage-card .ttl { font-family: var(--f-display); font-size: 22px; margin-top: 12px; line-height: 1.1; }
+.stage-card .desc { font-family: var(--f-arcade); font-size: 8px; color: var(--c-gray-d); letter-spacing: 0.18em; margin-top: 12px; text-transform: uppercase; }
+
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 1024px) { .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); } .grid-2 { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+.card { padding: 32px; background: var(--c-surface); border: 1px solid #1f1f1f; }
+.card-acc { padding: 32px; background: var(--c-surface); border-top: 3px solid var(--c-orange); }
+.card-num { font-family: var(--f-mono); font-size: 11px; color: var(--c-orange); letter-spacing: 0.1em; margin-bottom: 16px; }
+.card h3 { font-size: 24px; margin-bottom: 12px; }
+.card h4 { font-size: 18px; }
+.card p { font-size: 14px; line-height: 1.65; }
+.card .use { margin-top: 20px; padding-top: 16px; border-top: 1px dashed rgba(255,255,255,0.1); font-family: var(--f-mono); font-size: 12px; color: var(--c-gray); }
+.card .use::before { content: 'USE'; display: block; color: var(--c-success); font-size: 10px; letter-spacing: 0.15em; margin-bottom: 6px; }
+.card .avoid { margin-top: 16px; font-family: var(--f-mono); font-size: 12px; color: var(--c-gray-d); }
+.card .avoid::before { content: 'EVITE'; display: block; color: var(--c-danger); font-size: 10px; letter-spacing: 0.15em; margin-bottom: 6px; }
+
+.list-use, .list-avoid { padding: 24px; background: var(--c-surface); position: relative; padding-left: 28px; }
+.list-use { border-left: 2px solid var(--c-success); }
+.list-avoid { border-left: 2px solid var(--c-danger); }
+.list-use h4, .list-avoid h4 { font-family: var(--f-arcade); font-size: 9px; letter-spacing: 0.2em; margin-bottom: 16px; }
+.list-use h4 { color: var(--c-success); }
+.list-avoid h4 { color: var(--c-danger); }
+.list-use ul, .list-avoid ul { list-style: none; }
+.list-use li, .list-avoid li { font-family: var(--f-mono); font-size: 13px; padding: 6px 0; color: var(--c-gray); display: flex; gap: 8px; align-items: start; line-height: 1.5; }
+.list-use li::before { content: '✓'; color: var(--c-success); flex-shrink: 0; }
+.list-avoid li::before { content: '✗'; color: var(--c-danger); flex-shrink: 0; }
+
+.tag { display: inline-block; padding: 4px 10px; background: var(--c-orange); color: #000; font-family: var(--f-arcade); font-size: 8px; letter-spacing: 0.18em; }
+.tag.mario { background: var(--c-mario); color: #fff; }
+.tag.sonic { background: var(--c-sonic); color: #fff; }
+.tag.skin { background: var(--c-skin); color: #000; }
+.tag.gray { background: var(--c-gray); color: #000; }
+
+.audio-toggle { position: fixed; bottom: 24px; right: 24px; z-index: 90; background: var(--c-orange); color: #000; padding: 10px 16px; font-family: var(--f-arcade); font-size: 9px; letter-spacing: 0.18em; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.4); transition: all 0.2s; }
+.audio-toggle:hover { background: var(--c-orange-deep); color: #fff; }
+.audio-toggle.off { background: var(--c-surface-2); color: var(--c-gray); }
+
+.text-center { text-align: center; }
+.mt-4 { margin-top: 32px; } .mt-6 { margin-top: 48px; } .mt-8 { margin-top: 64px; }
+.mb-4 { margin-bottom: 32px; } .mb-6 { margin-bottom: 48px; }
+
+pre.codeblock { background: var(--c-surface); padding: 24px; font-family: var(--f-mono); font-size: 12px; line-height: 1.7; color: var(--c-gray); overflow-x: auto; border-left: 2px solid var(--c-orange); white-space: pre-wrap; word-break: break-word; }
+
+.bigband { padding: 48px var(--pad-x); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); margin: 64px 0; max-width: var(--container); margin-left: auto; margin-right: auto; }
+.bigband .section-num { font-family: var(--f-arcade); font-size: 9px; color: var(--c-orange); letter-spacing: 0.22em; }
+.bigband h2 { margin: 12px 0 0; font-size: clamp(36px, 6vw, 64px); }
+</style>
+</head>
+<body>
+
+<!-- LOCK SCREEN -->
+<div id="lock-screen">
+  <div class="lock-card">
+    <div class="ghut-mark"><img src="assets/logos/logoverticalorange.png" alt="Gamer Hut"></div>
+    <h1>BRANDBOOK</h1>
+    <span class="lock-tag">▸ ACCESS REQUIRED</span>
+    <p>Esse brandbook é vivo e contém informações estratégicas. Digite a senha pra continuar.</p>
+    <input type="password" id="lock-input" placeholder="senha de unlock" autocomplete="off">
+    <button id="lock-btn">PRESS START</button>
+    <div class="lock-error" id="lock-error">&nbsp;</div>
+    <div class="lock-foot">▸ V.2026.09 · CONFIDENTIAL</div>
+  </div>
+</div>
+
+<!-- HUD top bar -->
+<nav class="hud" id="hud">
+  <div class="hud-logo">
+    <div class="hud-mark"><img src="assets/logos/logohorizontalwhite.png" alt="Gamer Hut"></div>
+    <div class="hud-meta">
+      <span class="h-brand">BRANDBOOK</span>
+      <span class="h-ver">V.2026.09</span>
+    </div>
+  </div>
+  <div class="hud-nav">
+    <a href="#stage-01" class="nav-link">01 · MANIFESTO</a>
+    <a href="#stage-02" class="nav-link">02 · ESSÊNCIA</a>
+    <a href="#stage-03" class="nav-link">03 · VOZ</a>
+    <a href="#stage-07" class="nav-link">07 · LOGO</a>
+    <a href="#stage-10" class="nav-link">10 · CORES</a>
+    <a href="#stage-11" class="nav-link">11 · TIPO</a>
+    <a href="#stage-15" class="nav-link">15 · PUBLISHERS</a>
+    <a href="#hail" class="nav-link" style="color: var(--c-orange);">▸ BONUS</a>
+    <a href="#stage-19" class="nav-link">19 · FEED</a>
+    <a href="#stage-24" class="nav-link">24 · AUDIÊNCIA</a>
+  </div>
+  <div class="hud-scroll">
+    <span class="hud-scroll-label">SCROLL</span>
+    <div class="hud-scroll-track"><div class="hud-scroll-fill" id="lifebar"></div></div>
+  </div>
+  <div class="hud-tools">
+    <button class="hud-toggle" id="audio-toggle-hud">♪ ON</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-controller">
+    <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 30 Q15 30 15 50 L15 80 Q15 100 35 100 L165 100 Q185 100 185 80 L185 50 Q185 30 170 30 L130 30 L120 20 L80 20 L70 30 Z" stroke="#F26641" stroke-width="2" fill="none"/>
+      <circle cx="60" cy="60" r="6" fill="#F26641"/>
+      <circle cx="140" cy="60" r="6" fill="#F26641"/>
+      <circle cx="155" cy="55" r="3" fill="#F26641"/>
+      <circle cx="155" cy="65" r="3" fill="#F26641"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <span class="eyebrow">▸ PLAYER 1 · READY</span>
+    <h1>MÍDIA FÍSICA<br><span class="never">NEVER DIES</span></h1>
+    <p class="lead">Brandbook oficial GAMER HUT — a casa de quem entende de games. Original e lacrado, do jeito certo. Nada de console, nada de pirata, nada de mané. Só o que importa: o jogo na sua mão.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">26</span><span class="lbl">STAGES</span></div>
+      <div class="hero-stat"><span class="num">9</span><span class="lbl">PUBLISHERS</span></div>
+      <div class="hero-stat"><span class="num">3</span><span class="lbl">AUDIÊNCIAS</span></div>
+      <div class="hero-stat"><span class="num">0</span><span class="lbl">PIRATA</span></div>
+    </div>
+    <div class="hero-cta">
+      <a href="#stage-01" class="btn-primary">▶ PRESS START</a>
+      <a href="#index" class="btn-ghost">SELECT STAGE</a>
+    </div>
+  </div>
+  <div class="scroll-down">SCROLL TO CONTINUE ▼</div>
+</section>
+
+<!-- INDEX -->
+<section class="section" id="index">
+  <span class="eyebrow">▸ SELECT STAGE</span>
+  <h2>26 CAPÍTULOS<br><span class="hl-orange">/ 1 BRAND</span></h2>
+  <p class="lead">Esse brandbook é dividido em 26 stages. Sem chefão final, sem hard mode. Só a verdade da marca, do começo ao fim.</p>
+  <div class="stage-grid">
+    <a href="#stage-01" class="stage-card"><span class="num">STAGE 01</span><div class="ttl">MANIFESTO</div><div class="desc">QUEM SOMOS · POR QUÊ</div></a>
+    <a href="#stage-02" class="stage-card"><span class="num">STAGE 02</span><div class="ttl">ESSÊNCIA</div><div class="desc">MÍDIA FÍSICA NEVER DIES</div></a>
+    <a href="#stage-03" class="stage-card"><span class="num">STAGE 03</span><div class="ttl">TOM DE VOZ</div><div class="desc">5 PILARES</div></a>
+    <a href="#stage-04" class="stage-card"><span class="num">STAGE 04</span><div class="ttl">SENTIMENTOS</div><div class="desc">5 SENTIMENTOS DA MARCA</div></a>
+    <a href="#stage-05" class="stage-card"><span class="num">STAGE 05</span><div class="ttl">PILARES DE NEGÓCIO</div><div class="desc">4 FRENTES</div></a>
+    <a href="#stage-06" class="stage-card"><span class="num">STAGE 06</span><div class="ttl">BENCHMARKS</div><div class="desc">5 REFERÊNCIAS DE TOM</div></a>
+    <a href="#stage-07" class="stage-card"><span class="num">STAGE 07</span><div class="ttl">LOGO SYSTEM</div><div class="desc">7 VARIAÇÕES OFICIAIS</div></a>
+    <a href="#stage-08" class="stage-card"><span class="num">STAGE 08</span><div class="ttl">USOS DO LOGO</div><div class="desc">FAÇA · NÃO FAÇA</div></a>
+    <a href="#stage-09" class="stage-card"><span class="num">STAGE 09</span><div class="ttl">GRID & LAYOUT</div><div class="desc">12 COL · SPACING</div></a>
+    <a href="#stage-10" class="stage-card"><span class="num">STAGE 10</span><div class="ttl">PALETA</div><div class="desc">6 CORES · 60-30-10</div></a>
+    <a href="#stage-11" class="stage-card"><span class="num">STAGE 11</span><div class="ttl">TIPOGRAFIA</div><div class="desc">4 FAMÍLIAS</div></a>
+    <a href="#stage-12" class="stage-card"><span class="num">STAGE 12</span><div class="ttl">ICONOGRAFIA</div><div class="desc">SISTEMA HUD</div></a>
+    <a href="#stage-13" class="stage-card"><span class="num">STAGE 13</span><div class="ttl">GRAFISMOS</div><div class="desc">HUD · SCANLINES</div></a>
+    <a href="#stage-14" class="stage-card"><span class="num">STAGE 14</span><div class="ttl">PATTERNS</div><div class="desc">6 TEXTURAS</div></a>
+    <a href="#stage-15" class="stage-card"><span class="num">STAGE 15</span><div class="ttl">PUBLISHERS</div><div class="desc">9 PUBLISHERS PARCEIRAS</div></a>
+    <a href="#stage-16" class="stage-card"><span class="num">STAGE 16</span><div class="ttl">CO-BRANDING</div><div class="desc">LOCKUP COM PUBLISHERS</div></a>
+    <a href="#stage-17" class="stage-card"><span class="num">STAGE 17</span><div class="ttl">VOZ EM AÇÃO</div><div class="desc">CASOS DE USO</div></a>
+    <a href="#stage-18" class="stage-card"><span class="num">STAGE 18</span><div class="ttl">PILARES DE CONTEÚDO</div><div class="desc">DROP · REVIEW · TIP · LORE</div></a>
+    <a href="#stage-19" class="stage-card"><span class="num">STAGE 19</span><div class="ttl">FEED INSTAGRAM</div><div class="desc">GRID 3×3</div></a>
+    <a href="#stage-20" class="stage-card"><span class="num">STAGE 20</span><div class="ttl">POSTS</div><div class="desc">DROP · PRÉ-VENDA</div></a>
+    <a href="#stage-21" class="stage-card"><span class="num">STAGE 21</span><div class="ttl">APLICAÇÕES FÍSICAS</div><div class="desc">CARTÃO · CAMISETA · SACOLA</div></a>
+    <a href="#stage-22" class="stage-card"><span class="num">STAGE 22</span><div class="ttl">E-COMMERCE</div><div class="desc">MOCK LOJA ONLINE</div></a>
+    <a href="#stage-23" class="stage-card"><span class="num">STAGE 23</span><div class="ttl">TIPS DE COPY</div><div class="desc">13 BLOCOS PRONTOS</div></a>
+    <a href="#stage-24" class="stage-card"><span class="num">STAGE 24</span><div class="ttl">AUDIÊNCIA POR GERAÇÃO</div><div class="desc">GEN X · MILL · GEN Z</div></a>
+    <a href="#stage-25" class="stage-card"><span class="num">STAGE 25</span><div class="ttl">ARQUÉTIPO</div><div class="desc">SÁBIO + CARA COMUM</div></a>
+    <a href="#stage-26" class="stage-card"><span class="num">STAGE 26</span><div class="ttl">GAME OVER</div><div class="desc">CRÉDITOS · VERSÃO</div></a>
+    <a href="#hail" class="stage-card" style="border-color: var(--c-orange);"><span class="num" style="color: var(--c-orange);">▸ BONUS</span><div class="ttl">HAIL TO THE PLAN</div><div class="desc">PRESS START · SECRET LEVEL</div></a>
+  </div>
+</section>
+
+<div class="bigband">
+  <div class="section-num">▸ CHAPTER A</div>
+  <h2>BRAND <span class="hl-orange">IDENTITY</span></h2>
+  <p class="mono mt-4">// Stages 01-06 · Quem somos, como falamos, o que transparecemos</p>
+</div>
+
+<!-- STAGE 01 - MANIFESTO -->
+<section class="stage" id="stage-01">
+  <div class="stage-head">
+    <div class="stage-numwrap">01</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 01 · MANIFESTO</span>
+      <h2>SOMOS<br><span class="hl-orange">OS EXPERTS</span></h2>
+      <p class="lead">Criado por quem joga, coleciona e respeita o jogo, aqui a gente ainda olha pra capa e sente alguma coisa. A GAMER HUT existe pra um motivo só: colocar o jogo certo na mão certa.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-2">
+    <div class="card-acc">
+      <div class="card-num">// O QUE ENTREGAMOS</div>
+      <h3>Mídia física <span class="hl-orange">original e lacrada</span></h3>
+      <p>Direto do publisher, com NF emitida na hora. Não vendemos console. Não vendemos usado. Não vendemos código. Só o que importa: o jogo lacrado pra colocar na sua estante.</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">// PARA QUEM</div>
+      <h3>A galera que <span class="hl-orange">entende</span></h3>
+      <p>Player que coleciona. Pai que ensina o filho a abrir um drop. Veterano que ainda guarda a caixa do PS1. Gen Z que descobriu que mídia física tem alma. A Hut é pra todos esses.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STAGE 02 - ESSÊNCIA -->
+<section class="stage" id="stage-02">
+  <div class="stage-head">
+    <div class="stage-numwrap">02</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 02 · ESSÊNCIA</span>
+      <h2>MÍDIA FÍSICA<br><span class="hl-orange">NEVER DIES</span></h2>
+      <p class="lead">Não é só uma frase de marketing. É um posicionamento. Em 2026, mídia física virou nicho de luxo (3% da receita PS, mas em alta no colecionismo BR). A Hut aposta nesse nicho — sem hesitar.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div style="background: var(--c-surface); padding: 64px 48px; text-align: center; border: 2px solid var(--c-orange);">
+    <div class="mono" style="margin-bottom: 24px;">// FRASE-ÂNCORA HERO</div>
+    <h2 style="font-size: clamp(48px, 8vw, 96px); margin: 0;">MÍDIA FÍSICA<br><span class="hl-orange">NEVER DIES_</span></h2>
+    <div class="mono mt-4">· LET THE GAMES BEGIN ·</div>
+  </div>
+  <div class="grid-3 mt-6">
+    <div class="card">
+      <div class="card-num">A · O QUE A FRASE DIZ</div>
+      <p>Servidor cai. Conta é hackeada. Plataforma morre. Estante <strong>fica</strong>. Mídia física é o jogo na sua mão, sem dependência.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">B · O QUE NÃO DIZ</div>
+      <p>Não é antidigital. A Hut respeita o digital. Mas escolhe o lado físico — porque é o que faz sentido pra quem coleciona.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">C · COMO USAR</div>
+      <p>Hero de página, fim de Reels, selo de embalagem, bordão de fechamento de e-mail. Sempre em CAIXA ALTA, sempre com peso.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STAGE 03 - TOM DE VOZ -->
+<section class="stage" id="stage-03">
+  <div class="stage-head">
+    <div class="stage-numwrap solid">03</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 03 · TOM DE VOZ</span>
+      <h2>PROFISSIONAL<br><span class="hl-orange">SEM PERDER GAMER</span></h2>
+      <p class="lead">Cinco pilares regem cada caption, cada legenda, cada e-mail, cada DM. Não são opcionais — são o filtro que separa um post da Hut de um post de qualquer e-commerce de jogos.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-2">
+    <div class="card-acc">
+      <div class="card-num">PILAR 01 / 05</div>
+      <h3>Descontraído e <span class="hl-orange">empolgante</span></h3>
+      <p>Energia de drop noturno, não de loja de shopping. Empolgação real, sem precisar gritar pra provar.</p>
+      <div class="use">"Chegou. Press start."<br>"Drop pesado essa semana."<br>"Bora? Vai voar."</div>
+      <div class="avoid">"É IMPERDÍVEL!!!"<br>"Imperdível oferta especial!"<br>"Aproveite agora mesmo!"</div>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">PILAR 02 / 05</div>
+      <h3>Próximo da <span class="hl-orange">comunidade</span></h3>
+      <p>Fala de player pra player. "A gente" no lugar de "a empresa". O cliente é "você", "[Nome]" ou "galera".</p>
+      <div class="use">"Boa, [Nome]. Tô aqui pra ajudar."<br>"A galera que entende sabe."<br>"Comenta aí qual te marcou."</div>
+      <div class="avoid">"Prezado cliente, viemos por meio desta…"<br>"Nosso público-alvo demonstra interesse…"<br>"Convidamos os senhores."</div>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">PILAR 03 / 05</div>
+      <h3>Transparente e <span class="hl-orange">direto</span></h3>
+      <p>Procedência, prazo, pagamento, troca — tudo às claras, antes do CTA.</p>
+      <div class="use">"Original. Lacrado. Com NF."<br>"Direto do publisher pra sua estante."<br>"A gente errou aqui. Vou resolver."</div>
+      <div class="avoid">"100% confiável e seguro!"<br>"Procedência garantida pela equipe."<br>"Conforme nossa política interna…"</div>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">PILAR 04 / 05</div>
+      <h3>Instigante e <span class="hl-orange">envolvente</span></h3>
+      <p>Storytelling antes do CTA. A Hut dá contexto, posiciona como quem entende, e <em>só depois</em> abre a venda.</p>
+      <div class="use">"GTA VI. Sete anos depois de RDR2."<br>"Steelbook em edição limitada. Quando acabar, acabou."<br>"28 anos depois, ainda joga muito."</div>
+      <div class="avoid">"GTA VI no estoque, compre já!"<br>"Restam apenas 3 unidades, corra!"<br>"O melhor jogo de Castlevania!"</div>
+    </div>
+  </div>
+  <div class="card-acc mt-4">
+    <div class="card-num">PILAR 05 / 05 · O EQUILÍBRIO</div>
+    <h3>Profissional sem perder a <span class="hl-orange">personalidade gamer</span></h3>
+    <p>Quando o assunto é venda, prazo, atendimento ou parceria com publisher — postura. Quando o assunto é jogo, cultura, comunidade — gíria, empolgação, irreverência. Nunca os dois ao mesmo tempo, nunca um sem o outro.</p>
+    <div class="grid-2 mt-4">
+      <div>
+        <div class="mono" style="color: var(--c-orange); margin-bottom: 8px;">// ATENDIMENTO DM</div>
+        <p style="color: var(--c-cream); font-size: 14px;">"Olá, [Nome]. Vou checar o status do seu pedido. Volto em 2h com posição."</p>
+      </div>
+      <div>
+        <div class="mono" style="color: var(--c-orange); margin-bottom: 8px;">// DROP NO FEED</div>
+        <p style="color: var(--c-cream); font-size: 14px;">"GTA VI chegou. Bora ver isso?"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAGE 04 - SENTIMENTOS -->
+<section class="stage" id="stage-04">
+  <div class="stage-head">
+    <div class="stage-numwrap">04</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 04 · O QUE A MARCA TRANSPARECE</span>
+      <h2>5 SENTIMENTOS<br><span class="hl-orange">EM CADA PEÇA</span></h2>
+      <p class="lead">Tom de voz é <em>como</em> a Hut fala. Esses 5 sentimentos são <em>o que a Hut faz a galera sentir</em>. Cada peça precisa transparecer ao menos 2.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-3">
+    <div class="card-acc">
+      <div class="card-num">01 · SEGURANÇA</div>
+      <h3>Sabe que tá <span class="hl-orange">protegido</span></h3>
+      <p style="font-family: var(--f-mono); font-size: 13px;">Procedência + NF + lacre.</p>
+      <p class="mt-4" style="font-style: italic;">"Original. Lacrado. Com NF."</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">02 · EXCLUSIVIDADE</div>
+      <h3>Sabe que <span class="hl-orange">é poucos</span></h3>
+      <p style="font-family: var(--f-mono); font-size: 13px;">Edição limitada com número real.</p>
+      <p class="mt-4" style="font-style: italic;">"Quando acabar, acabou."</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">03 · PAIXÃO</div>
+      <h3>Sente que <span class="hl-orange">os caras amam</span></h3>
+      <p style="font-family: var(--f-mono); font-size: 13px;">Lore + horas jogadas + clássicos.</p>
+      <p class="mt-4" style="font-style: italic;">"A gente joga, coleciona, respeita."</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">04 · INOVAÇÃO</div>
+      <h3>Tá no <span class="hl-orange">drop certo</span></h3>
+      <p style="font-family: var(--f-mono); font-size: 13px;">Drop · lançamento · pré-venda.</p>
+      <p class="mt-4" style="font-style: italic;">"Press start no [JOGO]."</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">05 · CREDIBILIDADE</div>
+      <h3>Confia <span class="hl-orange">de cara</span></h3>
+      <p style="font-family: var(--f-mono); font-size: 13px;">Publishers parceiros + números.</p>
+      <p class="mt-4" style="font-style: italic;">"9 publishers no squad."</p>
+    </div>
+    <div class="card" style="background: var(--c-orange); color: #000;">
+      <div class="mono" style="color: #000;">// REGRA</div>
+      <h3 style="color: #000;">2 mínimo · 5 ideal</h3>
+      <p style="color: #000; font-size: 14px;">Toda peça transparece <strong>ao menos 2</strong>. Drops big-name carregam os 5.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STAGE 05 - PILARES DE NEGÓCIO -->
+<section class="stage" id="stage-05">
+  <div class="stage-head">
+    <div class="stage-numwrap">05</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 05 · PILARES DE NEGÓCIO</span>
+      <h2>4 FRENTES<br><span class="hl-orange">DA MARCA</span></h2>
+      <p class="lead">Onde a Hut atua, com que postura. Cada pilar guia decisões diferentes — de produto, contratação, parceria, comunicação.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-2">
+    <div class="card-acc">
+      <div class="card-num">01 · NEGÓCIO</div>
+      <h3>Transparência e seriedade <span class="hl-orange">com ousadia</span></h3>
+      <p>NF na hora. Garantia de origem. Suporte rápido. Mas sem virar burocrata.</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">02 · OFERTA</div>
+      <h3>Segurança e <span class="hl-orange">tranquilidade</span></h3>
+      <p>Tudo lacrado, tudo original, tudo direto do publisher. Sem usado, sem pirata.</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">03 · TIME</div>
+      <h3>Empolgação genuína por <span class="hl-orange">proporcionar diversão</span></h3>
+      <p>Squad de gamers que entende do que vende. Atendimento como conversa entre players, não SAC.</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">04 · SOCIEDADE</div>
+      <h3>Criando <span class="hl-orange">oportunidades</span></h3>
+      <p>Hut como hub. Comunidade ativa. Drops que viram evento. Cultura gamer BR ganhando espaço.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STAGE 06 - BENCHMARKS -->
+<section class="stage" id="stage-06">
+  <div class="stage-head">
+    <div class="stage-numwrap">06</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 06 · SQUAD DE BENCHMARKS</span>
+      <h2>5 REFERÊNCIAS<br><span class="hl-orange">EXTERNAS</span></h2>
+      <p class="lead">A Hut não copia ninguém. Mas se inspira em quem faz bem feito, em uma dimensão específica de cada um.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-3">
+    <div class="card-acc">
+      <div class="card-num">01 · NINTENDO BR</div>
+      <h3>Calor + <span class="hl-orange">gíria leve</span></h3>
+      <p>Melhor squad fazendo a ponte "publisher global → comunidade BR". Captions curtas, capa forte.</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">02 · RAZER</div>
+      <h3>Tipografia + <span class="hl-orange">secura técnica</span></h3>
+      <p>Define o ceiling de "gamer hardcore premium". A Hut quer essa autoridade técnica.</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">03 · NUUVEM</div>
+      <h3>Slang + <span class="hl-orange">energia de drop</span></h3>
+      <p>Loja-especialista BR como a Hut. Mesmo público, tom irmão.</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">04 · HYPERX</div>
+      <h3>Performance + <span class="hl-orange">evento</span></h3>
+      <p>"Gamer competitivo sério" — vira pegada de colecionismo como ato cultural.</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">05 · DISNEY+ BR</div>
+      <h3>Storytelling + <span class="hl-orange">afeto de IP</span></h3>
+      <p>"Respeito de IP virar afeto de fã". Publishers viram personagens, não só logos.</p>
+    </div>
+    <div class="card" style="background: var(--c-orange); color: #000;">
+      <div class="mono" style="color: #000;">// FÓRMULA HUT</div>
+      <pre style="background: transparent; color: #000; font-size: 11px; padding: 0; border: none; line-height: 1.6;">NINTENDO  → calor + gíria
+RAZER     → tipografia
+NUUVEM    → slang + drop
+HYPERX    → performance
+DISNEY+   → storytelling
+─────────────────────
+HUT = mídia física no centro</pre>
+    </div>
+  </div>
+</section>
+
+<div class="bigband">
+  <div class="section-num">▸ CHAPTER B</div>
+  <h2>VISUAL <span class="hl-orange">SYSTEM</span></h2>
+  <p class="mono mt-4">// Stages 07-14 · Logo, paleta, tipografia, grid, ícones, patterns</p>
+</div>
+
+<!-- STAGE 07 - LOGO SYSTEM (matching print) -->
+<section class="stage" id="stage-07">
+  <div class="stage-head">
+    <div class="stage-numwrap solid">07</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 07 · LOGO SYSTEM</span>
+      <h2>7 VARIAÇÕES<br><span class="hl-orange">OFICIAIS</span></h2>
+      <p class="lead">Sistema de logo com 7 versões — cada uma com função específica. Sempre com margem mínima de 1× altura da letra "G". Aplicação correta começa pela escolha da variação certa pro fundo.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- Linha principal: 2 cards grandes lado a lado -->
+  <div class="grid-2">
+    <div class="logo-frame">
+      <div class="logo-block bg-light"><img src="assets/logos/logoverticalblack.png" alt="Logo primário"></div>
+      <div class="logo-label">
+        <span class="l-title">01 · LOGO PRIMÁRIO</span>
+        <span class="l-sub">VERTICAL · BLACK ON LIGHT</span>
+        <span class="l-meta">USO PADRÃO · MÁXIMA LEGIBILIDADE</span>
+      </div>
+    </div>
+    <div class="logo-frame">
+      <div class="logo-block bg-dark"><img src="assets/logos/logoverticalorange.png" alt="Logo assinatura"></div>
+      <div class="logo-label">
+        <span class="l-title">02 · LOGO ASSINATURA</span>
+        <span class="l-sub">VERTICAL · ORANGE ON DARK</span>
+        <span class="l-meta">DARK MODE · DROPS · HEROS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Linha 2: horizontal light/dark -->
+  <div class="grid-2 mt-6">
+    <div class="logo-frame">
+      <div class="logo-block bg-light"><img src="assets/logos/logohorizontalblack.png" alt="Logo horizontal"></div>
+      <div class="logo-label">
+        <span class="l-title">03 · LOGO HORIZONTAL</span>
+        <span class="l-sub">LOCKUP WIDE · BLACK</span>
+        <span class="l-meta">HEADERS · ASSINATURA EM E-MAIL</span>
+      </div>
+    </div>
+    <div class="logo-frame">
+      <div class="logo-block bg-dark"><img src="assets/logos/logohorizontalwhite.png" alt="Logo horizontal dark"></div>
+      <div class="logo-label">
+        <span class="l-title">04 · LOGO HORIZONTAL DARK</span>
+        <span class="l-sub">LOCKUP WIDE · WHITE ON DARK</span>
+        <span class="l-meta">FUNDO ESCURO · NAV · FOOTERS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Linha 3: 3 cards menores - badges + outline -->
+  <div class="grid-3 mt-6">
+    <div class="logo-frame">
+      <div class="logo-block-sm bg-dark"><img src="assets/logos/badgecircleblack.png" alt="Badge black"></div>
+      <div class="logo-label">
+        <span class="l-title">05 · BADGE BLACK</span>
+        <span class="l-sub">SELO CIRCULAR · BLACK</span>
+        <span class="l-meta">AVATAR · STAMPS · FAVICON</span>
+      </div>
+    </div>
+    <div class="logo-frame">
+      <div class="logo-block-sm bg-dark"><img src="assets/logos/badgecircleorange.png" alt="Badge orange"></div>
+      <div class="logo-label">
+        <span class="l-title">06 · BADGE ORANGE</span>
+        <span class="l-sub">SELO CIRCULAR · ORANGE</span>
+        <span class="l-meta">AVATAR INSTAGRAM · PINS</span>
+      </div>
+    </div>
+    <div class="logo-frame">
+      <div class="logo-block-sm bg-dark"><img src="assets/logos/logoverticaloutlineorange.png" alt="Logo outline"></div>
+      <div class="logo-label">
+        <span class="l-title">07 · OUTLINE</span>
+        <span class="l-sub">VERTICAL · STROKE ORANGE</span>
+        <span class="l-meta">WATERMARK · PATTERNS · BG</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAGE 08 - USOS DO LOGO -->
+<section class="stage" id="stage-08">
+  <div class="stage-head">
+    <div class="stage-numwrap">08</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 08 · USOS DO LOGO</span>
+      <h2>FAÇA<br><span class="hl-orange">/ NÃO FAÇA</span></h2>
+      <p class="lead">Regras claras pra preservar a identidade. O que pode, o que não pode — com exemplos concretos.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-2">
+    <div class="list-use">
+      <h4>FAÇA</h4>
+      <ul>
+        <li>Use a versão preta em fundos claros</li>
+        <li>Use a versão branca/laranja em fundos escuros</li>
+        <li>Mantenha margem mínima de 1× altura do "G"</li>
+        <li>Tamanho mínimo digital: 24px de altura</li>
+        <li>Tamanho mínimo impresso: 12mm de altura</li>
+        <li>Em fundo busy: sempre com fundo de proteção sólido</li>
+      </ul>
+    </div>
+    <div class="list-avoid">
+      <h4>NÃO FAÇA</h4>
+      <ul>
+        <li>Distorcer ou esticar (mantém proporção sempre)</li>
+        <li>Rotacionar fora dos 0°, 90°, 180°, 270°</li>
+        <li>Aplicar gradient ou efeito (lisos só)</li>
+        <li>Mudar cor pra fora da paleta oficial</li>
+        <li>Sobrepor em fundo busy sem proteção</li>
+        <li>Usar em tamanho menor que 24px (digital) / 12mm (impresso)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- STAGE 09 - GRID & LAYOUT -->
+<section class="stage" id="stage-09">
+  <div class="stage-head">
+    <div class="stage-numwrap">09</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 09 · GRID & LAYOUT</span>
+      <h2>12 COLUNAS<br><span class="hl-orange">SPACING SCALE</span></h2>
+      <p class="lead">Sistema de grid em 12 colunas com gutters de 24px. Container máximo: 1280px. Padding lateral: 80px desktop, 32px tablet, 16px mobile.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-num">DESKTOP</div><h3>12 colunas</h3><p>Container 1280px · gutter 24px · padding 80px lateral.</p></div>
+    <div class="card"><div class="card-num">TABLET</div><h3>6 colunas</h3><p>Breakpoint &lt;1024px · gutter 16px · padding 32px lateral.</p></div>
+    <div class="card"><div class="card-num">MOBILE</div><h3>4 colunas</h3><p>Breakpoint &lt;520px · gutter 12px · padding 16px lateral.</p></div>
+  </div>
+  <div class="mt-6">
+    <h4>SPACING SCALE</h4>
+    <pre class="codeblock">--space-xs:  4px
+--space-sm:  8px
+--space-md:  16px
+--space-lg:  24px
+--space-xl:  32px
+--space-2xl: 48px
+--space-3xl: 64px
+--space-4xl: 96px
+--space-5xl: 128px</pre>
+  </div>
+</section>
+
+<!-- STAGE 10 - PALETA -->
+<section class="stage" id="stage-10">
+  <div class="stage-head">
+    <div class="stage-numwrap solid">10</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 10 · PALETA</span>
+      <h2>6 CORES<br><span class="hl-orange">REGRA 60-30-10</span></h2>
+      <p class="lead">Black Mustache domina (60%). Orange Sunset acentua (30%). As 4 outras somam 10% combinadas — apoio, alerta, info, neutros.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-3">
+    <div class="logo-frame">
+      <div style="background: #000; padding: 48px 32px; min-height: 220px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #222;">
+        <div class="mono" style="color: #fff; font-size: 11px;">60%</div>
+        <div>
+          <h3 style="color: #fff; margin: 0;">Black Mustache</h3>
+          <div class="mono" style="color: rgba(255,255,255,0.5); margin-top: 8px;">#000000 · DOMINA</div>
+        </div>
+      </div>
+    </div>
+    <div class="logo-frame">
+      <div style="background: var(--c-orange); padding: 48px 32px; min-height: 220px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="mono" style="color: #000; font-size: 11px;">30%</div>
+        <div>
+          <h3 style="color: #000; margin: 0;">Orange Sunset</h3>
+          <div class="mono" style="color: rgba(0,0,0,0.7); margin-top: 8px;">#F26641 · PANTONE 7416</div>
+        </div>
+      </div>
+    </div>
+    <div class="logo-frame">
+      <div style="background: var(--c-mario); padding: 48px 32px; min-height: 220px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="mono" style="color: #fff; font-size: 11px;">10%</div>
+        <div>
+          <h3 style="color: #fff; margin: 0;">Mario Red</h3>
+          <div class="mono" style="color: rgba(255,255,255,0.7); margin-top: 8px;">#E1251B · PANTONE 485</div>
+        </div>
+      </div>
+    </div>
+    <div class="logo-frame">
+      <div style="background: var(--c-skin); padding: 48px 32px; min-height: 220px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="mono" style="color: #000; font-size: 11px;">10%</div>
+        <div>
+          <h3 style="color: #000; margin: 0;">Fast Skin</h3>
+          <div class="mono" style="color: rgba(0,0,0,0.7); margin-top: 8px;">#FFC27A · PANTONE 149</div>
+        </div>
+      </div>
+    </div>
+    <div class="logo-frame">
+      <div style="background: var(--c-sonic); padding: 48px 32px; min-height: 220px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="mono" style="color: #fff; font-size: 11px;">10%</div>
+        <div>
+          <h3 style="color: #fff; margin: 0;">Sonic Blue</h3>
+          <div class="mono" style="color: rgba(255,255,255,0.7); margin-top: 8px;">#194F90 · PANTONE 7686</div>
+        </div>
+      </div>
+    </div>
+    <div class="logo-frame">
+      <div style="background: var(--c-gray); padding: 48px 32px; min-height: 220px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="mono" style="color: #000; font-size: 11px;">NEUTRO</div>
+        <div>
+          <h3 style="color: #000; margin: 0;">Cool Gray</h3>
+          <div class="mono" style="color: rgba(0,0,0,0.7); margin-top: 8px;">#B1B1B1 · NEUTROS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAGE 11 - TIPOGRAFIA -->
+<section class="stage" id="stage-11">
+  <div class="stage-head">
+    <div class="stage-numwrap">11</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 11 · TIPOGRAFIA</span>
+      <h2>4 FAMÍLIAS<br><span class="hl-orange">EM HARMONIA</span></h2>
+      <p class="lead">Russo One pro display (CAIXA ALTA). Red Hat Display pro corpo. Press Start 2P pra acentos retrô (NUNCA em corpo). JetBrains Mono pra specs.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-2">
+    <div class="logo-frame">
+      <div style="background: var(--c-bg); padding: 48px 32px; min-height: 240px; display: flex; flex-direction: column; justify-content: center;">
+        <span style="font-family: var(--f-display); font-size: 56px; line-height: 1; color: var(--c-cream);">RUSSO ONE</span>
+      </div>
+      <div class="logo-label">
+        <span class="l-title">01 · DISPLAY</span>
+        <span class="l-sub">RUSSO ONE · 400</span>
+        <span class="l-meta">HEADLINES CAIXA ALTA · LETTER-SPACING -0.01EM</span>
+      </div>
+    </div>
+    <div class="logo-frame">
+      <div style="background: var(--c-bg); padding: 48px 32px; min-height: 240px; display: flex; flex-direction: column; justify-content: center;">
+        <span style="font-family: var(--f-body); font-size: 40px; font-weight: 700; color: var(--c-cream); line-height: 1.1;">Red Hat Display</span>
+      </div>
+      <div class="logo-label">
+        <span class="l-title">02 · BODY</span>
+        <span class="l-sub">RED HAT DISPLAY · 300/400/500/700/800/900</span>
+        <span class="l-meta">TEXTO CORRIDO · ITALICS · VERSÁTIL</span>
+      </div>
+    </div>
+    <div class="logo-frame">
+      <div style="background: var(--c-bg); padding: 48px 32px; min-height: 240px; display: flex; flex-direction: column; justify-content: center;">
+        <span style="font-family: var(--f-arcade); font-size: 18px; letter-spacing: 0.22em; color: var(--c-orange);">PRESS START 2P</span>
+      </div>
+      <div class="logo-label">
+        <span class="l-title">03 · ARCADE</span>
+        <span class="l-sub">PRESS START 2P · 400</span>
+        <span class="l-meta">TAGS · EYEBROWS · BADGES · LETTER 0.22EM</span>
+      </div>
+    </div>
+    <div class="logo-frame">
+      <div style="background: var(--c-bg); padding: 48px 32px; min-height: 240px; display: flex; flex-direction: column; justify-content: center;">
+        <span style="font-family: var(--f-mono); font-size: 28px; font-weight: 500; color: var(--c-cream);">JetBrains Mono</span>
+      </div>
+      <div class="logo-label">
+        <span class="l-title">04 · MONO</span>
+        <span class="l-sub">JETBRAINS MONO · 400/500/700</span>
+        <span class="l-meta">SPECS · EAN · CÓDIGOS · TRACKING</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAGE 12 - ICONOGRAFIA -->
+<section class="stage" id="stage-12">
+  <div class="stage-head">
+    <div class="stage-numwrap">12</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 12 · ICONOGRAFIA</span>
+      <h2>SISTEMA HUD<br><span class="hl-orange">18 ÍCONES</span></h2>
+      <p class="lead">Estilo HUD de jogo retrô. Linhas finas (1.5-2px), cantos retos, geometria simples. Sempre em laranja ou branco — nunca em gradient.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="card">
+    <p class="mono">// 18 ícones em SVG · controle, disco, joystick, troféu, lacre, NF, drop, estoque, escudo, raio, coração, fone, target, cesta, tag, fogo, estrela, pin · disponíveis em <code>/icons/</code> quando squad de design entregar.</p>
+  </div>
+</section>
+
+<!-- STAGE 13 - GRAFISMOS -->
+<section class="stage" id="stage-13">
+  <div class="stage-head">
+    <div class="stage-numwrap">13</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 13 · GRAFISMOS</span>
+      <h2>HUD · SCANLINES<br><span class="hl-orange">PIXEL TRAILS</span></h2>
+      <p class="lead">Elementos gráficos recorrentes que dão personalidade gamer ao layout — sem virar caricatura.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-num">01 · SCANLINES</div><h3>Linhas de varredura</h3><p>Repeating linear gradient horizontal a 2-3px. Aplicado em background com opacity 0.015. Nostalgia CRT sem cansar.</p></div>
+    <div class="card"><div class="card-num">02 · HUD BARS</div><h3>Lifebar pulsante</h3><p>Barra horizontal no topo do HUD. Largura corresponde ao % de scroll. Acento laranja. Movimento sutil.</p></div>
+    <div class="card"><div class="card-num">03 · CONTROLLER GHOST</div><h3>Controle silhueta</h3><p>Silhueta de controle no hero, opacity 0.06. Motivo recorrente — também aparece em badges e swatches.</p></div>
+  </div>
+</section>
+
+<!-- STAGE 14 - PATTERNS -->
+<section class="stage" id="stage-14">
+  <div class="stage-head">
+    <div class="stage-numwrap">14</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 14 · PATTERNS & TEXTURAS</span>
+      <h2>SEIS<br><span class="hl-orange">TEXTURAS OFICIAIS</span></h2>
+      <p class="lead">Patterns repetíveis pra fundo de feed, papel de presente, embalagem, banner, papel timbrado. Tudo derivado do DNA visual: controle, scanline, pixel, lifebar.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="grid-3" style="gap: 16px;">
+
+    <!-- 01 SIGNATURE: logos repetidos -->
+    <div class="pattern-tile">
+      <div class="pattern-fill pattern-signature"></div>
+      <span class="pattern-label">SIGNATURE</span>
+    </div>
+
+    <!-- 02 CRT: scanlines horizontais densas -->
+    <div class="pattern-tile">
+      <div class="pattern-fill pattern-crt"></div>
+      <span class="pattern-label">CRT</span>
+    </div>
+
+    <!-- 03 8-BIT: grid pixel -->
+    <div class="pattern-tile">
+      <div class="pattern-fill pattern-8bit"></div>
+      <span class="pattern-label">8-BIT</span>
+    </div>
+
+    <!-- 04 HUD: cantos L-shape -->
+    <div class="pattern-tile">
+      <div class="pattern-fill pattern-hud"></div>
+      <span class="pattern-label">HUD</span>
+    </div>
+
+    <!-- 05 CAUTION: listras diagonais laranja/preto -->
+    <div class="pattern-tile">
+      <div class="pattern-fill pattern-caution"></div>
+      <span class="pattern-label">CAUTION</span>
+    </div>
+
+    <!-- 06 RETRO: dots/pixel alternado -->
+    <div class="pattern-tile">
+      <div class="pattern-fill pattern-retro"></div>
+      <span class="pattern-label">RETRO</span>
+    </div>
+
+  </div>
+
+  <div class="grid-3 mt-6" style="gap: 16px;">
+    <div class="card-acc">
+      <div class="card-num">▸ FEED · STORIES</div>
+      <p>Pattern <strong>01</strong> e <strong>02</strong> como fundo de Reels e capa de destaques. Sempre com overlay escuro 60% pra texto não competir.</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">▸ EMBALAGEM</div>
+      <p>Sacola laranja: pattern <strong>03</strong> em sutil opacidade no verso. Caixa de envio: pattern <strong>04</strong> ou <strong>05</strong> nas laterais.</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">▸ PAPELARIA</div>
+      <p>Verso de cartão de visita: pattern <strong>06</strong> em escala pequena. Papel timbrado: <strong>02</strong> no rodapé.</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">▸ EVENTO & BOOTH</div>
+      <p>Banner roll-up de 2m: pattern <strong>05</strong> nas faixas inferiores. Backdrop de eventos: <strong>01</strong> em mosaico grande.</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">▸ WEB & APP</div>
+      <p>Loading state: pattern <strong>02</strong> animado. Empty state: <strong>03</strong> com opacidade 8%. Footer da loja: <strong>04</strong>.</p>
+    </div>
+    <div class="card-acc" style="border-color: rgba(225,37,27,0.4);">
+      <div class="card-num" style="color: var(--c-red);">▸ NÃO USAR</div>
+      <p>Em corpo de texto. Em ícones. Em logos. Em fundos de produto (que precisam respirar). Sempre como elemento de apoio, nunca protagonista.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STAGE 15 - PUBLISHERS -->
+<section class="stage" id="stage-15">
+  <div class="stage-head">
+    <div class="stage-numwrap">15</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 15 · PUBLISHERS</span>
+      <h2>NOSSOS PARCEIROS<br><span class="hl-orange">OFICIAIS</span></h2>
+      <p class="lead">Trabalhamos com os principais publishers oficiais do mercado. Cada parceria garante os principais títulos, lançamentos e edições especiais — direto da fonte, sem terceiros, sem importação cinza.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-3" style="gap: 16px;">
+    <div class="publisher-card">
+      <div class="pub-logo">NINTENDO</div>
+      <div class="pub-meta">DESDE 1889</div>
+      <div class="pub-titles">SWITCH · SWITCH 2 · POKÉMON · MARIO · ZELDA</div>
+    </div>
+    <div class="publisher-card">
+      <div class="pub-logo">SONY PS</div>
+      <div class="pub-meta">PLAYSTATION</div>
+      <div class="pub-titles">PS5 · PS4 · GOD OF WAR · SPIDER-MAN</div>
+    </div>
+    <div class="publisher-card">
+      <div class="pub-logo">MICROSOFT</div>
+      <div class="pub-meta">XBOX STUDIOS</div>
+      <div class="pub-titles">SERIES X/S · HALO · FORZA · GEARS</div>
+    </div>
+    <div class="publisher-card">
+      <div class="pub-logo">CAPCOM</div>
+      <div class="pub-meta">RESIDENT · STREET</div>
+      <div class="pub-titles">RESIDENT EVIL · MONSTER HUNTER · STREET FIGHTER</div>
+    </div>
+    <div class="publisher-card">
+      <div class="pub-logo">ROCKSTAR</div>
+      <div class="pub-meta">GTA · RDR</div>
+      <div class="pub-titles">GTA · RED DEAD · BULLY · MAX PAYNE</div>
+    </div>
+    <div class="publisher-card">
+      <div class="pub-logo">KONAMI</div>
+      <div class="pub-meta">METAL GEAR · PES</div>
+      <div class="pub-titles">METAL GEAR · CASTLEVANIA · SILENT HILL · PES</div>
+    </div>
+    <div class="publisher-card">
+      <div class="pub-logo">SEGA</div>
+      <div class="pub-meta">SONIC · YAKUZA</div>
+      <div class="pub-titles">SONIC · YAKUZA · PERSONA · TOTAL WAR</div>
+    </div>
+    <div class="publisher-card">
+      <div class="pub-logo">BANDAI N.</div>
+      <div class="pub-meta">TEKKEN · DARK SOULS</div>
+      <div class="pub-titles">TEKKEN · SOULS · TALES · DRAGON BALL</div>
+    </div>
+    <div class="publisher-card">
+      <div class="pub-logo">UBISOFT</div>
+      <div class="pub-meta">ASSASSIN'S CREED</div>
+      <div class="pub-titles">ASSASSIN'S CREED · FAR CRY · WATCH DOGS</div>
+    </div>
+  </div>
+  <p class="mono mt-6" style="font-size: 11px; color: var(--c-gray-d); text-align: center; line-height: 1.7;">
+    // Todas as marcas, jogos e personagens citados são propriedade de seus respectivos publishers.<br>
+    A Gamer Hut é uma rede oficial autorizada e atua exclusivamente com mídia física original e lacrada.
+  </p>
+</section>
+
+<!-- STAGE 16 - CO-BRANDING -->
+<section class="stage" id="stage-16">
+  <div class="stage-head">
+    <div class="stage-numwrap">16</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 16 · CO-BRANDING</span>
+      <h2>LOCKUP<br><span class="hl-orange">COM PUBLISHERS</span></h2>
+      <p class="lead">Lockup horizontal é a regra. Logo Hut + barra divisória + logo publisher. Sempre lado a lado, mesma altura visual.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="logo-frame">
+    <div class="logo-block bg-dark">
+      <div style="display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;">
+        <img src="assets/logos/logohorizontalwhite.png" alt="Gamer Hut" style="height: 56px; width: auto;">
+        <div style="width: 1px; height: 56px; background: var(--c-orange);"></div>
+        <div style="font-family: var(--f-display); color: var(--c-cream); font-size: 24px; letter-spacing: 0.05em;">[ PUBLISHER ]</div>
+      </div>
+    </div>
+    <div class="logo-label">
+      <span class="l-title">LOCKUP HORIZONTAL OFICIAL</span>
+      <span class="l-sub">DISTRIBUIDORA OFICIAL AUTORIZADA</span>
+      <span class="l-meta">REQUER ACORDO FORMAL VIGENTE</span>
+    </div>
+  </div>
+  <div class="grid-2 mt-6">
+    <div class="list-use">
+      <h4>FAÇA</h4>
+      <ul>
+        <li>Lockup horizontal sempre — mesma altura visual</li>
+        <li>Barra divisória vertical em laranja entre logos</li>
+        <li>Distância igual entre logos e barra</li>
+        <li>Sempre incluir frase "Distribuidora oficial autorizada"</li>
+      </ul>
+    </div>
+    <div class="list-avoid">
+      <h4>NÃO FAÇA</h4>
+      <ul>
+        <li>Sobreposição de logos</li>
+        <li>Logo Hut maior que logo publisher (ou vice-versa)</li>
+        <li>Co-branding sem acordo formal vigente</li>
+        <li>Mudar a cor do logo do publisher</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="bigband">
+  <div class="section-num">▸ CHAPTER C</div>
+  <h2>VOICE IN <span class="hl-orange">ACTION</span></h2>
+  <p class="mono mt-4">// Stages 17-23 · Tom aplicado · pilares de conteúdo · feed · tips</p>
+</div>
+
+<!-- STAGE 17 - VOZ EM AÇÃO -->
+<section class="stage" id="stage-17">
+  <div class="stage-head">
+    <div class="stage-numwrap">17</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 17 · VOZ EM AÇÃO</span>
+      <h2>CASOS<br><span class="hl-orange">DE USO</span></h2>
+      <p class="lead">Como os 5 pilares se aplicam em situações reais — drop, atendimento, e-mail, parceria.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-num">CENÁRIO 01 · DROP NIGHT</div>
+      <h4>Drop noturno · Gen Z core</h4>
+      <pre class="codeblock">▶ DROP NIGHT · sexta · 20h
+GTA VI Steelbook · 50 unidades BR.
+Quem foi? Quem foi.
+→ link na bio.</pre>
+      <p class="mono mt-4" style="color: var(--c-success);">PILARES: Descontraído · Próximo · Instigante</p>
+    </div>
+    <div class="card">
+      <div class="card-num">CENÁRIO 02 · ATENDIMENTO</div>
+      <h4>Cliente reclamando de prazo</h4>
+      <pre class="codeblock">Foi mal, [Nome]. Vou olhar
+isso pra você. Me dá um segundo.
+
+[após verificar]
+Encontrei. Atrasou 2 dias.
+Tracking atualizado: [link].
+Pra compensar: 15% off no próximo.</pre>
+      <p class="mono mt-4" style="color: var(--c-success);">PILARES: Próximo · Transparente · Profissional</p>
+    </div>
+    <div class="card">
+      <div class="card-num">CENÁRIO 03 · E-MAIL DE ERRO</div>
+      <h4>Pedido extraviado</h4>
+      <pre class="codeblock">A gente errou aqui. Seu pedido
+#1234 foi extraviado.
+
+O que tá rolando agora:
+▸ Reposição em 24h, prioritária
+▸ Frete grátis no próximo
+Squad da Hut</pre>
+      <p class="mono mt-4" style="color: var(--c-success);">PILARES: Transparente · Próximo · Profissional</p>
+    </div>
+    <div class="card">
+      <div class="card-num">CENÁRIO 04 · PRESS RELEASE</div>
+      <h4>Anúncio de parceria</h4>
+      <pre class="codeblock">A Gamer Hut é, a partir
+de 2026, distribuidora oficial
+autorizada Konami no Brasil.
+
+Toda mídia física, lacrada,
+com NF — direto do publisher
+pra sua estante.</pre>
+      <p class="mono mt-4" style="color: var(--c-success);">PILARES: Profissional · Transparente</p>
+    </div>
+  </div>
+</section>
+
+<!-- STAGE 18 - PILARES DE CONTEÚDO -->
+<section class="stage" id="stage-18">
+  <div class="stage-head">
+    <div class="stage-numwrap">18</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 18 · PILARES DE CONTEÚDO</span>
+      <h2>5 PILARES<br><span class="hl-orange">DA HUT</span></h2>
+      <p class="lead">Distribuição editorial do feed. Drop puxa volume, Review constrói autoridade, Tip educa, Lore cultiva paixão, Resumo fecha a semana.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-3">
+    <div class="card-acc">
+      <div class="card-num">35% · 3-4×/SEMANA</div>
+      <h3>🟧 Drop & <span class="hl-orange">Lançamento</span></h3>
+      <p>Anúncio de jogo novo, pré-venda, edição limitada, drop secreto. Energia de evento. CTA direto.</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">20% · 1×/SEMANA · TER 19H</div>
+      <h3>🟦 Review <span class="hl-orange">do Squad</span></h3>
+      <p>Análise honesta. Squad jogou X horas, dá nota, aponta o que decepciona. Carrossel longo.</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">20% · 2×/SEMANA</div>
+      <h3>🟨 Tip <span class="hl-orange">da Hut</span></h3>
+      <p>Educacional. "Como cuidar de coleção", "Por que pré-venda compensa", "Steelbook vale o preço?".</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">15% · 1×/SEMANA · DOM 20H</div>
+      <h3>🟥 Lore & <span class="hl-orange">Curiosidade</span></h3>
+      <p>História da indústria, easter egg, bastidor. Cultiva paixão. Sem CTA de venda.</p>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">10% · 1×/SEMANA · SAB 9H</div>
+      <h3>⬜ Resumo <span class="hl-orange">da Semana</span></h3>
+      <p>Recap dos drops. Carrossel 3-5 slides. Quem perdeu, atualiza.</p>
+    </div>
+    <div class="card" style="background: var(--c-orange); color: #000;">
+      <div class="mono" style="color: #000;">// REGRA</div>
+      <h3 style="color: #000;">Nem toda peça é venda</h3>
+      <p style="color: #000;">Equilíbrio: 35% drop · 65% comunidade. Sem essa proporção, vira spam de loja.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STAGE 19 - FEED INSTAGRAM -->
+<section class="stage" id="stage-19">
+  <div class="stage-head">
+    <div class="stage-numwrap">19</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 19 · FEED INSTAGRAM</span>
+      <h2>GRID 3×3<br><span class="hl-orange">MODULAR</span></h2>
+      <p class="lead">Feed em padrão 3×3 reordenável. Capas de jogo, drops, posts editorial. Cards quadrados (1080×1080), padrão visual consistente.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; max-width: 600px;">
+    <img src="assets/games/gta5sq.jpg" alt="" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+    <img src="assets/games/zeldatotksq.jpg" alt="" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+    <img src="assets/games/rdr2sq.jpg" alt="" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+    <img src="assets/games/mgsdeltasq.jpg" alt="" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+    <img src="assets/games/gowsq.jpg" alt="" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+    <img src="assets/games/pokemonzasq.jpg" alt="" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+    <img src="assets/games/acblackflagsq.jpg" alt="" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+    <img src="assets/games/soniccwsq.jpg" alt="" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+    <img src="assets/games/gowragnaroksq.jpg" alt="" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+  </div>
+  <p class="mono mt-6">// Capas reais · drops da semana · alternância de jogo, post editorial e tip mantém o feed dinâmico.</p>
+</section>
+
+<!-- STAGE 20 - POSTS -->
+<section class="stage" id="stage-20">
+  <div class="stage-head">
+    <div class="stage-numwrap">20</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 20 · POSTS</span>
+      <h2>3 FORMATOS<br><span class="hl-orange">PRONTOS</span></h2>
+      <p class="lead">Drop · Pré-venda · Story. Templates editáveis com variáveis em [colchetes].</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-num">DROP · CARROSSEL 4 SLIDES</div>
+      <pre class="codeblock">SLIDE 1 · capa
+[Foto do jogo lacrado]
+TÍTULO: [JOGO]
+
+SLIDE 2 · contexto
+[História breve]
+
+SLIDE 3 · diferenciação
+Versão BR · lacrada · com NF.
+
+SLIDE 4 · CTA
+R$ [VALOR] — quando acabar, acabou.
+→ link na bio.</pre>
+    </div>
+    <div class="card">
+      <div class="card-num">PRÉ-VENDA · CAPTION</div>
+      <pre class="codeblock">Pré-venda aberta.
+
+[JOGO] · [PUBLISHER]
+Lançamento: [DATA]
+Pague agora, recebe no dia.
+
+Os 100 primeiros levam [BRINDE].
+→ link na bio.</pre>
+    </div>
+    <div class="card">
+      <div class="card-num">STORY · 4 SLIDES · 15s</div>
+      <pre class="codeblock">SLIDE 1 · 3s
+[Capa + tag laranja "▶ DROP"]
+
+SLIDE 2 · 4s
+[JOGO] / chegou.
+
+SLIDE 3 · 5s
+▸ Edição: [STEELBOOK]
+▸ Plataforma: [PS5]
+▸ R$ [VALOR]
+
+SLIDE 4 · 3s
+press start →
+[sticker de link]</pre>
+    </div>
+  </div>
+</section>
+
+<!-- STAGE 21 - APLICAÇÕES FÍSICAS -->
+<section class="stage" id="stage-21">
+  <div class="stage-head">
+    <div class="stage-numwrap">21</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 21 · APLICAÇÕES FÍSICAS</span>
+      <h2>6 PEÇAS<br><span class="hl-orange">DA MARCA</span></h2>
+      <p class="lead">Cartão · camiseta · sacola · banner · etiqueta · crachá. Cada aplicação usa a versão correta de logo pelo contraste do material — preto sobre claro, branco/laranja sobre escuro.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="grid-3" style="gap: 24px;">
+
+    <!-- 01 · CARTÃO DE VISITA · preto com logo branco -->
+    <div class="logo-frame">
+      <div class="logo-block bg-dark" style="min-height: 220px; padding: 32px; aspect-ratio: 1.75; flex-direction: column; justify-content: space-between; align-items: stretch; border: 1px solid #1a1a1a;">
+        <img src="assets/logos/logohorizontalwhite.png" alt="" style="height: 32px; width: auto; max-width: none; max-height: none; align-self: flex-start;">
+        <div>
+          <div class="mono" style="color: var(--c-orange); font-size: 10px; letter-spacing: 0.2em; margin-bottom: 4px;">JEFFERSON · SQUAD HUT</div>
+          <div class="mono" style="color: var(--c-gray); font-size: 9px;">+55 19 9 9999-9999 · gamerhut.com.br</div>
+        </div>
+      </div>
+      <div class="logo-label">
+        <span class="l-title">01 · CARTÃO DE VISITA</span>
+        <span class="l-sub">PRETO · LOGO BRANCO</span>
+        <span class="l-meta">90×50MM · PAPEL KRAFT 300G</span>
+      </div>
+    </div>
+
+    <!-- 02 · CAMISETA LARANJA · logo preto -->
+    <div class="logo-frame">
+      <div class="logo-block" style="background: var(--c-orange); min-height: 220px; padding: 40px; aspect-ratio: 1; align-items: center; justify-content: center;">
+        <img src="assets/logos/logoverticalblack.png" alt="" style="max-width: 55%; max-height: 80%;">
+      </div>
+      <div class="logo-label">
+        <span class="l-title">02 · CAMISETA</span>
+        <span class="l-sub">LARANJA · LOGO PRETO</span>
+        <span class="l-meta">SILK 1 COR · 100% ALGODÃO</span>
+      </div>
+    </div>
+
+    <!-- 03 · SACOLA KRAFT · logo preto -->
+    <div class="logo-frame">
+      <div class="logo-block" style="background: #d4a574; min-height: 220px; padding: 32px; aspect-ratio: 1; flex-direction: column; align-items: center; justify-content: center; gap: 16px;">
+        <img src="assets/logos/logoverticalblack.png" alt="" style="max-width: 50%; max-height: 60%;">
+        <div class="mono" style="color: #4a3520; font-size: 9px; letter-spacing: 0.22em; text-align: center;">MÍDIA FÍSICA NEVER DIES</div>
+      </div>
+      <div class="logo-label">
+        <span class="l-title">03 · SACOLA KRAFT</span>
+        <span class="l-sub">KRAFT · LOGO PRETO</span>
+        <span class="l-meta">35×40CM · ALÇA REFORÇADA</span>
+      </div>
+    </div>
+
+    <!-- 04 · BANNER LOJA · preto com logo branco -->
+    <div class="logo-frame">
+      <div class="logo-block bg-dark" style="min-height: 220px; padding: 28px; aspect-ratio: 1.6; flex-direction: column; justify-content: space-between; align-items: stretch; border: 2px solid var(--c-orange);">
+        <img src="assets/logos/logohorizontalwhite.png" alt="" style="height: 24px; width: auto; max-width: none; max-height: none; align-self: flex-start;">
+        <div style="text-align: center;">
+          <h3 style="font-size: clamp(28px, 4vw, 38px); margin: 0; color: var(--c-cream); line-height: 1;">DROP <span class="hl-orange">NIGHT</span></h3>
+          <div class="mono" style="color: var(--c-orange); font-size: 9px; margin-top: 6px; letter-spacing: 0.22em;">SEXTA · 20H</div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span class="mono" style="color: var(--c-gray-d); font-size: 8px;">@gamerhut.store</span>
+          <span class="mono" style="color: var(--c-orange); font-size: 8px;">▶ PRESS START</span>
+        </div>
+      </div>
+      <div class="logo-label">
+        <span class="l-title">04 · BANNER LOJA</span>
+        <span class="l-sub">PRETO · LOGO BRANCO</span>
+        <span class="l-meta">VINIL 120×80CM · BORDA LARANJA</span>
+      </div>
+    </div>
+
+    <!-- 05 · ETIQUETA DE PREÇO · cream com badge preto -->
+    <div class="logo-frame">
+      <div class="logo-block" style="background: var(--c-cream); min-height: 220px; padding: 28px; aspect-ratio: 1; flex-direction: column; align-items: center; justify-content: center; gap: 12px;">
+        <img src="assets/logos/badgecircleblack.png" alt="Selo" style="width: 56px; height: 56px; max-width: none; max-height: none;">
+        <div class="mono" style="color: #000; font-size: 9px; letter-spacing: 0.18em; text-align: center;">ORIGINAL · LACRADO · NF</div>
+        <div style="font-family: var(--f-display); color: var(--c-orange); font-size: 36px; line-height: 1;">R$ 349</div>
+        <div class="mono" style="color: #555; font-size: 8px;">EAN · 7898000000000</div>
+      </div>
+      <div class="logo-label">
+        <span class="l-title">05 · ETIQUETA DE PREÇO</span>
+        <span class="l-sub">CREAM · BADGE PRETO</span>
+        <span class="l-meta">SELO PROCEDÊNCIA · 60×90MM</span>
+      </div>
+    </div>
+
+    <!-- 06 · CRACHÁ EVENTO · preto com logo laranja -->
+    <div class="logo-frame">
+      <div class="logo-block bg-dark" style="min-height: 220px; padding: 28px; aspect-ratio: 0.85; flex-direction: column; align-items: center; justify-content: center; gap: 16px; border: 1px solid var(--c-orange);">
+        <img src="assets/logos/logoverticalorange.png" alt="" style="max-width: 60%; max-height: 50%;">
+        <div style="text-align: center;">
+          <div class="mono" style="color: var(--c-orange); font-size: 11px; letter-spacing: 0.22em;">JEFF</div>
+          <div class="mono" style="color: var(--c-gray); font-size: 8px; letter-spacing: 0.2em; margin-top: 4px;">STAFF · DROP NIGHT</div>
+        </div>
+      </div>
+      <div class="logo-label">
+        <span class="l-title">06 · CRACHÁ EVENTO</span>
+        <span class="l-sub">PRETO · LOGO LARANJA</span>
+        <span class="l-meta">CORDÃO LARANJA · 90×130MM</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STAGE 22 - E-COMMERCE -->
+<section class="stage" id="stage-22">
+  <div class="stage-head">
+    <div class="stage-numwrap">22</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 22 · E-COMMERCE</span>
+      <h2>LOJA<br><span class="hl-orange">ONLINE</span></h2>
+      <p class="lead">Mock da loja. Cards com selo de procedência, badge de edição, preço em destaque. Layout dark, paleta 60-30-10.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-3">
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <img src="assets/games/gta5sq.jpg" alt="" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+      <div style="padding: 20px;">
+        <div class="mono" style="color: var(--c-orange); font-size: 10px;">PS5 · LACRADO</div>
+        <h4 style="font-size: 16px; margin: 8px 0;">GTA V — Premium</h4>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-family: var(--f-display); color: var(--c-orange); font-size: 22px;">R$ 199</span>
+          <span class="mono" style="font-size: 10px;">12× R$ 17</span>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <img src="assets/games/rdr2sq.jpg" alt="" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+      <div style="padding: 20px;">
+        <div class="mono" style="color: var(--c-orange); font-size: 10px;">PS5 · STEELBOOK · LACRADO</div>
+        <h4 style="font-size: 16px; margin: 8px 0;">Red Dead Redemption 2</h4>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-family: var(--f-display); color: var(--c-orange); font-size: 22px;">R$ 449</span>
+          <span class="mono" style="font-size: 10px;">12× R$ 38</span>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <img src="assets/games/zeldatotksq.jpg" alt="" style="width: 100%; aspect-ratio: 1; object-fit: cover;">
+      <div style="padding: 20px;">
+        <div class="mono" style="color: var(--c-orange); font-size: 10px;">SWITCH · LACRADO</div>
+        <h4 style="font-size: 16px; margin: 8px 0;">Zelda · Tears of the Kingdom</h4>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-family: var(--f-display); color: var(--c-orange); font-size: 22px;">R$ 379</span>
+          <span class="mono" style="font-size: 10px;">12× R$ 32</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAGE 23 - TIPS DE COPY -->
+<section class="stage" id="stage-23">
+  <div class="stage-head">
+    <div class="stage-numwrap solid">23</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 23 · TIPS DE COPY</span>
+      <h2>13 BLOCOS<br><span class="hl-orange">PRONTOS</span></h2>
+      <p class="lead">Templates editáveis pra qualquer ocasião. Detalhe completo em <code>voice-content/copy-templates.md</code>.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-num">01</div><h4>Drop announcement</h4><p>Caption curta, média, e-mail, story 15s.</p></div>
+    <div class="card"><div class="card-num">02</div><h4>Pré-venda</h4><p>Caption + tip explicativo (carrossel 4 slides).</p></div>
+    <div class="card"><div class="card-num">03</div><h4>Edição limitada · escassez REAL</h4><p>Só usa quando é verdade.</p></div>
+    <div class="card"><div class="card-num">04</div><h4>Review do Squad</h4><p>Carrossel 5-7 slides com nota, prós, contras.</p></div>
+    <div class="card"><div class="card-num">05</div><h4>Tip da Hut</h4><p>Pergunta no topo, resposta em 1-2 parágrafos.</p></div>
+    <div class="card"><div class="card-num">06</div><h4>Lore & Curiosidade</h4><p>Storytelling sem CTA de venda.</p></div>
+    <div class="card"><div class="card-num">07</div><h4>Resumo da Semana</h4><p>Recap 3-5 slides dos drops.</p></div>
+    <div class="card"><div class="card-num">08</div><h4>Reforço de procedência</h4><p>Selo "Original. Lacrado. Com NF.".</p></div>
+    <div class="card"><div class="card-num">09</div><h4>Comunidade · engajamento</h4><p>Pergunta do dia · domingo de retrô.</p></div>
+    <div class="card"><div class="card-num">10</div><h4>E-mail · transparência radical</h4><p>"A gente errou aqui. Vou resolver."</p></div>
+    <div class="card"><div class="card-num">11</div><h4>Atendimento DM · console</h4><p>"Console não é o nosso negócio".</p></div>
+    <div class="card"><div class="card-num">12</div><h4>Atendimento DM · usado</h4><p>"Só lacrado".</p></div>
+    <div class="card"><div class="card-num">13</div><h4>Co-branding · publisher</h4><p>Legenda institucional com lockup.</p></div>
+  </div>
+</section>
+
+<div class="bigband">
+  <div class="section-num">▸ CHAPTER D · NOVO V.2026.09</div>
+  <h2>AUDIENCE & <span class="hl-orange">ARCHETYPE</span></h2>
+  <p class="mono mt-4">// Stages 24-25 · Quem é a galera · quem somos pra ela</p>
+</div>
+
+<!-- STAGE 24 - AUDIÊNCIA POR GERAÇÃO -->
+<section class="stage" id="stage-24">
+  <div class="stage-head">
+    <div class="stage-numwrap solid">24</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 24 · AUDIÊNCIA POR GERAÇÃO</span>
+      <h2>3 GERAÇÕES<br><span class="hl-orange">3 LINGUAGENS</span></h2>
+      <p class="lead">Diagnóstico cruzado IGN/Kantar/Berkeley + PGB 2026. Como cada geração compra, descobre e se relaciona com mídia física.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- GEN X -->
+  <div style="margin-bottom: 64px;">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px;">
+      <span class="tag sonic">GEN X</span>
+      <span class="mono">45-60 ANOS · OS VETERANOS</span>
+    </div>
+    <h3>Tempo é luxo. <span class="hl-orange">Filtro é severo.</span></h3>
+    <p>Caras que viraram a noite pra esperar Symphony of the Night. Compraram Mega Drive original em 1990. Casados, têm filhos, cargo sênior.</p>
+    <div class="grid-3 mt-4">
+      <div class="card">
+        <div class="card-num">DADOS</div>
+        <p style="font-size: 13px;"><strong>20%</strong> compra preço cheio.<br>Descobre via <strong>Google</strong>.<br>Prefere <strong>single-player</strong>.<br>Revisita pra <strong>completar 100%</strong>.</p>
+      </div>
+      <div class="list-use" style="background: var(--c-surface);">
+        <h4>O QUE MOVE</h4>
+        <ul>
+          <li>Legado (versão definitiva)</li>
+          <li>Completude (coleção fechada)</li>
+          <li>ROI brutal</li>
+          <li>Curadoria de quem entende</li>
+          <li>Permanência</li>
+        </ul>
+      </div>
+      <div class="list-avoid" style="background: var(--c-surface);">
+        <h4>O QUE REPELE</h4>
+        <ul>
+          <li>Gírias de Gen Z</li>
+          <li>Urgência fake</li>
+          <li>Hype vazio</li>
+          <li>Foco em multiplayer</li>
+          <li>Vídeo de 15s sem contexto</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-acc mt-4">
+      <div class="card-num">// HOOK PRONTO PRA USAR</div>
+      <pre class="codeblock">"Symphony of the Night completa 28 anos.
+Edição PS5 lacrada, a versão definitiva
+que merece a sua estante."</pre>
+      <p class="mono mt-4" style="color: var(--c-success);">PILARES: Profissional · Transparente · Instigante</p>
+    </div>
+  </div>
+
+  <!-- MILLENNIALS -->
+  <div style="margin-bottom: 64px;">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px;">
+      <span class="tag skin">MILLENNIALS</span>
+      <span class="mono">30-44 ANOS · A GERAÇÃO PONTE</span>
+    </div>
+    <h3>Dinheiro razoável. <span class="hl-orange">Tempo limitado.</span></h3>
+    <p>Cresceram entre o PS1 e o online. Primeiros gamers BR assumidos. Geração da nostalgia ativa — pagam pela versão remasterizada do jogo de 14 anos.</p>
+    <div class="grid-3 mt-4">
+      <div class="card">
+        <div class="card-num">DADOS</div>
+        <p style="font-size: 13px;"><strong>38%</strong> compra preço cheio.<br>85% descobre via <strong>YouTube</strong>.<br>Divididos single/multi.<br>Revisita pra <strong>achievements</strong>.</p>
+      </div>
+      <div class="list-use" style="background: var(--c-surface);">
+        <h4>O QUE MOVE</h4>
+        <ul>
+          <li>Nostalgia ativada</li>
+          <li>Curadoria por creator</li>
+          <li>Permanência da biblioteca</li>
+          <li>Símbolo de adulto-gamer</li>
+          <li>Comparação com a juventude</li>
+        </ul>
+      </div>
+      <div class="list-avoid" style="background: var(--c-surface);">
+        <h4>O QUE REPELE</h4>
+        <ul>
+          <li>Conteúdo só pra Gen Z</li>
+          <li>Linguagem corporativa</li>
+          <li>Anúncio sem histórico</li>
+          <li>Promoção genérica</li>
+          <li>Falta de review profundo</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-acc mt-4">
+      <div class="card-num">// HOOK PRONTO PRA USAR</div>
+      <pre class="codeblock">"O jogo que você jogou aos 14 voltou.
+Pokémon Z-A — Game Freak refez Kalos do zero.
+Bora rever a região que você zerou em 2013?"</pre>
+      <p class="mono mt-4" style="color: var(--c-success);">PILARES: Próximo · Instigante · Profissional</p>
+    </div>
+  </div>
+
+  <!-- GEN Z -->
+  <div style="margin-bottom: 64px;">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px;">
+      <span class="tag">GEN Z</span>
+      <span class="mono">16-29 ANOS · OS INSIDERS · MAIORIA BR</span>
+    </div>
+    <h3>Identidade gamer = <span class="hl-orange">identidade pessoal.</span></h3>
+    <p><strong>Maioria do público gamer BR (36,5%).</strong> Nasceram com Wi-Fi. Discord antes de shopping. Pagam quando o produto vira social currency.</p>
+    <div class="grid-3 mt-4">
+      <div class="card">
+        <div class="card-num">DADOS</div>
+        <p style="font-size: 13px;"><strong>42%</strong> compra preço cheio.<br>Insta/TikTok/X/Twitch.<br>Forte preferência por <strong>multiplayer</strong>.<br>Busca conteúdo, comunidade.</p>
+      </div>
+      <div class="list-use" style="background: var(--c-surface);">
+        <h4>O QUE MOVE</h4>
+        <ul>
+          <li>Status de insider</li>
+          <li>Drop como evento cultural</li>
+          <li>Pertencimento</li>
+          <li>Hype antecipado</li>
+          <li>Mídia física como cult</li>
+        </ul>
+      </div>
+      <div class="list-avoid" style="background: var(--c-surface);">
+        <h4>O QUE REPELE</h4>
+        <ul>
+          <li>Linguagem de boomer</li>
+          <li>Storytelling longo</li>
+          <li>Falta de teaser</li>
+          <li>Layout institucional</li>
+          <li>Quem fala "de cima"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-acc mt-4">
+      <div class="card-num">// HOOK PRONTO PRA USAR</div>
+      <pre class="codeblock">"Drop Night · sexta · 20h.
+Steelbook do GTA VI. 50 unidades BR.
+Quem foi? Quem foi."</pre>
+      <p class="mono mt-4" style="color: var(--c-success);">PILARES: Descontraído · Instigante · Próximo</p>
+    </div>
+  </div>
+
+  <!-- DISTRIBUIÇÃO -->
+  <div class="card-acc mt-6">
+    <div class="card-num">// DISTRIBUIÇÃO DE ESFORÇO DE PRODUÇÃO</div>
+    <h3>Onde investir <span class="hl-orange">tempo de produção</span></h3>
+    <pre style="background: var(--c-bg); padding: 24px; font-family: var(--f-mono); font-size: 13px; color: var(--c-cream); line-height: 1.8; margin-top: 16px; border-left: 2px solid var(--c-orange); white-space: pre;">GEN Z       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░  45%
+MILLENNIALS ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░  35%
+GEN X       ▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░  20%</pre>
+    <p class="mono mt-4">// Distribuição de ESFORÇO, não de RECEITA. Em receita, Gen X/Mill = 60-70%. Gen Z = motor de buzz.</p>
+  </div>
+
+  <!-- REGRA -->
+  <div style="margin-top: 48px; padding: 32px; background: var(--c-bg); border: 2px dashed var(--c-orange);">
+    <div class="mono" style="color: var(--c-orange);">▸ REGRA DE OURO</div>
+    <h3 class="mt-4">Um post nunca fala com <span class="hl-orange">as 3 gerações</span> ao mesmo tempo.</h3>
+    <p style="font-size: 18px; color: var(--c-cream);">Cada peça mira UMA — as outras pegam de raspão se for bom. Em campanha grande, fragmenta em 3 versões: Gen X (e-mail/YT longo), Millennial (carrossel/parceria creator), Gen Z (Reels/Stories/Discord).</p>
+  </div>
+</section>
+
+<!-- STAGE 25 - ARQUÉTIPO -->
+<section class="stage" id="stage-25">
+  <div class="stage-head">
+    <div class="stage-numwrap">25</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 25 · ARQUÉTIPO DE MARCA</span>
+      <h2>SÁBIO<br><span class="hl-orange">+ CARA COMUM</span></h2>
+      <p class="lead">Apêndice estratégico — não é estrela do brandbook, é alicerce. Framework Mark & Pearson aplicado.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="grid-2">
+    <div class="card-acc">
+      <div class="card-num">DOMINANTE · 60%</div>
+      <h3>O <span class="hl-orange">Sábio</span></h3>
+      <p>"Somos os experts" vem daqui. É o que entende de mídia física, procedência, catálogo, história da indústria.</p>
+      <div class="mono mt-4" style="color: var(--c-success);">DEFINE: transparência · profissionalismo · autoridade</div>
+    </div>
+    <div class="card-acc">
+      <div class="card-num">CONTRAPONTO · 40%</div>
+      <h3>O <span class="hl-orange">Cara Comum</span></h3>
+      <p>"A gente joga, coleciona, respeita o jogo" vem daqui. Segura a expertise no chão — sem pedestal.</p>
+      <div class="mono mt-4" style="color: var(--c-success);">DEFINE: proximidade · descontração · pertencimento</div>
+    </div>
+  </div>
+  <div style="margin-top: 48px; padding: 48px; background: var(--c-orange); color: #000; text-align: center;">
+    <div class="mono" style="color: #000;">// FRASE-SÍNTESE</div>
+    <h2 style="color: #000; font-size: clamp(28px, 5vw, 48px); margin-top: 16px;">"O squad que entende,<br>sem virar bancada de TV."</h2>
+  </div>
+</section>
+
+<!-- BONUS STAGE - HAIL TO THE PLAN -->
+<section class="stage" id="hail">
+  <div class="hail-stage">
+    <div class="hail-warning">⚠ CLASSIFIED · LEVEL UNLOCKED · ACCESS GRANTED ⚠</div>
+    <span class="eyebrow" style="display: block; margin-bottom: 16px;">▸ :: BONUS STAGE ::</span>
+    <h2><span class="hl-orange">HAIL</span> TO THE <span class="hl-orange">PLAN</span></h2>
+    <p style="max-width: 640px; margin: 0 auto 16px; font-size: 17px; line-height: 1.6;">
+      Você chegou no <strong>final do brandbook</strong>. Agora é hora de pôr em prática.<br>
+      Bater o boss não é problema — o problema é o <strong>Planejamento Social</strong>.
+    </p>
+    <a href="https://ghsocial.vercel.app/" target="_blank" rel="noopener" class="hail-cta">
+      <span class="cta-press">▸ PRESS START · SECRET LEVEL</span>
+      <span class="cta-meta">PLANEJAMENTO SOCIAL · GH OPS · 2026</span>
+      <span class="cta-meta">ALWAYS BET ON GH ↗</span>
+    </a>
+    <p class="mono" style="font-size: 10px; color: var(--c-gray-d); margin-top: 12px; letter-spacing: 0.18em;">▸ ABRE EM NOVA ABA · ghsocial.vercel.app</p>
+    <div class="easter-hint">
+      <strong style="color: var(--c-orange); letter-spacing: 0.2em;">EASTER EGG ·</strong> TENTA O CÓDIGO
+      <span class="key-combo">↑</span><span class="key-combo">↑</span><span class="key-combo">↓</span><span class="key-combo">↓</span><span class="key-combo">←</span><span class="key-combo">→</span><span class="key-combo">←</span><span class="key-combo">→</span><span class="key-combo">B</span><span class="key-combo">A</span>
+      <br><br>
+      // OU TENTA DIGITAR <strong style="color: var(--c-orange);">T·G·T</strong> NO TECLADO. OU CLICA <strong style="color: var(--c-orange);">3 VEZES</strong> NO BADGE LARANJA AQUI EMBAIXO.
+      <br><br>
+      <img src="assets/logos/badgecircleorange.png" alt="Badge Gamer Hut" id="tgt-badge-trigger" style="width: 88px; height: 88px; cursor: pointer; transition: all 0.3s ease; margin-top: 8px;">
+    </div>
+  </div>
+</section>
+
+<!-- STAGE 26 - GAME OVER -->
+<section class="stage" id="stage-26">
+  <div class="stage-head">
+    <div class="stage-numwrap solid">26</div>
+    <div class="stage-headcol">
+      <span class="eyebrow">▸ STAGE 26 · GAME OVER</span>
+      <h2>CRÉDITOS<br><span class="hl-orange">/ STAFF ROLL</span></h2>
+      <p class="lead">Esse brandbook é vivo. Foi feito por quem ama games e respeita marca. Próximo level começa quando você fechar essa janela.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="logo-frame">
+    <div class="logo-block bg-dark">
+      <div style="text-align: center;">
+        <img src="assets/logos/logoverticalorange.png" alt="" style="max-width: 180px; max-height: 140px; object-fit: contain; margin-bottom: 24px;">
+        <h2 style="font-size: clamp(40px, 7vw, 64px); margin: 0;">PRESS START<br><span class="hl-orange">NA REALIDADE</span></h2>
+      </div>
+    </div>
+    <div class="logo-label">
+      <span class="l-title">END OF BRANDBOOK</span>
+      <span class="l-sub">A MARCA NÃO VIVE AQUI</span>
+      <span class="l-meta">VIVE NA EMBALAGEM · NA DM · NO DROP DA SEXTA</span>
+    </div>
+  </div>
+  <div class="grid-3 mt-6">
+    <div class="card">
+      <div class="card-num">DESIGN</div>
+      <p style="font-size: 13px;"><strong>TGT Strategy MKT</strong></p>
+      <p class="mono">// A Agência Além do Marketing</p>
+    </div>
+    <div class="card">
+      <div class="card-num">CLIENTE</div>
+      <p style="font-size: 13px;"><strong>GAMER HUT</strong></p>
+      <p class="mono">// gamerhut.com.br · @gamerhut.store</p>
+    </div>
+    <div class="card">
+      <div class="card-num">VERSÃO</div>
+      <p style="font-size: 13px;"><strong>v.2026.09</strong> · Audience Patch</p>
+      <p class="mono">// 26 stages · 9 publishers · 3 audiências</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="padding: 96px var(--pad-x) 48px; max-width: var(--container); margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.06);">
+  <div style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap; margin-bottom: 32px;">
+    <img src="assets/logos/logohorizontalwhite.png" alt="Gamer Hut" style="height: 56px; width: auto;">
+    <div class="mono" style="color: var(--c-gray-d); font-size: 10px; letter-spacing: 0.22em;">▸ END OF BRANDBOOK · STAFF ROLL</div>
+  </div>
+  <h2 style="color: var(--c-orange); font-size: clamp(48px, 8vw, 96px);">MÍDIA FÍSICA<br><span style="color: var(--c-cream);">NEVER DIES_</span></h2>
+  <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin: 64px 0 48px;">
+    <div>
+      <div class="card-num">// THE END</div>
+      <p>Esse brandbook foi feito pra ser lido, lembrado e quebrado quando precisar. Cada release abre uma chance de evolução.</p>
+    </div>
+    <div>
+      <div class="card-num">// CONTATO</div>
+      <p style="font-size: 13px;">contato@gamerhut.com.br<br>@gamerhut.store<br>gamerhut.com.br</p>
+    </div>
+    <div>
+      <div class="card-num">// AGÊNCIA</div>
+      <p style="font-size: 13px;"><strong>TGT Strategy MKT</strong><br>A Agência Além do Marketing</p>
+    </div>
+  </div>
+  <div style="font-family: var(--f-arcade); font-size: 9px; color: var(--c-gray-d); letter-spacing: 0.2em; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.06);">
+    <span>▸ V.2026.09 · STAGE 26/26 · AUDIENCE PATCH</span> &nbsp;|&nbsp;
+    <span>SENHA: gh_brandbook_unlocked_v2026.09</span> &nbsp;|&nbsp;
+    <span>© 2026 GAMER HUT</span>
+  </div>
+</footer>
+
+<!-- Audio toggle FAB -->
+<button class="audio-toggle" id="audio-toggle">♪ ON</button>
+
+<script>
+const PASSWORD = 'gh_brandbook_unlocked_v2026.09';
+const lockScreen = document.getElementById('lock-screen');
+const lockInput = document.getElementById('lock-input');
+const lockBtn = document.getElementById('lock-btn');
+const lockError = document.getElementById('lock-error');
+
+function unlock() {
+  if (lockInput.value === PASSWORD) {
+    sessionStorage.setItem('gh_unlocked_v2026_09', '1');
+    lockScreen.style.display = 'none';
+    document.body.style.overflow = '';
+    audioFanfare();
+  } else {
+    lockError.textContent = 'Senha incorreta. Tenta de novo.';
+    audioBuzz();
+    lockInput.value = '';
+    lockInput.focus();
+  }
+}
+
+if (sessionStorage.getItem('gh_unlocked_v2026_09')) {
+  lockScreen.style.display = 'none';
+} else {
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => lockInput && lockInput.focus(), 100);
+}
+
+if (lockBtn) {
+  lockBtn.addEventListener('click', unlock);
+  lockInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') unlock(); });
+}
+
+let audioCtx = null;
+let audioEnabled = localStorage.getItem('gh_audio_enabled_v2026_09') !== '0';
+
+function getCtx() {
+  if (!audioCtx) {
+    try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e) {}
+  }
+  return audioCtx;
+}
+
+function tone(freq, duration, type='square', vol=0.05) {
+  if (!audioEnabled) return;
+  const ctx = getCtx();
+  if (!ctx) return;
+  const o = ctx.createOscillator();
+  const g = ctx.createGain();
+  o.type = type;
+  o.frequency.value = freq;
+  g.gain.setValueAtTime(vol, ctx.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+  o.connect(g); g.connect(ctx.destination);
+  o.start();
+  o.stop(ctx.currentTime + duration);
+}
+
+function audioCoin() { tone(988, 0.08); setTimeout(() => tone(1319, 0.12), 80); }
+function audioBuzz() { tone(110, 0.15, 'sawtooth', 0.06); }
+function audioFanfare() { [523, 659, 784, 1047].forEach((f, i) => setTimeout(() => tone(f, 0.15), i*100)); }
+function audioBleep() { tone(440, 0.05, 'square', 0.03); }
+function audioHover() { tone(660, 0.04, 'square', 0.015); }
+
+const audioToggle = document.getElementById('audio-toggle');
+const audioToggleHud = document.getElementById('audio-toggle-hud');
+
+function updateAudioBtn() {
+  const txt = audioEnabled ? '♪ ON' : '♪ OFF';
+  if (audioToggle) {
+    audioToggle.textContent = txt;
+    audioToggle.classList.toggle('off', !audioEnabled);
+  }
+  if (audioToggleHud) audioToggleHud.textContent = txt;
+}
+
+function toggleAudio() {
+  audioEnabled = !audioEnabled;
+  localStorage.setItem('gh_audio_enabled_v2026_09', audioEnabled ? '1' : '0');
+  updateAudioBtn();
+  if (audioEnabled) audioBleep();
+}
+
+if (audioToggle) audioToggle.addEventListener('click', toggleAudio);
+if (audioToggleHud) audioToggleHud.addEventListener('click', toggleAudio);
+updateAudioBtn();
+
+const hud = document.getElementById('hud');
+const lifebar = document.getElementById('lifebar');
+const navLinks = document.querySelectorAll('.nav-link');
+const stages = document.querySelectorAll('.stage');
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / docHeight) * 100;
+  if (lifebar) lifebar.style.width = progress + '%';
+
+  if (scrollTop > 200) hud.classList.add('visible'); else hud.classList.remove('visible');
+
+  let current = '';
+  stages.forEach(s => {
+    const top = s.offsetTop - 100;
+    if (scrollTop >= top) current = s.id;
+  });
+  navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+});
+
+document.querySelectorAll('.stage-card, .btn-primary, .btn-ghost, .hud-toggle').forEach(el => {
+  el.addEventListener('mouseenter', audioHover);
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(el => {
+  el.addEventListener('click', () => audioCoin());
+});
+
+// ===== EASTER EGG TGT BOMBÁSTICO =====
+// Triggers: Konami code (↑↑↓↓←→←→BA) · digitar "tgt" · clicar 3x no badge laranja
+
+function showTGTEasterEgg() {
+  audioFanfare();
+  setTimeout(() => audioFanfare(), 200);
+  setTimeout(() => audioFanfare(), 400);
+
+  const easter = document.createElement('div');
+  easter.id = 'tgt-easter-modal';
+  easter.style.cssText = `
+    position:fixed;inset:0;background:radial-gradient(ellipse at center, rgba(225,37,27,0.35) 0%, rgba(0,0,0,0.97) 60%);
+    z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px;
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    animation:easter-fadein 0.4s ease;
+  `;
+  easter.innerHTML = `
+    <style>
+      @keyframes easter-fadein { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes easter-zoom { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+      @keyframes easter-glow {
+        0%, 100% { box-shadow: 0 0 60px rgba(225,37,27,0.5), 0 0 120px rgba(225,37,27,0.3), inset 0 0 60px rgba(225,37,27,0.1); }
+        50% { box-shadow: 0 0 100px rgba(225,37,27,0.8), 0 0 200px rgba(225,37,27,0.5), inset 0 0 80px rgba(225,37,27,0.2); }
+      }
+      @keyframes easter-tagline { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: translateY(0); } }
+      @keyframes easter-spin { to { transform: rotate(360deg); } }
+      .tgt-frame {
+        text-align: center;
+        border: 3px solid #E1251B;
+        padding: 80px 64px;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a0505 100%);
+        position: relative;
+        animation: easter-zoom 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), easter-glow 2s ease-in-out infinite 0.6s;
+        max-width: 600px;
+      }
+      .tgt-frame::before {
+        content: '';
+        position: absolute;
+        inset: -3px;
+        border: 1px solid rgba(225,37,27,0.3);
+        animation: easter-spin 30s linear infinite;
+        pointer-events: none;
+      }
+      .tgt-eyebrow {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 11px;
+        letter-spacing: 0.24em;
+        color: #E1251B;
+        margin-bottom: 32px;
+        animation: hail-pulse 1.4s ease-in-out infinite;
+      }
+      .tgt-mark {
+        font-family: 'Russo One', sans-serif;
+        font-size: clamp(96px, 16vw, 144px);
+        color: #fff;
+        margin: 0;
+        line-height: 0.9;
+        letter-spacing: 0.04em;
+        text-shadow: 0 0 40px rgba(225,37,27,0.8), 0 0 80px rgba(225,37,27,0.4);
+      }
+      .tgt-mark span { color: #E1251B; }
+      .tgt-tagline {
+        font-family: 'Russo One', sans-serif;
+        font-size: clamp(13px, 1.5vw, 17px);
+        letter-spacing: 0.22em;
+        color: #fff;
+        text-transform: uppercase;
+        margin-top: 24px;
+        opacity: 0;
+        animation: easter-tagline 0.8s ease forwards 1s;
+      }
+      .tgt-sub {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: rgba(255,255,255,0.6);
+        margin-top: 16px;
+        opacity: 0;
+        animation: easter-tagline 0.8s ease forwards 1.4s;
+      }
+      .tgt-close {
+        margin-top: 40px;
+        background: #E1251B;
+        color: #fff;
+        border: none;
+        padding: 14px 32px;
+        font-family: 'Press Start 2P', monospace;
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        opacity: 0;
+        animation: easter-tagline 0.6s ease forwards 1.8s;
+      }
+      .tgt-close:hover { background: #fff; color: #E1251B; }
+    </style>
+    <div class="tgt-frame">
+      <div class="tgt-eyebrow">▸ EASTER EGG UNLOCKED · CONGRATULATIONS PLAYER 1</div>
+      <h1 class="tgt-mark"><span>T</span>G<span>T</span></h1>
+      <p class="tgt-tagline">A AGÊNCIA ALÉM DO MARKETING</p>
+      <p class="tgt-sub">// BRANDBOOK · DESIGN · ESTRATÉGIA · CODE</p>
+      <button class="tgt-close" onclick="document.getElementById('tgt-easter-modal').remove()">▶ CLOSE</button>
+    </div>
+  `;
+  document.body.appendChild(easter);
+  // dismiss with ESC
+  const dismissEsc = (ev) => {
+    if (ev.key === 'Escape') {
+      const m = document.getElementById('tgt-easter-modal');
+      if (m) m.remove();
+      window.removeEventListener('keydown', dismissEsc);
+    }
+  };
+  window.addEventListener('keydown', dismissEsc);
+}
+
+// Trigger 1: Konami code
+const konami = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+let konamiIdx = 0;
+// Trigger 2: digitar T-G-T
+const tgtSeq = ['t','g','t'];
+let tgtIdx = 0;
+
+window.addEventListener('keydown', (e) => {
+  const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+  // konami
+  if (key === konami[konamiIdx]) {
+    konamiIdx++;
+    if (konamiIdx === konami.length) { showTGTEasterEgg(); konamiIdx = 0; }
+  } else { konamiIdx = (key === konami[0]) ? 1 : 0; }
+  // tgt
+  if (key === tgtSeq[tgtIdx]) {
+    tgtIdx++;
+    if (tgtIdx === tgtSeq.length) { showTGTEasterEgg(); tgtIdx = 0; }
+  } else { tgtIdx = (key === tgtSeq[0]) ? 1 : 0; }
+});
+
+// Trigger 3: clique 3x no badge laranja do hail-stage
+const tgtBadgeTrigger = document.getElementById('tgt-badge-trigger');
+let badgeClicks = 0;
+let badgeClickTimer = null;
+if (tgtBadgeTrigger) {
+  tgtBadgeTrigger.addEventListener('click', () => {
+    badgeClicks++;
+    audioBleep();
+    tgtBadgeTrigger.style.transform = 'scale(0.9) rotate(' + (badgeClicks * 12) + 'deg)';
+    setTimeout(() => { tgtBadgeTrigger.style.transform = ''; }, 200);
+    clearTimeout(badgeClickTimer);
+    badgeClickTimer = setTimeout(() => { badgeClicks = 0; }, 2000);
+    if (badgeClicks >= 3) { showTGTEasterEgg(); badgeClicks = 0; }
+  });
+}
+
+console.log('%c▶ GAMER HUT BRANDBOOK · v.2026.09', 'background:#F26641;color:#000;font-family:monospace;font-size:14px;padding:8px 12px;');
+console.log('%c// Mídia Física Never Dies · Press Start.', 'color:#F26641;font-family:monospace;');
+</script>
+</body>
+</html>
